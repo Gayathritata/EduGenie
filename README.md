@@ -203,11 +203,12 @@ Example output:
 
 ## 👨‍💻 Author
 
-**B.Tech CSE (AI & ML)**
-
 **Course : Google Cloud Generative AI**
 
 **AITS Kadapa**
+
+**B.Tech CSE (AI & ML)**
+
 
 **Syed Mohammad Sameer**
 
