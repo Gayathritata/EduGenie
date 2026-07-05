@@ -234,13 +234,13 @@ Roll No. : 23HM1A3348
 
 GitHub:https://github.com/SHAIKFAWAZ920
 
-3. Name : 
+3. Name : VADANALA VIJAY KUMAR
 
-Email :
+Email :vijaykumarvadanala2005@gmail.com
 
-Roll No. :
+Roll No. :23HM1A3359
 
-GitHub:
+GitHub:https://github.com/vjaykumarvadanala2005-max
 
 4. Name : 
 
