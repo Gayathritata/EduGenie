@@ -224,7 +224,7 @@ Email : js8380237@gmail.com
 
 Roll No. :23HM1A3353
 
-GitHub:
+GitHub:https://github.com/js8380237-oss
 
 2. Name : SHAIK MOHAMMED FAWAZ 
 
