@@ -226,13 +226,13 @@ Roll No. :23HM1A3353
 
 GitHub:
 
-2. Name : 
+2. Name : SHAIK MOHAMMED FAWAZ 
 
-Email :
+Email : shaikfawaz920@gmail.com
 
-Roll No. :
+Roll No. : 23HM1A3348
 
-GitHub:
+GitHub:https://github.com/SHAIKFAWAZ920
 
 3. Name : 
 
