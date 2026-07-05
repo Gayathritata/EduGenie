@@ -218,11 +218,11 @@ Roll No. : 23HM1A3354
 
 GitHub: https://github.com/samxiao0
 
-1. Name : 
+1. Name : syed Jaffarhussain 
 
-Email :
+Email : js8380237@gmail.com
 
-Roll No. :
+Roll No. :23HM1A3353
 
 GitHub:
 
