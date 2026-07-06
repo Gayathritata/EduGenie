@@ -1,0 +1,73 @@
+/* File: app/static/css/variables.css */
+/* Part of EduGenie Premium Styling System */
+
+:root {
+    /* Color Palette (HSL Tailored) */
+    --bg-base: #080c16;
+    --bg-surface: rgba(16, 22, 38, 0.6);
+    --bg-surface-solid: #0d1222;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(255, 255, 255, 0.15);
+    
+    /* Neon Accent Highlights */
+    --accent-primary: #00f2fe;     /* Neon Cyan */
+    --accent-secondary: #4facfe;   /* Electric Blue */
+    --accent-glow: rgba(0, 242, 254, 0.15);
+    --accent-success: #00e676;     /* Bright Green */
+    --accent-error: #ff1744;       /* Bright Red */
+    --accent-warning: #ffea00;     /* Vivid Yellow */
+    --accent-purple: #7f00ff;      /* Deep Violet */
+
+    /* Typography */
+    --font-sans: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+    
+    /* Structural variables */
+    --sidebar-width: 260px;
+    --sidebar-collapsed-width: 80px;
+    --navbar-height: 70px;
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    
+    /* Glassmorphism settings */
+    --glass-bg: rgba(255, 255, 255, 0.02);
+    --glass-border: rgba(255, 255, 255, 0.06);
+    --glass-blur: blur(16px);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    
+    /* Animations & Transitions */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base resets & scrollbars */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-base);
+    color: #e2e8f0;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-secondary);
+}

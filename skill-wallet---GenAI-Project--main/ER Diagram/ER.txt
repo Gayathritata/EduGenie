@@ -1,1 +1,11 @@
+Description of the ER Diagram
 
+*  The ER Diagram for the EduGenie Learning Assistant illustrates the database structure used to manage users, educational queries, AI-generated responses, quizzes, summaries, and personalized learning recommendations.
+
+*  The system consists of six main entities: USER, USER_QUERY, AI_RESPONSE, QUIZ, SUMMARY, and LEARNING_PATH. Each entity has a primary key for unique identification, while foreign keys establish relationships between related entities.
+
+*  A single user can submit multiple educational queries, and each query is associated with one AI response. A query can also generate multiple quiz questions, summaries, and learning path recommendations. This design ensures efficient storage and retrieval of educational data while maintaining data integrity.
+
+*  The ER diagram follows normalization principles by separating different types of information into individual entities, reducing redundancy and improving scalability. The database structure supports all major EduGenie functionalities, including question answering, concept explanation, quiz generation, text summarization, personalized learning recommendations, and user management.
+
+*  This design is flexible and can be implemented using databases such as MongoDB, MySQL, or PostgreSQL, depending on the project requirements, making it suitable for future enhancements like user progress tracking, multilingual support, and AI-powered analytics.
