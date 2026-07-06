@@ -1,0 +1,114 @@
+<!-- File: app/templates/dashboard/index.html -->
+<!-- Main Dashboard Workspace -->
+{% extends "base.html" %}
+
+{% block title %}Workspace – EduGenie{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="/static/css/dashboard.css">
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="brand">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#cyan-grad)" stroke-width="2.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            Edu<span class="brand-accent">Genie</span>
+        </div>
+        
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#" class="menu-item active" data-section="dashboard-home">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+                    Overview
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-item" data-section="qa">
+                    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    Smart Q&A
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-item" data-section="explain">
+                    <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    Concept Explainer
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-item" data-section="roadmap">
+                    <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    Study Roadmap
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-item" data-section="summarize">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    Summarizer
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-item" data-section="quiz">
+                    <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Dynamic Quiz
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-item" data-section="history">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Timeline Log
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-item" data-section="saved">
+                    <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    Bookmarks
+                </a>
+            </li>
+        </ul>
+        
+        <div class="sidebar-footer">
+            <a href="#" class="menu-item" data-section="profile" style="margin-bottom:8px;">
+                <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                My Profile
+            </a>
+            <a href="#" class="menu-item" id="logout-btn" style="color:var(--accent-error);">
+                <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                Sign Out
+            </a>
+        </div>
+    </aside>
+    
+    <!-- Right side workspace area -->
+    <main class="workspace">
+        
+        <!-- Top Navbar -->
+        <header class="navbar">
+            <div class="navbar-title">Overview</div>
+            
+            <div class="user-profile-widget">
+                <div class="avatar">{{ user.username[0].toUpperCase() }}</div>
+                <div class="username">{{ user.username }}</div>
+            </div>
+        </header>
+        
+        <!-- Workspace dynamic content -->
+        <div class="workspace-content" id="dynamic-workspace-content">
+            <!-- Asynchronous sub-views are loaded here dynamically by JavaScript -->
+        </div>
+        
+    </main>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="/static/js/api_client.js"></script>
+<script src="/static/js/auth.js"></script>
+<script src="/static/js/roadmap.js"></script>
+<script src="/static/js/quiz.js"></script>
+<script src="/static/js/ai_features.js"></script>
+{% endblock %}

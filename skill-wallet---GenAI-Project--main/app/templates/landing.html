@@ -1,0 +1,89 @@
+<!-- File: app/templates/landing.html -->
+<!-- Landing Page for EduGenie educational assistant -->
+{% extends "base.html" %}
+
+{% block title %}EduGenie – AI Powered Learning Assistant{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <!-- Glowing background elements -->
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    
+    <!-- Top Nav -->
+    <nav class="landing-nav glass-panel" style="border-radius: var(--radius-md); padding: 14px 30px; margin-top: 20px; width: 88%;">
+        <div class="brand">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="url(#cyan-grad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                <defs>
+                    <linearGradient id="cyan-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#4facfe" />
+                        <stop offset="100%" stop-color="#00f2fe" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            Edu<span class="brand-accent">Genie</span>
+        </div>
+        <div style="display:flex; gap:16px;">
+            <a href="/login" class="btn-secondary" style="padding: 10px 24px; font-size: 0.85rem;">Login</a>
+            <a href="/register" class="btn-primary" style="padding: 10px 24px; font-size: 0.85rem;">Register</a>
+        </div>
+    </nav>
+    
+    <!-- Main Hero Text Section -->
+    <h1 class="float-effect" style="margin-top: 100px;">Intelligent Co-Pilot for <span class="brand-accent" style="font-weight: 800; background: linear-gradient(135deg, #00f2fe, #4facfe); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Personalized Learning</span></h1>
+    <p>Unlock the power of Google Gemini & LaMini-Flan-T5 to construct custom roadmaps, explain complex concepts with analogies, and challenge yourself with dynamic quizzes.</p>
+    
+    <div class="hero-actions">
+        <a href="/login" class="btn-primary" style="text-decoration:none;">Start Learning Free</a>
+        <a href="#features" class="btn-secondary" style="text-decoration:none;">Explore Features</a>
+    </div>
+    
+    <!-- Features Highlight Grid Section -->
+    <div class="features-grid" id="features">
+        <div class="glass-panel feature-card animated" style="animation-delay: 0.1s;">
+            <div class="icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+            </div>
+            <h3>Smart Q&A</h3>
+            <p>Get instant answers to difficult academic inquiries with optional textbook context integration.</p>
+        </div>
+        
+        <div class="glass-panel feature-card animated" style="animation-delay: 0.2s;">
+            <div class="icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+            </div>
+            <h3>Personalized Roadmaps</h3>
+            <p>Generate step-by-step weekly milestone guides tailored to your experience and difficulty level.</p>
+        </div>
+        
+        <div class="glass-panel feature-card animated" style="animation-delay: 0.3s;">
+            <div class="icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+                </svg>
+            </div>
+            <h3>Concept Explanations</h3>
+            <p>Break down complex terms into simple analogies tailored specifically to your background.</p>
+        </div>
+        
+        <div class="glass-panel feature-card animated" style="animation-delay: 0.4s;">
+            <div class="icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+            </div>
+            <h3>Dynamic Quizzes</h3>
+            <p>Test your conceptual retention with interactive multiple-choice tests followed by explanations.</p>
+        </div>
+    </div>
+    
+    <footer style="color:#64748b; font-size:0.85rem; padding: 40px 0; border-top:1px solid var(--border-color); width:100%; max-width:1200px;">
+        &copy; 2026 EduGenie. Built under SmartBridge production standards. All rights reserved.
+    </footer>
+</div>
+{% endblock %}
