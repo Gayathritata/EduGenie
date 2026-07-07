@@ -17,7 +17,7 @@ def get_landing(request: Request):
     token = request.cookies.get("access_token")
     if token:
         return RedirectResponse(url="/dashboard")
-    return templates.TemplateResponse("landing.html", {"request": request})
+    return templates.TemplateResponse(request, "landing.html")
 
 @router.get("/login", response_class=HTMLResponse, tags=["Views"])
 def get_login(request: Request):
@@ -25,7 +25,7 @@ def get_login(request: Request):
     token = request.cookies.get("access_token")
     if token:
         return RedirectResponse(url="/dashboard")
-    return templates.TemplateResponse("auth/login.html", {"request": request})
+    return templates.TemplateResponse(request, "auth/login.html")
 
 @router.get("/register", response_class=HTMLResponse, tags=["Views"])
 def get_register(request: Request):
@@ -33,14 +33,14 @@ def get_register(request: Request):
     token = request.cookies.get("access_token")
     if token:
         return RedirectResponse(url="/dashboard")
-    return templates.TemplateResponse("auth/register.html", {"request": request})
+    return templates.TemplateResponse(request, "auth/register.html")
 
 @router.get("/dashboard", response_class=HTMLResponse, tags=["Views"])
 def get_dashboard(request: Request, db: Session = Depends(get_db)):
     """Serve the authenticated Dashboard workspace."""
     try:
         current_user = get_current_user(request, db)
-        return templates.TemplateResponse("dashboard/index.html", {"request": request, "user": current_user})
+        return templates.TemplateResponse(request, "dashboard/index.html", {"user": current_user})
     except Exception:
         # Redirect to login page if user session is invalid
         return RedirectResponse(url="/login?msg=unauthorized")

@@ -308,3 +308,894 @@ Traceback (most recent call last):
     rv = self._mapping[key]
          ~~~~~~~~~~~~~^^^^^
 TypeError: cannot use 'tuple' as a dict key (unhashable type: 'dict')
+2026-07-06 18:47:22,984 [INFO] edugenie: Initializing database tables...
+2026-07-06 18:47:23,008 [INFO] edugenie: Database tables initialized successfully.
+2026-07-06 18:47:23,010 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-06 18:49:47,884 [INFO] edugenie: Initializing database tables...
+2026-07-06 18:49:47,895 [INFO] edugenie: Database tables initialized successfully.
+2026-07-06 18:49:47,896 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-06 18:53:24,500 [INFO] edugenie: Initializing database tables...
+2026-07-06 18:53:24,509 [INFO] edugenie: Database tables initialized successfully.
+2026-07-06 18:53:24,512 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-06 19:08:20,051 [INFO] edugenie: Initializing database tables...
+2026-07-06 19:08:20,081 [INFO] edugenie: Database tables initialized successfully.
+2026-07-06 19:08:20,083 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-06 19:08:28,683 [ERROR] edugenie: Unhandled exception encountered at /: cannot use 'tuple' as a dict key (unhashable type: 'dict')
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SNEHARSHA\ANTIGRAVITY\SmartBridge\EduGenie\skill-wallet---GenAI-Project--main\app\main.py", line 62, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "C:\SNEHARSHA\ANTIGRAVITY\SmartBridge\EduGenie\skill-wallet---GenAI-Project--main\app\api\endpoints\pages.py", line 20, in get_landing
+    return templates.TemplateResponse("landing.html", {"request": request})
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\templating.py", line 148, in TemplateResponse
+    template = self.get_template(name)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\templating.py", line 115, in get_template
+    return self.env.get_template(name)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\jinja2\environment.py", line 964, in _load_template
+    template = self.cache.get(cache_key)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\jinja2\utils.py", line 477, in get
+    return self[key]
+           ~~~~^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\jinja2\utils.py", line 515, in __getitem__
+    rv = self._mapping[key]
+         ~~~~~~~~~~~~~^^^^^
+TypeError: cannot use 'tuple' as a dict key (unhashable type: 'dict')
+2026-07-06 19:08:28,937 [INFO] edugenie: Method: GET | Path: /favicon.ico | Status: 404 | Duration: 0.0017s
+2026-07-06 19:08:42,989 [INFO] edugenie: Method: GET | Path: /docs | Status: 200 | Duration: 0.0011s
+2026-07-06 19:08:43,966 [INFO] edugenie: Method: GET | Path: /openapi.json | Status: 200 | Duration: 0.1702s
+2026-07-06 19:09:01,515 [INFO] edugenie: Method: GET | Path: /redoc | Status: 200 | Duration: 0.0008s
+2026-07-06 19:09:02,992 [INFO] edugenie: Method: GET | Path: /openapi.json | Status: 200 | Duration: 0.0052s
+2026-07-06 19:09:21,310 [ERROR] edugenie: Unhandled exception encountered at /: cannot use 'tuple' as a dict key (unhashable type: 'dict')
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SNEHARSHA\ANTIGRAVITY\SmartBridge\EduGenie\skill-wallet---GenAI-Project--main\app\main.py", line 62, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "C:\SNEHARSHA\ANTIGRAVITY\SmartBridge\EduGenie\skill-wallet---GenAI-Project--main\app\api\endpoints\pages.py", line 20, in get_landing
+    return templates.TemplateResponse("landing.html", {"request": request})
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\templating.py", line 148, in TemplateResponse
+    template = self.get_template(name)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\templating.py", line 115, in get_template
+    return self.env.get_template(name)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\jinja2\environment.py", line 964, in _load_template
+    template = self.cache.get(cache_key)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\jinja2\utils.py", line 477, in get
+    return self[key]
+           ~~~~^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\jinja2\utils.py", line 515, in __getitem__
+    rv = self._mapping[key]
+         ~~~~~~~~~~~~~^^^^^
+TypeError: cannot use 'tuple' as a dict key (unhashable type: 'dict')
+2026-07-06 19:09:26,218 [ERROR] edugenie: Unhandled exception encountered at /: cannot use 'tuple' as a dict key (unhashable type: 'dict')
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SNEHARSHA\ANTIGRAVITY\SmartBridge\EduGenie\skill-wallet---GenAI-Project--main\app\main.py", line 62, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "C:\SNEHARSHA\ANTIGRAVITY\SmartBridge\EduGenie\skill-wallet---GenAI-Project--main\app\api\endpoints\pages.py", line 20, in get_landing
+    return templates.TemplateResponse("landing.html", {"request": request})
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\templating.py", line 148, in TemplateResponse
+    template = self.get_template(name)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\templating.py", line 115, in get_template
+    return self.env.get_template(name)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\jinja2\environment.py", line 964, in _load_template
+    template = self.cache.get(cache_key)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\jinja2\utils.py", line 477, in get
+    return self[key]
+           ~~~~^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\jinja2\utils.py", line 515, in __getitem__
+    rv = self._mapping[key]
+         ~~~~~~~~~~~~~^^^^^
+TypeError: cannot use 'tuple' as a dict key (unhashable type: 'dict')
+2026-07-06 19:09:26,475 [ERROR] edugenie: Unhandled exception encountered at /: cannot use 'tuple' as a dict key (unhashable type: 'dict')
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SNEHARSHA\ANTIGRAVITY\SmartBridge\EduGenie\skill-wallet---GenAI-Project--main\app\main.py", line 62, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 2683, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 1753, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 2738, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 1773, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 1264, in handle
+    await app(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "C:\SNEHARSHA\ANTIGRAVITY\SmartBridge\EduGenie\skill-wallet---GenAI-Project--main\app\api\endpoints\pages.py", line 20, in get_landing
+    return templates.TemplateResponse("landing.html", {"request": request})
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\templating.py", line 148, in TemplateResponse
+    template = self.get_template(name)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\starlette\templating.py", line 115, in get_template
+    return self.env.get_template(name)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\jinja2\environment.py", line 964, in _load_template
+    template = self.cache.get(cache_key)
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\jinja2\utils.py", line 477, in get
+    return self[key]
+           ~~~~^^^^^
+  File "C:\Users\HP\AppData\Local\uv\cache\archive-v0\rPul_i_-0mqCbu2u\Lib\site-packages\jinja2\utils.py", line 515, in __getitem__
+    rv = self._mapping[key]
+         ~~~~~~~~~~~~~^^^^^
+TypeError: cannot use 'tuple' as a dict key (unhashable type: 'dict')
+2026-07-06 19:17:43,417 [INFO] edugenie: Initializing database tables...
+2026-07-06 19:17:43,449 [INFO] edugenie: Database tables initialized successfully.
+2026-07-06 19:17:43,452 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-06 19:18:08,481 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.2113s
+2026-07-06 19:18:08,724 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.1534s
+2026-07-06 19:18:08,729 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.1598s
+2026-07-06 19:18:20,709 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0090s
+2026-07-06 19:18:20,746 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0092s
+2026-07-06 19:18:20,753 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0140s
+2026-07-06 19:18:38,472 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0047s
+2026-07-06 19:19:26,874 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 401 | Duration: 0.1226s
+2026-07-06 19:19:30,659 [INFO] edugenie: Method: GET | Path: /register | Status: 200 | Duration: 0.0153s
+2026-07-06 19:19:51,007 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 201 | Duration: 0.6299s
+2026-07-06 19:19:51,048 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0049s
+2026-07-06 19:19:56,159 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.4914s
+2026-07-06 19:19:56,204 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0072s
+2026-07-06 19:19:56,222 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0036s
+2026-07-06 19:19:56,240 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0046s
+2026-07-06 19:19:56,257 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0053s
+2026-07-06 19:19:56,278 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0076s
+2026-07-06 19:19:56,299 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0046s
+2026-07-06 19:19:56,315 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0049s
+2026-07-06 19:19:56,331 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0039s
+2026-07-06 19:19:56,349 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0049s
+2026-07-06 19:19:56,369 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0073s
+2026-07-06 19:19:56,385 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0043s
+2026-07-06 19:19:56,401 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0031s
+2026-07-06 19:19:56,415 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0035s
+2026-07-06 19:19:56,430 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0033s
+2026-07-06 19:19:56,446 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0039s
+2026-07-06 19:19:56,468 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0048s
+2026-07-06 19:19:56,491 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0077s
+2026-07-06 19:19:56,507 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0043s
+2026-07-06 19:19:56,525 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0050s
+2026-07-06 19:19:56,539 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0033s
+2026-07-06 19:19:57,822 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0028s
+2026-07-06 19:19:57,838 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0055s
+2026-07-06 19:19:57,850 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0026s
+2026-07-06 19:19:57,866 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0044s
+2026-07-06 19:19:57,879 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0028s
+2026-07-06 19:19:57,894 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0053s
+2026-07-06 19:19:57,907 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0033s
+2026-07-06 19:19:57,920 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0048s
+2026-07-06 19:19:57,931 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0027s
+2026-07-06 19:19:57,944 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0032s
+2026-07-06 19:19:57,956 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0025s
+2026-07-06 19:19:57,970 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0039s
+2026-07-06 19:19:57,980 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0024s
+2026-07-06 19:19:57,991 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0031s
+2026-07-06 19:19:58,002 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0027s
+2026-07-06 19:19:58,014 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0044s
+2026-07-06 19:19:58,025 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0025s
+2026-07-06 19:19:58,037 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0034s
+2026-07-06 19:19:58,048 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0026s
+2026-07-06 19:19:58,061 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0045s
+2026-07-06 19:19:59,242 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0037s
+2026-07-06 19:19:59,259 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0023s
+2026-07-06 19:19:59,277 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0037s
+2026-07-06 19:19:59,293 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0040s
+2026-07-06 19:19:59,306 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0037s
+2026-07-06 19:19:59,321 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0032s
+2026-07-06 19:19:59,338 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0038s
+2026-07-06 19:19:59,351 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0025s
+2026-07-06 19:19:59,367 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0047s
+2026-07-06 19:19:59,384 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0024s
+2026-07-06 19:19:59,399 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0036s
+2026-07-06 19:19:59,410 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0023s
+2026-07-06 19:19:59,423 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0033s
+2026-07-06 19:19:59,434 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0031s
+2026-07-06 19:19:59,450 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0075s
+2026-07-06 19:19:59,461 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0023s
+2026-07-06 19:19:59,472 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0031s
+2026-07-06 19:19:59,484 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0023s
+2026-07-06 19:19:59,497 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0047s
+2026-07-06 19:19:59,507 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0024s
+2026-07-06 19:20:10,821 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.4449s
+2026-07-06 19:20:10,861 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0053s
+2026-07-06 19:20:10,884 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0040s
+2026-07-06 19:20:10,898 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0028s
+2026-07-06 19:20:10,915 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0034s
+2026-07-06 19:20:10,930 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0049s
+2026-07-06 19:20:10,944 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0024s
+2026-07-06 19:20:10,959 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0046s
+2026-07-06 19:20:10,976 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0028s
+2026-07-06 19:20:10,993 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0032s
+2026-07-06 19:20:11,006 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0023s
+2026-07-06 19:20:11,022 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0039s
+2026-07-06 19:20:11,035 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0042s
+2026-07-06 19:20:11,048 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0034s
+2026-07-06 19:20:11,059 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0030s
+2026-07-06 19:20:11,072 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0031s
+2026-07-06 19:20:11,083 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0018s
+2026-07-06 19:20:11,096 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0039s
+2026-07-06 19:20:11,107 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0030s
+2026-07-06 19:20:11,117 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0028s
+2026-07-06 19:20:11,128 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0023s
+2026-07-06 19:20:12,336 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0027s
+2026-07-06 19:20:12,355 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0070s
+2026-07-06 19:20:12,369 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0029s
+2026-07-06 19:20:12,385 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0040s
+2026-07-06 19:20:12,402 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0044s
+2026-07-06 19:20:12,417 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0046s
+2026-07-06 19:20:12,429 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0028s
+2026-07-06 19:20:12,445 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0047s
+2026-07-06 19:20:12,462 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0034s
+2026-07-06 19:20:12,480 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0056s
+2026-07-06 19:20:12,492 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0030s
+2026-07-06 19:20:12,507 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0044s
+2026-07-06 19:20:12,519 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0030s
+2026-07-06 19:20:12,530 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0030s
+2026-07-06 19:20:12,542 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0025s
+2026-07-06 19:20:12,555 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0044s
+2026-07-06 19:20:12,567 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0024s
+2026-07-06 19:20:12,579 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0034s
+2026-07-06 19:20:12,591 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0030s
+2026-07-06 19:20:12,602 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0027s
+2026-07-06 19:21:24,190 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.4335s
+2026-07-06 19:21:24,222 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0055s
+2026-07-06 19:21:24,247 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0033s
+2026-07-06 19:21:24,263 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0045s
+2026-07-06 19:21:24,279 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0032s
+2026-07-06 19:21:24,293 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0047s
+2026-07-06 19:21:24,304 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0021s
+2026-07-06 19:21:24,321 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0062s
+2026-07-06 19:21:24,338 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0049s
+2026-07-06 19:21:24,350 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0027s
+2026-07-06 19:21:24,364 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0034s
+2026-07-06 19:21:24,388 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0039s
+2026-07-06 19:21:24,400 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0018s
+2026-07-06 19:21:24,412 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0030s
+2026-07-06 19:21:24,423 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0022s
+2026-07-06 19:21:24,437 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0052s
+2026-07-06 19:21:24,447 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0021s
+2026-07-06 19:21:24,462 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0034s
+2026-07-06 19:21:24,474 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0020s
+2026-07-06 19:21:24,487 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0041s
+2026-07-06 19:21:24,499 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0031s
+2026-07-06 19:21:25,705 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0031s
+2026-07-06 19:21:25,726 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0104s
+2026-07-06 19:21:25,746 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0032s
+2026-07-06 19:21:25,761 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0042s
+2026-07-06 19:21:25,775 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0035s
+2026-07-06 19:21:25,789 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0034s
+2026-07-06 19:21:25,802 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0029s
+2026-07-06 19:21:25,819 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0054s
+2026-07-06 19:21:25,831 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0026s
+2026-07-06 19:21:25,846 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0055s
+2026-07-06 19:21:25,859 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0038s
+2026-07-06 19:21:25,876 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0089s
+2026-07-06 19:21:25,887 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0029s
+2026-07-06 19:21:25,901 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0034s
+2026-07-06 19:21:25,911 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0018s
+2026-07-06 19:21:25,925 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0048s
+2026-07-06 19:21:25,936 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0027s
+2026-07-06 19:21:25,947 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0032s
+2026-07-06 19:21:25,959 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0026s
+2026-07-06 19:21:25,971 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0034s
+2026-07-06 19:22:54,647 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.4682s
+2026-07-06 19:22:54,691 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0078s
+2026-07-06 19:22:54,724 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0033s
+2026-07-06 19:22:54,750 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0103s
+2026-07-06 19:22:54,787 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0061s
+2026-07-06 19:22:54,818 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0111s
+2026-07-06 19:22:54,852 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0084s
+2026-07-06 19:22:54,881 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0124s
+2026-07-06 19:22:54,914 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0127s
+2026-07-06 19:22:54,957 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0174s
+2026-07-06 19:22:54,986 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0171s
+2026-07-06 19:22:55,008 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0069s
+2026-07-06 19:22:55,028 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0066s
+2026-07-06 19:22:55,053 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0046s
+2026-07-06 19:22:55,080 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0069s
+2026-07-06 19:22:55,095 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0051s
+2026-07-06 19:22:55,109 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0039s
+2026-07-06 19:22:55,127 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0072s
+2026-07-06 19:22:55,141 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0039s
+2026-07-06 19:22:55,174 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0226s
+2026-07-06 19:22:55,199 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0053s
+2026-07-06 19:22:56,411 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0028s
+2026-07-06 19:22:56,439 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0076s
+2026-07-06 19:22:56,467 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0026s
+2026-07-06 19:22:56,491 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0058s
+2026-07-06 19:22:56,504 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0027s
+2026-07-06 19:22:56,521 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0065s
+2026-07-06 19:22:56,538 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0043s
+2026-07-06 19:22:56,554 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0042s
+2026-07-06 19:22:56,569 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0033s
+2026-07-06 19:22:56,586 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0046s
+2026-07-06 19:22:56,604 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0045s
+2026-07-06 19:22:56,624 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0065s
+2026-07-06 19:22:56,637 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0023s
+2026-07-06 19:22:56,652 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0044s
+2026-07-06 19:22:56,669 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0038s
+2026-07-06 19:22:56,689 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0072s
+2026-07-06 19:22:56,703 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0040s
+2026-07-06 19:22:56,719 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0053s
+2026-07-06 19:22:56,733 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0034s
+2026-07-06 19:22:56,749 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0056s
+2026-07-06 19:47:20,201 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.1259s
+2026-07-06 19:47:20,326 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0564s
+2026-07-06 19:47:20,368 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0224s
+2026-07-06 19:47:20,381 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0044s
+2026-07-06 19:47:20,394 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0044s
+2026-07-06 19:47:20,406 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0051s
+2026-07-06 19:47:20,416 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0018s
+2026-07-06 19:47:20,430 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0058s
+2026-07-06 19:47:20,440 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0022s
+2026-07-06 19:47:20,453 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0070s
+2026-07-06 19:47:20,468 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0035s
+2026-07-06 19:47:20,483 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0084s
+2026-07-06 19:47:20,495 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0027s
+2026-07-06 19:47:20,507 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0040s
+2026-07-06 19:47:20,518 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0025s
+2026-07-06 19:47:20,529 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0046s
+2026-07-06 19:47:20,537 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0021s
+2026-07-06 19:47:20,549 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0045s
+2026-07-06 19:47:20,559 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0037s
+2026-07-06 19:47:20,573 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0057s
+2026-07-06 19:47:21,809 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0073s
+2026-07-06 19:47:21,837 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0105s
+2026-07-06 19:47:21,866 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0075s
+2026-07-06 19:47:21,979 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0139s
+2026-07-06 19:47:22,080 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0655s
+2026-07-06 19:47:22,157 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0234s
+2026-07-06 19:47:22,211 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0211s
+2026-07-06 19:47:22,315 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0679s
+2026-07-06 19:47:22,446 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0507s
+2026-07-06 19:47:22,484 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0135s
+2026-07-06 19:47:22,531 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0280s
+2026-07-06 19:47:22,555 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0066s
+2026-07-06 19:47:22,578 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0055s
+2026-07-06 19:47:22,601 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0139s
+2026-07-06 19:47:22,688 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0792s
+2026-07-06 19:47:22,699 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0029s
+2026-07-06 19:47:22,716 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0059s
+2026-07-06 19:47:22,730 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0042s
+2026-07-06 19:47:22,745 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0051s
+2026-07-06 19:47:22,759 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0020s
+2026-07-06 19:47:26,638 [INFO] edugenie: Method: GET | Path: /register | Status: 307 | Duration: 0.0051s
+2026-07-06 19:47:26,661 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0087s
+2026-07-06 19:47:26,685 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0044s
+2026-07-06 19:47:26,716 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0057s
+2026-07-06 19:47:26,738 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0056s
+2026-07-06 19:47:26,765 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0056s
+2026-07-06 19:47:26,791 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0079s
+2026-07-06 19:47:26,812 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0065s
+2026-07-06 19:47:26,841 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0043s
+2026-07-06 19:47:26,861 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0069s
+2026-07-06 19:47:26,883 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0050s
+2026-07-06 19:47:26,901 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0059s
+2026-07-06 19:47:26,927 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0085s
+2026-07-06 19:47:26,951 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0076s
+2026-07-06 19:47:26,967 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0031s
+2026-07-06 19:47:26,984 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0058s
+2026-07-06 19:47:26,996 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0031s
+2026-07-06 19:47:27,011 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0048s
+2026-07-06 19:47:27,028 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0036s
+2026-07-06 19:47:27,046 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0047s
+2026-07-06 19:47:28,299 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0063s
+2026-07-06 19:47:28,321 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0068s
+2026-07-06 19:47:28,342 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0064s
+2026-07-06 19:47:28,359 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0035s
+2026-07-06 19:47:28,374 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0049s
+2026-07-06 19:47:28,394 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0047s
+2026-07-06 19:47:28,410 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0041s
+2026-07-06 19:47:28,429 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0075s
+2026-07-06 19:47:28,447 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0051s
+2026-07-06 19:47:28,461 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0029s
+2026-07-06 19:47:28,482 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0070s
+2026-07-06 19:47:28,495 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0024s
+2026-07-06 19:47:28,511 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0042s
+2026-07-06 19:47:28,524 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0027s
+2026-07-06 19:47:28,541 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0045s
+2026-07-06 19:47:28,557 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0031s
+2026-07-06 19:47:28,571 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0038s
+2026-07-06 19:47:28,585 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0028s
+2026-07-06 19:47:28,600 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0040s
+2026-07-06 19:47:28,613 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0031s
+2026-07-06 20:09:27,412 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0738s
+2026-07-06 20:09:27,525 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0814s
+2026-07-06 20:09:27,532 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0786s
+2026-07-06 20:09:27,747 [INFO] edugenie: Method: GET | Path: /favicon.ico | Status: 404 | Duration: 0.0294s
+2026-07-06 20:09:30,575 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0076s
+2026-07-06 20:09:30,592 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0060s
+2026-07-06 20:09:30,599 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0105s
+2026-07-06 20:10:05,445 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 401 | Duration: 0.2809s
+2026-07-06 20:10:10,063 [INFO] edugenie: Method: GET | Path: /register | Status: 200 | Duration: 0.0080s
+2026-07-06 20:10:27,651 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 400 | Duration: 0.0644s
+2026-07-06 20:10:36,758 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0041s
+2026-07-06 20:10:43,805 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 401 | Duration: 0.0184s
+2026-07-06 20:10:49,984 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 401 | Duration: 0.2220s
+2026-07-06 20:10:51,164 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 401 | Duration: 0.0189s
+2026-07-06 20:10:55,953 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.3628s
+2026-07-06 20:10:55,979 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0041s
+2026-07-06 20:10:55,990 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0016s
+2026-07-06 20:10:55,998 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0031s
+2026-07-06 20:10:56,008 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0025s
+2026-07-06 20:10:56,017 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0024s
+2026-07-06 20:10:56,025 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0019s
+2026-07-06 20:10:56,033 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0022s
+2026-07-06 20:10:56,041 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0015s
+2026-07-06 20:10:56,049 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0023s
+2026-07-06 20:10:56,056 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0015s
+2026-07-06 20:10:56,063 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0019s
+2026-07-06 20:10:56,071 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0012s
+2026-07-06 20:10:56,080 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0024s
+2026-07-06 20:10:56,088 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0018s
+2026-07-06 20:10:56,095 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0020s
+2026-07-06 20:10:56,104 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0018s
+2026-07-06 20:10:56,112 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0023s
+2026-07-06 20:10:56,119 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0012s
+2026-07-06 20:10:56,126 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0022s
+2026-07-06 20:10:56,133 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0011s
+2026-07-06 20:10:57,295 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0020s
+2026-07-06 20:10:57,305 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0022s
+2026-07-06 20:10:57,315 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0024s
+2026-07-06 20:10:57,327 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0035s
+2026-07-06 20:10:57,334 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0014s
+2026-07-06 20:10:57,343 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0029s
+2026-07-06 20:10:57,351 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0024s
+2026-07-06 20:10:57,361 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0039s
+2026-07-06 20:10:57,368 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0020s
+2026-07-06 20:10:57,378 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0031s
+2026-07-06 20:10:57,387 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0019s
+2026-07-06 20:10:57,398 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0028s
+2026-07-06 20:10:57,406 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0019s
+2026-07-06 20:10:57,413 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0018s
+2026-07-06 20:10:57,420 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0015s
+2026-07-06 20:10:57,428 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0021s
+2026-07-06 20:10:57,434 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0016s
+2026-07-06 20:10:57,443 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0027s
+2026-07-06 20:10:57,450 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0027s
+2026-07-06 20:10:57,459 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0023s
+2026-07-06 22:54:25,201 [INFO] edugenie: Initializing database tables...
+2026-07-06 22:54:25,227 [INFO] edugenie: Database tables initialized successfully.
+2026-07-06 22:54:25,231 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-06 22:55:26,230 [INFO] edugenie: Method: GET | Path: /docs | Status: 200 | Duration: 0.0077s
+2026-07-06 22:55:27,363 [INFO] edugenie: Method: GET | Path: /openapi.json | Status: 200 | Duration: 0.2743s
+2026-07-06 22:55:34,619 [INFO] edugenie: Method: GET | Path: / | Status: 307 | Duration: 0.0097s
+2026-07-06 22:55:34,689 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0223s
+2026-07-06 22:55:34,709 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0044s
+2026-07-06 22:55:34,732 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0055s
+2026-07-06 22:55:34,745 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0033s
+2026-07-06 22:55:34,774 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0089s
+2026-07-06 22:55:34,796 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0031s
+2026-07-06 22:55:34,810 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0030s
+2026-07-06 22:55:34,822 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0038s
+2026-07-06 22:55:34,846 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0063s
+2026-07-06 22:55:34,876 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0048s
+2026-07-06 22:55:34,889 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0045s
+2026-07-06 22:55:34,905 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0028s
+2026-07-06 22:55:34,918 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0028s
+2026-07-06 22:55:34,932 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0044s
+2026-07-06 22:55:34,950 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0043s
+2026-07-06 22:55:34,964 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0026s
+2026-07-06 22:55:34,977 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0052s
+2026-07-06 22:55:35,001 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0025s
+2026-07-06 22:55:35,019 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0078s
+2026-07-06 22:55:36,284 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0051s
+2026-07-06 22:55:36,301 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0060s
+2026-07-06 22:55:36,317 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0048s
+2026-07-06 22:55:36,332 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0033s
+2026-07-06 22:55:36,344 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0045s
+2026-07-06 22:55:36,360 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0040s
+2026-07-06 22:55:36,375 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0057s
+2026-07-06 22:55:36,389 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0026s
+2026-07-06 22:55:36,400 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0036s
+2026-07-06 22:55:36,412 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0026s
+2026-07-06 22:55:36,423 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0035s
+2026-07-06 22:55:36,433 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0025s
+2026-07-06 22:55:36,445 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0037s
+2026-07-06 22:55:36,455 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0022s
+2026-07-06 22:55:36,466 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0031s
+2026-07-06 22:55:36,478 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0027s
+2026-07-06 22:55:36,489 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0031s
+2026-07-06 22:55:36,499 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0026s
+2026-07-06 22:55:36,510 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0036s
+2026-07-06 22:55:36,524 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0037s
+2026-07-06 22:55:41,603 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0045s
+2026-07-06 22:55:41,625 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0043s
+2026-07-06 22:55:41,639 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0027s
+2026-07-06 22:55:41,658 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0050s
+2026-07-06 22:55:41,673 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0038s
+2026-07-06 22:55:41,685 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0038s
+2026-07-06 22:55:41,712 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0069s
+2026-07-06 22:55:41,726 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0046s
+2026-07-06 22:55:41,741 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0041s
+2026-07-06 22:55:41,757 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0045s
+2026-07-06 22:55:41,770 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0050s
+2026-07-06 22:55:41,781 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0029s
+2026-07-06 22:55:41,794 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0025s
+2026-07-06 22:55:41,807 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0039s
+2026-07-06 22:55:41,819 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0033s
+2026-07-06 22:55:41,831 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0039s
+2026-07-06 22:55:41,844 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0022s
+2026-07-06 22:55:41,859 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0045s
+2026-07-06 22:55:41,871 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0020s
+2026-07-06 22:55:41,886 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0031s
+2026-07-07 21:05:42,380 [INFO] edugenie: Initializing database tables...
+2026-07-07 21:05:42,394 [INFO] edugenie: Database tables initialized successfully.
+2026-07-07 21:05:42,398 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-07 21:06:35,338 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0921s
+2026-07-07 21:06:35,834 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 304 | Duration: 0.2064s
+2026-07-07 21:06:35,837 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 304 | Duration: 0.2055s
+2026-07-07 21:06:36,304 [INFO] edugenie: Method: GET | Path: /favicon.ico | Status: 404 | Duration: 0.0140s
+2026-07-07 21:06:50,473 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0152s
+2026-07-07 21:06:50,530 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 304 | Duration: 0.0154s
+2026-07-07 21:06:50,539 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 304 | Duration: 0.0218s
+2026-07-07 21:06:55,107 [INFO] edugenie: Method: GET | Path: /register | Status: 200 | Duration: 0.0161s
+2026-07-07 21:07:41,619 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 400 | Duration: 0.1957s
+2026-07-07 21:07:49,773 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 201 | Duration: 0.5083s
+2026-07-07 21:07:49,826 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0080s
+2026-07-07 21:08:03,204 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.5805s
+2026-07-07 21:08:03,271 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0100s
+2026-07-07 21:08:03,296 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0041s
+2026-07-07 21:08:03,320 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0104s
+2026-07-07 21:08:03,337 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0030s
+2026-07-07 21:08:03,356 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0059s
+2026-07-07 21:08:03,373 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0039s
+2026-07-07 21:08:03,395 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0056s
+2026-07-07 21:08:03,413 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0027s
+2026-07-07 21:08:03,430 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0045s
+2026-07-07 21:08:03,450 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0059s
+2026-07-07 21:08:03,464 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0050s
+2026-07-07 21:08:03,480 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0034s
+2026-07-07 21:08:03,493 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0039s
+2026-07-07 21:08:03,507 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0021s
+2026-07-07 21:08:03,522 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0041s
+2026-07-07 21:08:03,536 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0015s
+2026-07-07 21:08:03,551 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0048s
+2026-07-07 21:08:03,563 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0023s
+2026-07-07 21:08:03,579 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0047s
+2026-07-07 21:08:03,590 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0028s
+2026-07-07 21:08:04,888 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0048s
+2026-07-07 21:08:04,918 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0132s
+2026-07-07 21:08:04,945 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0037s
+2026-07-07 21:08:04,966 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0050s
+2026-07-07 21:08:04,984 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0069s
+2026-07-07 21:08:05,005 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0061s
+2026-07-07 21:08:05,022 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0055s
+2026-07-07 21:08:05,041 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0061s
+2026-07-07 21:08:05,064 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0032s
+2026-07-07 21:08:05,083 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0058s
+2026-07-07 21:08:05,100 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0030s
+2026-07-07 21:08:05,116 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0050s
+2026-07-07 21:08:05,132 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0035s
+2026-07-07 21:08:05,155 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0104s
+2026-07-07 21:08:05,178 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0057s
+2026-07-07 21:08:05,195 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0054s
+2026-07-07 21:08:05,211 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0028s
+2026-07-07 21:08:05,226 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0044s
+2026-07-07 21:08:05,241 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0022s
+2026-07-07 21:08:05,258 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0058s
+2026-07-07 21:08:09,210 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0103s
+2026-07-07 21:08:09,240 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0067s
+2026-07-07 21:08:09,264 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0060s
+2026-07-07 21:08:09,281 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0042s
+2026-07-07 21:08:09,298 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0052s
+2026-07-07 21:08:09,319 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0070s
+2026-07-07 21:08:09,337 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0042s
+2026-07-07 21:08:09,356 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0055s
+2026-07-07 21:08:09,376 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0069s
+2026-07-07 21:08:09,393 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0034s
+2026-07-07 21:08:09,420 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0042s
+2026-07-07 21:08:09,438 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0029s
+2026-07-07 21:08:09,453 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0052s
+2026-07-07 21:08:09,471 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0054s
+2026-07-07 21:08:09,486 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0045s
+2026-07-07 21:08:09,502 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0037s
+2026-07-07 21:08:09,520 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0045s
+2026-07-07 21:08:09,536 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0034s
+2026-07-07 21:08:09,552 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0053s
+2026-07-07 21:08:09,569 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0051s
+2026-07-07 21:09:42,945 [INFO] edugenie: Method: GET | Path: /redoc | Status: 200 | Duration: 0.0010s
+2026-07-07 21:09:44,738 [INFO] edugenie: Method: GET | Path: /openapi.json | Status: 200 | Duration: 0.5692s
+2026-07-07 21:09:53,588 [INFO] edugenie: Method: GET | Path: /docs | Status: 200 | Duration: 0.0010s
+2026-07-07 21:09:54,740 [INFO] edugenie: Method: GET | Path: /openapi.json | Status: 200 | Duration: 0.0010s
+2026-07-07 21:14:44,102 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.4381s
+2026-07-07 21:14:44,146 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0048s
+2026-07-07 21:14:44,172 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0081s
+2026-07-07 21:14:44,191 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0048s
+2026-07-07 21:14:44,207 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0022s
+2026-07-07 21:14:44,223 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0047s
+2026-07-07 21:14:44,241 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0032s
+2026-07-07 21:14:44,254 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0040s
+2026-07-07 21:14:44,269 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0028s
+2026-07-07 21:14:44,282 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0039s
+2026-07-07 21:14:44,294 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0037s
+2026-07-07 21:14:44,308 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0043s
+2026-07-07 21:14:44,322 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0041s
+2026-07-07 21:14:44,329 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0000s
+2026-07-07 21:14:44,346 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0081s
+2026-07-07 21:14:44,361 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0048s
+2026-07-07 21:14:44,373 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0030s
+2026-07-07 21:14:44,387 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0054s
+2026-07-07 21:14:44,398 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0022s
+2026-07-07 21:14:44,412 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0045s
+2026-07-07 21:14:44,425 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0029s
+2026-07-07 21:14:45,638 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0040s
+2026-07-07 21:14:45,662 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0034s
+2026-07-07 21:14:45,678 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0018s
+2026-07-07 21:14:45,696 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0038s
+2026-07-07 21:14:45,708 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0022s
+2026-07-07 21:14:45,726 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0059s
+2026-07-07 21:14:45,740 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0020s
+2026-07-07 21:14:45,757 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0047s
+2026-07-07 21:14:45,776 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0065s
+2026-07-07 21:14:45,795 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0076s
+2026-07-07 21:14:45,812 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0028s
+2026-07-07 21:14:45,827 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0054s
+2026-07-07 21:14:45,843 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0043s
+2026-07-07 21:14:45,857 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0040s
+2026-07-07 21:14:45,871 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0037s
+2026-07-07 21:14:45,884 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0041s
+2026-07-07 21:14:45,898 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0028s
+2026-07-07 21:14:45,914 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0055s
+2026-07-07 21:14:45,927 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0031s
+2026-07-07 21:14:45,939 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0040s
