@@ -4,7 +4,7 @@
 import logging
 import requests
 import json
-import google.generativeai as genai
+from google import genai
 from app.config import settings
 
 logger = logging.getLogger("edugenie")
@@ -12,9 +12,10 @@ logger = logging.getLogger("edugenie")
 class AIOrchestrator:
     def __init__(self):
         self.gemini_enabled = False
+        self._client = None
         if settings.GEMINI_API_KEY and settings.GEMINI_API_KEY != "your-gemini-api-key-here":
             try:
-                genai.configure(api_key=settings.GEMINI_API_KEY)
+                self._client = genai.Client(api_key=settings.GEMINI_API_KEY)
                 self.gemini_enabled = True
                 logger.info("Google Gemini API successfully configured.")
             except Exception as e:
@@ -28,8 +29,10 @@ class AIOrchestrator:
             return self._get_offline_response(prompt, "gemini")
             
         try:
-            model = genai.GenerativeModel("gemini-1.5-flash")
-            response = model.generate_content(prompt)
+            response = self._client.models.generate_content(
+                model="gemini-2.0-flash",
+                contents=prompt
+            )
             return self._clean_markdown_fencing(response.text.strip())
         except Exception as e:
             logger.error(f"Gemini Query Failed: {e}", exc_info=True)
