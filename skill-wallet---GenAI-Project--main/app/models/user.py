@@ -1,9 +1,8 @@
 # File: app/models/user.py
 # Part of EduGenie SmartBridge Project
 
-from sqlalchemy import Column, Integer, String, Boolean, DateTime
+from sqlalchemy import Column, Integer, String, Boolean, DateTime, func
 from sqlalchemy.orm import relationship
-from datetime import datetime
 from app.database.session import Base
 
 class User(Base):
@@ -14,8 +13,8 @@ class User(Base):
     email = Column(String(100), unique=True, index=True, nullable=False)
     password_hash = Column(String(255), nullable=False)
     is_active = Column(Boolean, default=True, nullable=False)
-    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+    created_at = Column(DateTime, default=func.now(), server_default=func.now(), nullable=False)
+    updated_at = Column(DateTime, default=func.now(), server_default=func.now(), onupdate=func.now(), nullable=False)
 
     # Relationships
     queries = relationship("Query", back_populates="user", cascade="all, delete-orphan")
@@ -26,3 +25,6 @@ class User(Base):
     history_logs = relationship("History", back_populates="user", cascade="all, delete-orphan")
     saved_responses = relationship("SavedResponse", back_populates="user", cascade="all, delete-orphan")
     activity_logs = relationship("ActivityLog", back_populates="user", cascade="all, delete-orphan")
+
+    def __repr__(self) -> str:
+        return f"<User id={self.id} username={self.username!r} active={self.is_active}>"

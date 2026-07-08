@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+
+# Environment Secrets — NEVER commit this file
+.env
+
+# Database
+*.db
+*.sqlite3
+
+# Runtime Logs
+*.log
+edugenie.log
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS Generated
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Byte-compiled
+*.pyc
+
+# Test / Coverage Reports
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Type Checking
+.mypy_cache/
+
+# Hugging Face model cache (large, not for version control)
+.cache/huggingface/

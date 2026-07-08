@@ -1,8 +1,7 @@
 /* File: app/static/css/main.css */
+/* File: app/static/css/main.css */
 /* Core Layout, Controls, Animations, and Landing Page Styles */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
-@import url('./variables.css');
 
 /* -----------------------------------------------------
    Animation Keyframes
@@ -26,6 +25,16 @@
     50% { transform: translateY(-10px) rotate(1deg); }
 }
 
+@keyframes typing {
+    from { width: 0; opacity: 0; }
+    to { width: 100%; opacity: 1; }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
 /* Helper Classes */
 .animated {
     animation: fadeIn var(--transition-normal) forwards;
@@ -39,7 +48,7 @@
    Buttons and Form Controls
    ----------------------------------------------------- */
 .btn-primary {
-    background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+    background: var(--grad-primary);
     color: #050510;
     border: none;
     padding: 12px 28px;
@@ -47,21 +56,51 @@
     font-weight: 600;
     border-radius: var(--radius-md);
     cursor: pointer;
-    transition: var(--transition-fast);
+    transition: all var(--transition-fast);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.2);
+    box-shadow: 0 4px 15px var(--accent-glow);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: skewX(-25deg) translateX(-100%);
+    transition: none;
+}
+
+.btn-primary:hover::after {
+    transform: skewX(-25deg) translateX(100%);
+    transition: transform 0.75s ease-in-out;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 242, 254, 0.4);
+    box-shadow: 0 8px 25px rgba(0, 242, 254, 0.4);
+    filter: brightness(1.05);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px var(--accent-glow);
+}
+
+.btn-primary:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 3px;
 }
 
 .btn-secondary {
-    background: var(--glass-bg);
+    background: rgba(255, 255, 255, 0.03);
     color: #e2e8f0;
     border: 1px solid var(--glass-border);
     padding: 12px 28px;
@@ -69,14 +108,28 @@
     font-weight: 600;
     border-radius: var(--radius-md);
     cursor: pointer;
-    transition: var(--transition-fast);
+    transition: all var(--transition-fast);
     backdrop-filter: var(--glass-blur);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.06);
     border-color: var(--accent-primary);
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.1);
+}
+
+.btn-secondary:active {
+    transform: translateY(1px);
+}
+
+.btn-secondary:focus-visible {
+    outline: 2px solid var(--accent-secondary);
+    outline-offset: 3px;
 }
 
 .form-group {
@@ -114,6 +167,20 @@
     background: rgba(255, 255, 255, 0.04);
 }
 
+.form-input:focus-visible {
+    outline: none; /* Handled by border glow above */
+}
+
+/* Select elements — override browser background */
+select.form-input {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-color: rgba(13, 18, 34, 0.9);
+    padding-right: 40px;
+}
+
 /* Glassmorphic Panel utility */
 .glass-panel {
     background: var(--bg-surface);
@@ -143,6 +210,7 @@
     font-weight: 800;
     background: linear-gradient(135deg, #fff, #94a3b8);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     display: flex;
     align-items: center;
@@ -152,6 +220,7 @@
 .brand-accent {
     background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -165,6 +234,9 @@
     text-align: center;
     position: relative;
     overflow: hidden;
+    background: radial-gradient(ellipse at 20% 50%, rgba(79, 172, 254, 0.04) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(0, 242, 254, 0.04) 0%, transparent 60%),
+                var(--bg-base);
 }
 
 .hero-glow-1 {
@@ -222,11 +294,13 @@
 .feature-card {
     padding: 35px 30px;
     text-align: left;
+    transition: var(--transition-normal), border-color var(--transition-fast);
 }
 
 .feature-card:hover {
     border-color: var(--accent-primary);
     transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 242, 254, 0.08);
 }
 
 .feature-card .icon-box {
@@ -336,3 +410,37 @@
     border-left: 4px solid var(--accent-secondary);
 }
 
+/* ---- Responsive Breakpoints ---- */
+
+/* Tablet (≤ 1024px) */
+@media (max-width: 1024px) {
+    .hero h1 { font-size: 2.8rem; }
+    .features-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+    .hero { padding: 0 4%; }
+    .hero h1 { font-size: 2.2rem; margin-top: 60px; }
+    .hero p { font-size: 1rem; }
+    .hero-actions { flex-direction: column; gap: 12px; width: 100%; max-width: 300px; }
+    .hero-actions a { width: 100%; text-align: center; }
+    .features-grid { grid-template-columns: 1fr; }
+    .landing-nav { padding: 12px 16px; width: 95%; }
+}
+
+/* Small phone (≤ 480px) */
+@media (max-width: 480px) {
+    .hero h1 { font-size: 1.8rem; letter-spacing: -0.5px; }
+    .hero p { font-size: 0.9rem; }
+    .feature-card { padding: 24px 20px; }
+}
+
+/* Accessibility: Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

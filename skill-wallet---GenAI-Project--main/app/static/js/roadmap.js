@@ -77,9 +77,10 @@ function renderRoadmapData(container, data) {
                 <button class="btn-secondary" style="padding: 10px 20px; font-size: 0.85rem;" id="save-roadmap-btn" data-id="${data.roadmap_id}">Bookmark Path</button>
             </div>
 
-            <!-- Overview -->
-            <div style="margin-bottom:30px; line-height:1.6; color:#cbd5e1;">
-                <p>${escapeHTML(rData.overview || 'Overview not available.')}</p>
+            <!-- Overview Callout -->
+            <div class="glass-panel" style="padding: 24px; margin-bottom:30px; line-height:1.6; color:#cbd5e1; border-left: 4px solid var(--accent-primary); background: rgba(0, 242, 254, 0.01);">
+                <h5 style="margin-bottom: 8px; color: #fff; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px;">Curriculum Overview</h5>
+                <p style="margin:0;">${escapeHTML(rData.overview || 'Overview not available.')}</p>
             </div>
 
             <!-- 2. Progression Tiers Grid -->
@@ -165,7 +166,7 @@ function renderRoadmapData(container, data) {
 
     // Save/Bookmark path listener
     document.getElementById('save-roadmap-btn').addEventListener('click', () => {
-        saveResponseBookmark(data.roadmap_id, `Roadmap: ${data.topic}`, 'roadmap', JSON.stringify(data.roadmap_data));
+        saveResponseBookmark(null, `Roadmap: ${data.topic}`, 'roadmap', JSON.stringify(data.roadmap_data));
     });
 }
 

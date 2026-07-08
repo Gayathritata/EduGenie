@@ -17,6 +17,12 @@ from app.services.ai_orchestrator import AIOrchestrator
 logger = logging.getLogger("edugenie")
 ai_orchestrator = AIOrchestrator()
 
+
+def _truncate(text: str, max_len: int = 45) -> str:
+    """Return a display-safe truncation of text. Appends '...' only when truncated."""
+    return text[:max_len] + "..." if len(text) > max_len else text
+
+
 class EduService:
     @staticmethod
     def ask_question(db: Session, user_id: int, question: str, context: str = None) -> dict:
@@ -26,89 +32,111 @@ class EduService:
         db.add(query)
         db.commit()
         db.refresh(query)
-        
+
         # 2. Query Gemini and measure latency
         prompt = PromptManager.get_qa_prompt(question, context)
         start_time = time.time()
-        response_raw = ai_orchestrator.query_gemini(prompt)
+        try:
+            response_raw = ai_orchestrator.query_gemini(prompt)
+        except Exception as e:
+            db.rollback()
+            raise RuntimeError(f"Q&A AI call failed: {e}") from e
         latency_ms = int((time.time() - start_time) * 1000)
-        
+
         # 3. Parse JSON response safely
+        parsed_json = {}
         try:
             parsed_json = ai_orchestrator.parse_json_response(response_raw)
             answer_text = parsed_json.get("answer", response_raw)
         except Exception as e:
             logger.warning(f"Failed to parse Q&A response JSON: {e}. Using raw response.")
             answer_text = response_raw
-        
-        # 4. Save response log
-        ai_response = AIResponse(
-            query_id=query.id,
-            user_id=user_id,
-            response_text=answer_text,
-            model_used="gemini-1.5-flash",
-            latency_ms=latency_ms
-        )
-        db.add(ai_response)
-        
-        # 5. Log activity timeline
-        history_log = History(
-            user_id=user_id,
-            action="asked_question",
-            entity_id=query.id,
-            entity_type="query",
-            description=f"Asked: '{question[:45]}...'"
-        )
-        db.add(history_log)
-        db.commit()
-        db.refresh(ai_response)
-        
-        return {"answer": answer_text, "session_id": ai_response.id}
+
+        # 4. Persist response + history in one transaction
+        try:
+            ai_response = AIResponse(
+                query_id=query.id,
+                user_id=user_id,
+                response_text=answer_text,
+                model_used="gemini-2.0-flash",
+                latency_ms=latency_ms
+            )
+            db.add(ai_response)
+
+            history_log = History(
+                user_id=user_id,
+                action="asked_question",
+                entity_id=query.id,
+                entity_type="query",
+                description=f"Asked: '{_truncate(question)}'"
+            )
+            db.add(history_log)
+            db.commit()
+            db.refresh(ai_response)
+        except Exception as e:
+            db.rollback()
+            logger.error(f"DB write failed after Q&A response: {e}", exc_info=True)
+            raise RuntimeError(f"Database write failed: {e}") from e
+
+        return {
+            "answer": answer_text,
+            "session_id": ai_response.id,
+            "key_concepts": parsed_json.get("key_concepts", []),
+            "follow_up_questions": parsed_json.get("follow_up_questions", [])
+        }
+
 
     @staticmethod
     def explain_concept(db: Session, user_id: int, concept: str, depth_level: str) -> dict:
         """Process concept explanation using LaMini-Flan-T5 model and log timeline history."""
         # 1. Log query input
         query = Query(
-            user_id=user_id, 
-            query_text=f"Concept: '{concept}' depth: '{depth_level}'", 
+            user_id=user_id,
+            query_text=f"Concept: '{concept}' depth: '{depth_level}'",
             query_type="explain"
         )
         db.add(query)
         db.commit()
         db.refresh(query)
-        
+
         # 2. Query LaMini model and measure latency
         prompt = PromptManager.get_explain_prompt(concept, depth_level)
         start_time = time.time()
-        response_raw = ai_orchestrator.query_lamini(prompt)
+        try:
+            response_raw = ai_orchestrator.query_lamini(prompt)
+        except Exception as e:
+            db.rollback()
+            raise RuntimeError(f"Explain AI call failed: {e}") from e
         latency_ms = int((time.time() - start_time) * 1000)
-        
-        # Wrap response into a structured format
+
         explanation_text = response_raw
-        
-        # 3. Save response log
-        ai_response = AIResponse(
-            query_id=query.id,
-            user_id=user_id,
-            response_text=explanation_text,
-            model_used="lamini-flan-t5",
-            latency_ms=latency_ms
-        )
-        db.add(ai_response)
-        
-        # 4. Log timeline activity
-        history_log = History(
-            user_id=user_id,
-            action="requested_explanation",
-            entity_id=query.id,
-            entity_type="query",
-            description=f"Requested explanation for concept: '{concept}' ({depth_level})"
-        )
-        db.add(history_log)
-        db.commit()
-        db.refresh(ai_response)
-        
+
+        # 3. Persist response + history in one transaction
+        try:
+            ai_response = AIResponse(
+                query_id=query.id,
+                user_id=user_id,
+                response_text=explanation_text,
+                model_used="lamini-flan-t5",
+                latency_ms=latency_ms
+            )
+            db.add(ai_response)
+
+            history_log = History(
+                user_id=user_id,
+                action="requested_explanation",
+                entity_id=query.id,
+                entity_type="query",
+                description=f"Requested explanation for concept: '{_truncate(concept)}' ({depth_level})"
+            )
+            db.add(history_log)
+            db.commit()
+            db.refresh(ai_response)
+        except Exception as e:
+            db.rollback()
+            logger.error(f"DB write failed after explain response: {e}", exc_info=True)
+            raise RuntimeError(f"Database write failed: {e}") from e
+
         return {"explanation": explanation_text, "session_id": ai_response.id}
 
     @staticmethod
@@ -117,62 +145,82 @@ class EduService:
         # 1. Log query input
         query = Query(
             user_id=user_id,
-            query_text=f"Summarize text (length: {target_length}): '{text[:100]}...'",
+            query_text=f"Summarize text (length: {target_length}): '{_truncate(text, 100)}'",
             query_type="summarize"
         )
         db.add(query)
         db.commit()
         db.refresh(query)
-        
+
         # 2. Query Gemini and measure latency
         prompt = PromptManager.get_summarize_prompt(text, target_length)
         start_time = time.time()
-        response_raw = ai_orchestrator.query_gemini(prompt)
+        try:
+            response_raw = ai_orchestrator.query_gemini(prompt)
+        except Exception as e:
+            db.rollback()
+            raise RuntimeError(f"Summarize AI call failed: {e}") from e
         latency_ms = int((time.time() - start_time) * 1000)
-        
+
         # 3. Parse JSON response safely
         try:
             parsed_json = ai_orchestrator.parse_json_response(response_raw)
             summary_text = parsed_json.get("summary", response_raw)
+            bullet_points = parsed_json.get("bullet_points", [])
+            important_keywords = parsed_json.get("important_keywords", [])
+            key_concepts = parsed_json.get("key_concepts", [])
+            revision_notes = parsed_json.get("revision_notes", "")
         except Exception as e:
             logger.warning(f"Failed to parse Summarization response JSON: {e}. Using raw response.")
             summary_text = response_raw
-            
-        # 4. Save response log
-        ai_response = AIResponse(
-            query_id=query.id,
-            user_id=user_id,
-            response_text=summary_text,
-            model_used="gemini-1.5-flash",
-            latency_ms=latency_ms
-        )
-        db.add(ai_response)
-        
-        # 5. Save Summary log record
-        summary_record = Summary(
-            user_id=user_id,
-            source_text=text,
-            summary_text=summary_text,
-            length_type=target_length
-        )
-        db.add(summary_record)
-        
-        # 6. Save history timeline log
-        db.commit()
-        db.refresh(summary_record)
-        
-        history_log = History(
-            user_id=user_id,
-            action="summarized_text",
-            entity_id=summary_record.id,
-            entity_type="summary",
-            description=f"Summarized study material ({target_length})"
-        )
-        db.add(history_log)
-        db.commit()
-        db.refresh(ai_response)
-        
-        return {"summary": summary_text, "session_id": ai_response.id}
+            bullet_points = []
+            important_keywords = []
+            key_concepts = []
+            revision_notes = ""
+
+        # 4. Persist response, summary record, and history in one transaction
+        try:
+            ai_response = AIResponse(
+                query_id=query.id,
+                user_id=user_id,
+                response_text=summary_text,
+                model_used="gemini-2.0-flash",
+                latency_ms=latency_ms
+            )
+            db.add(ai_response)
+
+            summary_record = Summary(
+                user_id=user_id,
+                source_text=text,
+                summary_text=summary_text,
+                length_type=target_length
+            )
+            db.add(summary_record)
+            db.flush()  # Get summary_record.id before history log
+
+            history_log = History(
+                user_id=user_id,
+                action="summarized_text",
+                entity_id=summary_record.id,
+                entity_type="summary",
+                description=f"Summarized study material ({target_length})"
+            )
+            db.add(history_log)
+            db.commit()
+            db.refresh(ai_response)
+        except Exception as e:
+            db.rollback()
+            logger.error(f"DB write failed after summarize response: {e}", exc_info=True)
+            raise RuntimeError(f"Database write failed: {e}") from e
+
+        return {
+            "summary": summary_text,
+            "session_id": ai_response.id,
+            "bullet_points": bullet_points,
+            "important_keywords": important_keywords,
+            "key_concepts": key_concepts,
+            "revision_notes": revision_notes
+        }
 
     @staticmethod
     def generate_roadmap(db: Session, user_id: int, topic: str, difficulty: str) -> dict:
@@ -186,13 +234,17 @@ class EduService:
         db.add(query)
         db.commit()
         db.refresh(query)
-        
+
         # 2. Query Gemini
         prompt = PromptManager.get_roadmap_prompt(topic, difficulty)
         start_time = time.time()
-        response_raw = ai_orchestrator.query_gemini(prompt)
+        try:
+            response_raw = ai_orchestrator.query_gemini(prompt)
+        except Exception as e:
+            db.rollback()
+            raise RuntimeError(f"Roadmap AI call failed: {e}") from e
         latency_ms = int((time.time() - start_time) * 1000)
-        
+
         # 3. Parse JSON response safely
         try:
             roadmap_data = ai_orchestrator.parse_json_response(response_raw)
@@ -215,39 +267,41 @@ class EduService:
                 ]
             }
 
-        # 4. Save response log
-        ai_response = AIResponse(
-            query_id=query.id,
-            user_id=user_id,
-            response_text=json.dumps(roadmap_data),
-            model_used="gemini-1.5-flash",
-            latency_ms=latency_ms
-        )
-        db.add(ai_response)
-        
-        # 5. Save LearningPath record
-        learning_path = LearningPath(
-            user_id=user_id,
-            topic=topic,
-            difficulty=difficulty,
-            roadmap_data=roadmap_data
-        )
-        db.add(learning_path)
-        
-        # 6. Save history timeline log
-        db.commit()
-        db.refresh(learning_path)
-        
-        history_log = History(
-            user_id=user_id,
-            action="generated_roadmap",
-            entity_id=learning_path.id,
-            entity_type="learning_path",
-            description=f"Generated learning path roadmap for '{topic}' ({difficulty})"
-        )
-        db.add(history_log)
-        db.commit()
-        
+        # 4. Persist all records in one transaction
+        try:
+            ai_response = AIResponse(
+                query_id=query.id,
+                user_id=user_id,
+                response_text=json.dumps(roadmap_data),
+                model_used="gemini-2.0-flash",
+                latency_ms=latency_ms
+            )
+            db.add(ai_response)
+
+            learning_path = LearningPath(
+                user_id=user_id,
+                topic=topic,
+                difficulty=difficulty,
+                roadmap_data=roadmap_data
+            )
+            db.add(learning_path)
+            db.flush()  # Get learning_path.id before history log
+
+            history_log = History(
+                user_id=user_id,
+                action="generated_roadmap",
+                entity_id=learning_path.id,
+                entity_type="learning_path",
+                description=f"Generated learning path roadmap for '{_truncate(topic)}' ({difficulty})"
+            )
+            db.add(history_log)
+            db.commit()
+            db.refresh(learning_path)
+        except Exception as e:
+            db.rollback()
+            logger.error(f"DB write failed after roadmap generation: {e}", exc_info=True)
+            raise RuntimeError(f"Database write failed: {e}") from e
+
         return {
             "roadmap_id": learning_path.id,
             "topic": learning_path.topic,
@@ -267,13 +321,17 @@ class EduService:
         db.add(query)
         db.commit()
         db.refresh(query)
-        
+
         # 2. Query Gemini
         prompt = PromptManager.get_quiz_prompt(topic, num_questions, difficulty)
         start_time = time.time()
-        response_raw = ai_orchestrator.query_gemini(prompt)
+        try:
+            response_raw = ai_orchestrator.query_gemini(prompt)
+        except Exception as e:
+            db.rollback()
+            raise RuntimeError(f"Quiz AI call failed: {e}") from e
         latency_ms = int((time.time() - start_time) * 1000)
-        
+
         # 3. Parse JSON response safely
         try:
             quiz_data = ai_orchestrator.parse_json_response(response_raw)
@@ -294,38 +352,41 @@ class EduService:
                 ]
             }
 
-        # 4. Save response log
-        ai_response = AIResponse(
-            query_id=query.id,
-            user_id=user_id,
-            response_text=json.dumps(quiz_data),
-            model_used="gemini-1.5-flash",
-            latency_ms=latency_ms
-        )
-        db.add(ai_response)
-        
-        # 5. Save Quiz record
-        quiz = Quiz(
-            user_id=user_id,
-            topic=topic,
-            questions_data=quiz_data,
-            total_questions=len(quiz_data.get("questions", []))
-        )
-        db.add(quiz)
-        db.commit()
-        db.refresh(quiz)
-        
-        # 6. Save history timeline log
-        history_log = History(
-            user_id=user_id,
-            action="generated_quiz",
-            entity_id=quiz.id,
-            entity_type="quiz",
-            description=f"Generated interactive quiz on topic: '{topic}' ({difficulty})"
-        )
-        db.add(history_log)
-        db.commit()
-        
+        # 4. Persist all records in one transaction
+        try:
+            ai_response = AIResponse(
+                query_id=query.id,
+                user_id=user_id,
+                response_text=json.dumps(quiz_data),
+                model_used="gemini-2.0-flash",
+                latency_ms=latency_ms
+            )
+            db.add(ai_response)
+
+            quiz = Quiz(
+                user_id=user_id,
+                topic=topic,
+                questions_data=quiz_data,
+                total_questions=len(quiz_data.get("questions", []))
+            )
+            db.add(quiz)
+            db.flush()  # Get quiz.id before history log
+
+            history_log = History(
+                user_id=user_id,
+                action="generated_quiz",
+                entity_id=quiz.id,
+                entity_type="quiz",
+                description=f"Generated interactive quiz on topic: '{_truncate(topic)}' ({difficulty})"
+            )
+            db.add(history_log)
+            db.commit()
+            db.refresh(quiz)
+        except Exception as e:
+            db.rollback()
+            logger.error(f"DB write failed after quiz generation: {e}", exc_info=True)
+            raise RuntimeError(f"Database write failed: {e}") from e
+
         # Strip correct answers and explanations for quiz integrity
         questions_out = []
         for q in quiz_data.get("questions", []):
@@ -334,7 +395,7 @@ class EduService:
                 "question": q.get("question"),
                 "choices": q.get("choices")
             })
-            
+
         return {
             "quiz_id": quiz.id,
             "topic": quiz.topic,
@@ -348,12 +409,12 @@ class EduService:
         quiz = db.query(Quiz).filter(Quiz.id == quiz_id, Quiz.user_id == user_id).first()
         if not quiz:
             raise ValueError("Quiz not found or unauthorized access.")
-            
+
         questions = quiz.questions_data.get("questions", [])
         score = 0
         total = len(questions)
         results = []
-        
+
         for q in questions:
             q_id = str(q.get("id"))
             correct_key = q.get("correct_key", "").upper()
@@ -361,7 +422,7 @@ class EduService:
             is_correct = (correct_key == user_key)
             if is_correct:
                 score += 1
-                
+
             results.append({
                 "id": q.get("id"),
                 "question": q.get("question"),
@@ -370,21 +431,26 @@ class EduService:
                 "is_correct": is_correct,
                 "explanation": q.get("explanation", "")
             })
-            
-        # Update score in database
-        quiz.score = score
-        
-        # Add to history timeline log
-        history_log = History(
-            user_id=user_id,
-            action="completed_quiz",
-            entity_id=quiz.id,
-            entity_type="quiz",
-            description=f"Scored {score}/{total} on quiz: '{quiz.topic}'"
-        )
-        db.add(history_log)
-        db.commit()
-        
+
+        try:
+            # Update score in database
+            quiz.score = score
+
+            # Add to history timeline log
+            history_log = History(
+                user_id=user_id,
+                action="completed_quiz",
+                entity_id=quiz.id,
+                entity_type="quiz",
+                description=f"Scored {score}/{total} on quiz: '{_truncate(quiz.topic)}'"
+            )
+            db.add(history_log)
+            db.commit()
+        except Exception as e:
+            db.rollback()
+            logger.error(f"DB write failed after quiz grading: {e}", exc_info=True)
+            raise RuntimeError(f"Database write failed: {e}") from e
+
         return {
             "score": score,
             "total": total,

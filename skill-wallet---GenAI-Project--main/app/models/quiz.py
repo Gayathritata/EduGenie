@@ -1,9 +1,8 @@
 # File: app/models/quiz.py
 # Part of EduGenie SmartBridge Project
 
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, JSON
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, JSON, func
 from sqlalchemy.orm import relationship
-from datetime import datetime
 from app.database.session import Base
 
 class Quiz(Base):
@@ -15,8 +14,11 @@ class Quiz(Base):
     questions_data = Column(JSON, nullable=False)  # Stores questions, choices, answers, and explanations
     score = Column(Integer, nullable=True)  # Populated when submitted
     total_questions = Column(Integer, nullable=False, default=5)
-    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+    created_at = Column(DateTime, default=func.now(), server_default=func.now(), nullable=False)
+    updated_at = Column(DateTime, default=func.now(), server_default=func.now(), onupdate=func.now(), nullable=False)
 
     # Relationships
     user = relationship("User", back_populates="quizzes")
+
+    def __repr__(self) -> str:
+        return f"<Quiz id={self.id} topic={self.topic!r} user_id={self.user_id} score={self.score}>"

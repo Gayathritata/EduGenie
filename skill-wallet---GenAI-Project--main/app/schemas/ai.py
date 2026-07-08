@@ -12,6 +12,8 @@ class QARequest(BaseModel):
 class QAResponse(BaseModel):
     answer: str
     session_id: int
+    key_concepts: Optional[List[str]] = Field(default_factory=list, description="Key concepts covered in the answer")
+    follow_up_questions: Optional[List[str]] = Field(default_factory=list, description="Suggested follow-up questions for deeper learning")
 
 # Concept Explanation Schema
 class ExplainRequest(BaseModel):
@@ -30,6 +32,10 @@ class SummarizeRequest(BaseModel):
 class SummarizeResponse(BaseModel):
     summary: str
     session_id: int
+    bullet_points: Optional[List[str]] = Field(default_factory=list, description="Key bullet points from the text")
+    important_keywords: Optional[List[str]] = Field(default_factory=list, description="Important keywords extracted from the text")
+    key_concepts: Optional[List[Dict[str, str]]] = Field(default_factory=list, description="Key concepts with definitions")
+    revision_notes: Optional[str] = Field(default="", description="Compact revision notes for exam preparation")
 
 # Roadmap Schema
 class RoadmapRequest(BaseModel):

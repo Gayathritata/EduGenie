@@ -7,11 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initNavigation();
     loadDashboardHome();
+    initMobileMenu();
 });
 
 /* Navigation Router */
 function initNavigation() {
     const menuItems = document.querySelectorAll('.menu-item[data-section]');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.sidebar-overlay');
+
     menuItems.forEach(item => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
@@ -19,11 +23,38 @@ function initNavigation() {
             // Switch active classes
             menuItems.forEach(i => i.classList.remove('active'));
             item.classList.add('active');
+
+            // Close mobile sidebar if open
+            if (sidebar) sidebar.classList.remove('open');
+            if (overlay) overlay.classList.remove('active');
             
             const targetSection = item.dataset.section;
             switchSection(targetSection);
         });
     });
+}
+
+function initMobileMenu() {
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.sidebar-overlay');
+    
+    if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+            const isOpen = sidebar && sidebar.classList.toggle('open');
+            if (overlay) overlay.classList.toggle('active');
+            // Update ARIA state for screen readers
+            menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+    }
+    if (overlay) {
+        overlay.addEventListener('click', () => {
+            if (sidebar) sidebar.classList.remove('open');
+            if (overlay) overlay.classList.remove('active');
+            const btn = document.querySelector('.mobile-menu-btn');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
+    }
 }
 
 function switchSection(sectionName) {
@@ -74,6 +105,8 @@ function switchSection(sectionName) {
    ----------------------------------------------------- */
 async function loadDashboardHome() {
     const contentArea = document.getElementById('dynamic-workspace-content');
+    const titleElement = document.querySelector('.navbar-title');
+    if (titleElement) titleElement.textContent = 'Overview';
     
     try {
         const historyData = await APIClient.get('/history');
@@ -94,28 +127,61 @@ async function loadDashboardHome() {
                 <div class="dashboard-grid">
                     <div class="glass-panel stat-card">
                         <h4>Total AI Inquiries</h4>
-                        <div class="value">${totalQueries}</div>
+                        <div style="display:flex; align-items:center; gap:12px; margin-top:8px;">
+                            <div class="value">${totalQueries}</div>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" opacity="0.5" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        </div>
                     </div>
                     <div class="glass-panel stat-card">
                         <h4>Roadmaps Generated</h4>
-                        <div class="value">${activeRoadmaps}</div>
+                        <div style="display:flex; align-items:center; gap:12px; margin-top:8px;">
+                            <div class="value">${activeRoadmaps}</div>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-secondary)" stroke-width="2" opacity="0.5" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        </div>
                     </div>
                     <div class="glass-panel stat-card">
                         <h4>Quizzes Completed</h4>
-                        <div class="value">${quizzesTaken}</div>
+                        <div style="display:flex; align-items:center; gap:12px; margin-top:8px;">
+                            <div class="value">${quizzesTaken}</div>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="2" opacity="0.5" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
                     </div>
                     <div class="glass-panel stat-card">
                         <h4>Bookmarked Responses</h4>
-                        <div class="value">${totalBookmarks}</div>
+                        <div style="display:flex; align-items:center; gap:12px; margin-top:8px;">
+                            <div class="value">${totalBookmarks}</div>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-warning)" stroke-width="2" opacity="0.5" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                        </div>
                     </div>
                 </div>
 
                 <div class="glass-panel input-panel">
-                    <h3 style="margin-bottom:12px;">Getting Started</h3>
-                    <p style="color:#94a3b8; margin-bottom:20px; line-height:1.6;">
-                        Select a feature from the left sidebar to start learning. You can ask educational questions, get analogies for complex topics, generate personalized weekly roadmaps, summarize textbook documents, or test your retention with dynamic quizzes.
+                    <h3 style="margin-bottom:12px;">Quick Start</h3>
+                    <p style="color:#94a3b8; margin-bottom:24px; line-height:1.6;">
+                        Select a feature below or from the left sidebar to begin your learning session.
                     </p>
-                    <button class="btn-primary" onclick="document.querySelector('[data-section=\\'qa\\']').click()">Ask a Question</button>
+                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap:12px;">
+                        <button class="btn-secondary" style="padding:12px 16px; text-align:left; gap:10px; flex-direction:column; align-items:flex-start; height:auto;" onclick="document.querySelector('[data-section=\'qa\']').click()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            <span style="font-size:0.85rem;">Ask a Question</span>
+                        </button>
+                        <button class="btn-secondary" style="padding:12px 16px; text-align:left; gap:10px; flex-direction:column; align-items:flex-start; height:auto;" onclick="document.querySelector('[data-section=\'explain\']').click()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-secondary)" stroke-width="2" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                            <span style="font-size:0.85rem;">Explain a Concept</span>
+                        </button>
+                        <button class="btn-secondary" style="padding:12px 16px; text-align:left; gap:10px; flex-direction:column; align-items:flex-start; height:auto;" onclick="document.querySelector('[data-section=\'roadmap\']').click()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-purple)" stroke-width="2" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            <span style="font-size:0.85rem;">Generate Roadmap</span>
+                        </button>
+                        <button class="btn-secondary" style="padding:12px 16px; text-align:left; gap:10px; flex-direction:column; align-items:flex-start; height:auto;" onclick="document.querySelector('[data-section=\'quiz\']').click()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span style="font-size:0.85rem;">Take a Quiz</span>
+                        </button>
+                        <button class="btn-secondary" style="padding:12px 16px; text-align:left; gap:10px; flex-direction:column; align-items:flex-start; height:auto;" onclick="document.querySelector('[data-section=\'summarize\']').click()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-warning)" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            <span style="font-size:0.85rem;">Summarize Text</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         `;
@@ -303,8 +369,13 @@ async function loadSavedResponses(container) {
         
         if (savedData.length === 0) {
             container.innerHTML = `
-                <div class="glass-panel input-panel animated">
-                    <p style="color:#94a3b8; text-align:center;">You do not have any bookmarked responses yet. Start consulting AI features to save highlights.</p>
+                <div class="empty-state-card animated">
+                    <svg class="empty-state-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+                    </svg>
+                    <h4>No Bookmarks Saved</h4>
+                    <p>When you consult EduGenie Q&A or generate study roadmaps, you can bookmark answers to compile a personal knowledge archive.</p>
+                    <button class="btn-primary" onclick="document.querySelector('[data-section=\\'qa\\']').click()">Ask a Question</button>
                 </div>
             `;
             return;
@@ -366,8 +437,13 @@ async function loadHistoryTimeline(container) {
         
         if (historyData.length === 0) {
             container.innerHTML = `
-                <div class="glass-panel input-panel animated">
-                    <p style="color:#94a3b8; text-align:center;">No timeline logs found. Complete actions to generate study logs.</p>
+                <div class="empty-state-card animated">
+                    <svg class="empty-state-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    <h4>Timeline Log is Empty</h4>
+                    <p>Interact with the Q&A co-pilot, explain complex terms, or generate customized milestone roadmaps to populate your activity logs.</p>
+                    <button class="btn-primary" onclick="document.querySelector('[data-section=\\'roadmap\\']').click()">Generate Roadmap</button>
                 </div>
             `;
             return;
@@ -376,11 +452,14 @@ async function loadHistoryTimeline(container) {
         let listHTML = `<div class="history-list animated">`;
         historyData.forEach(log => {
             const date = new Date(log.created_at).toLocaleString();
+            const actionLabel = log.action
+                ? log.action.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+                : 'Activity';
             listHTML += `
                 <div class="glass-panel history-item">
                     <div class="details">
                         <h5>${escapeHTML(log.description)}</h5>
-                        <p>Action: <strong>${log.action}</strong> | Target: ${log.entity_type || 'N/A'}</p>
+                        <p>Action: <strong style="color:var(--accent-primary); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.5px; padding:2px 6px; background:rgba(0,242,254,0.06); border-radius:4px;">${escapeHTML(actionLabel)}</strong> | Target: ${escapeHTML(log.entity_type || 'N/A')}</p>
                     </div>
                     <div class="time">${date}</div>
                 </div>
@@ -472,20 +551,29 @@ function capitalizeFirstLetter(str) {
 }
 
 function escapeHTML(str) {
-    return str.replace(/[&<>'"]/g, 
-        tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+    if (!str) return '';
+    return String(str).replace(/[&<>'"` ]/g, 
+        tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;', '`': '&#96;', ' ': ' ' }[tag] || tag)
     );
 }
 
 /* Simple Markdown formatter for educational formatting */
 function formatMarkdown(text) {
+    if (!text) return '';
     let html = escapeHTML(text);
     
     // Bold
     html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     
-    // Code blocks (pre/code)
-    html = html.replace(/```(.*?)\n([\s\S]*?)```/g, '<pre><code>$2</code></pre>');
+    // Code blocks (pre/code) with premium copy button
+    html = html.replace(/```(?:\w+)?\n([\s\S]*?)```/g, (match, code) => {
+        return `
+            <div class="code-block-wrapper">
+                <button class="copy-code-btn" onclick="copyCodeToClipboard(this)">Copy</button>
+                <pre><code>${code}</code></pre>
+            </div>
+        `;
+    });
     
     // Inline code
     html = html.replace(/`(.*?)`/g, '<code>$1</code>');
@@ -495,9 +583,42 @@ function formatMarkdown(text) {
     html = html.replace(/^## (.*?)$/gm, '<h2>$1</h2>');
     html = html.replace(/^# (.*?)$/gm, '<h1>$1</h1>');
     
-    // Lists
-    html = html.replace(/^\* (.*?)$/gm, '<li>$1</li>');
-    html = html.replace(/^- (.*?)$/gm, '<li>$1</li>');
+    // Lists — collect consecutive li items and wrap in ul
+    html = html.replace(/^[*\-] (.*?)$/gm, '<li>$1</li>');
+    // Wrap consecutive <li> blocks in <ul>
+    html = html.replace(/(<li>.*?<\/li>\n?)+/gs, match => `<ul>${match}</ul>`);
+
+    // Numbered lists
+    html = html.replace(/^\d+\. (.*?)$/gm, '<li>$1</li>');
+    html = html.replace(/(<li>.*?<\/li>\n?)+/gs, match => {
+        // Only wrap if not already inside <ul>
+        if (!match.includes('<ul>')) return `<ul>${match}</ul>`;
+        return match;
+    });
     
+    // Paragraphs — blank lines become paragraph breaks
+    html = html.replace(/\n\n+/g, '</p><p>');
+
     return html;
 }
+
+/* Global copy-to-clipboard handler */
+window.copyCodeToClipboard = function(btn) {
+    const pre = btn.nextElementSibling;
+    const code = pre.querySelector('code');
+    const textToCopy = code.innerText || code.textContent;
+    
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        btn.textContent = 'Copied!';
+        btn.style.background = 'var(--accent-success)';
+        btn.style.color = '#050510';
+        setTimeout(() => {
+            btn.textContent = 'Copy';
+            btn.style.background = '';
+            btn.style.color = '';
+        }, 2000);
+    }).catch(err => {
+        console.error('Could not copy code: ', err);
+        showNotification('Failed to copy to clipboard', 'error');
+    });
+};
