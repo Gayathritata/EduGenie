@@ -73,7 +73,7 @@ async function generateQuizAction(topic, count, difficulty) {
         renderQuizQuestions(outputDiv, data);
         showNotification('Quiz successfully generated!', 'success');
     } catch (err) {
-        outputDiv.innerHTML = `<p style="color:var(--accent-error);">Error: {err.message}</p>`;
+        outputDiv.innerHTML = `<p style="color:var(--accent-error);">Error: ${err.message}</p>`;
         showNotification(err.message, 'error');
     } finally {
         setLoadingBtn(submitBtn, false);
@@ -131,6 +131,21 @@ function renderQuizQuestions(container, quiz) {
     `;
 
     container.innerHTML = html;
+
+    // Attach dynamic choice selected highlight handlers
+    questions.forEach(q => {
+        const radios = container.querySelectorAll(`input[name="question_${q.id}"]`);
+        radios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                radios.forEach(r => {
+                    const label = container.querySelector(`#choice-label-${q.id}-${r.value}`);
+                    if (label) label.classList.remove('selected');
+                });
+                const selectedLabel = container.querySelector(`#choice-label-${q.id}-${radio.value}`);
+                if (selectedLabel) selectedLabel.classList.add('selected');
+            });
+        });
+    });
     
     // Start Timer
     quizSecondsElapsed = 0;

@@ -19,7 +19,7 @@ class HistoryOut(BaseModel):
 class SavedRequest(BaseModel):
     source_response_id: Optional[int] = Field(None, description="Optional ID of the source AIResponse that generated this content")
     title: str = Field(..., min_length=1, max_length=255, description="Custom bookmark title")
-    category: str = Field(..., pattern="^(qa|roadmap|quiz|summary)$", description="Target response category")
+    category: str = Field(..., pattern="^(qa|explain|roadmap|quiz|summary)$", description="Target response category")
     content: str = Field(..., min_length=1, description="Bookmarks text or payload details")
 
 class SavedResponseOut(BaseModel):

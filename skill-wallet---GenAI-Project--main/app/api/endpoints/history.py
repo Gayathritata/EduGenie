@@ -78,22 +78,33 @@ def save_response(
             detail=f"Failed to bookmark response: {str(e)}"
         )
 
-@router.get("/save", response_model=List[SavedResponseOut])
-def get_saved_responses(
-    db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
-):
-    """Retrieve all bookmarked responses saved by the student."""
+def _fetch_saved_responses(db: Session, current_user: User):
+    """Internal helper: fetch all bookmarked responses for the current user."""
     try:
-        saved_items = db.query(SavedResponse).filter(
+        return db.query(SavedResponse).filter(
             SavedResponse.user_id == current_user.id
         ).order_by(SavedResponse.created_at.desc()).all()
-        return saved_items
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Failed to retrieve bookmarked list: {str(e)}"
         )
+
+@router.get("/saved", response_model=List[SavedResponseOut])
+def get_saved_responses(
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    """Retrieve all bookmarked responses saved by the student (canonical path)."""
+    return _fetch_saved_responses(db, current_user)
+
+@router.get("/save", response_model=List[SavedResponseOut])
+def get_saved_responses_alias(
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    """Retrieve all bookmarked responses saved by the student (alias path for /save GET)."""
+    return _fetch_saved_responses(db, current_user)
 
 @router.delete("/save/{saved_id}", status_code=status.HTTP_200_OK)
 def delete_saved_response(

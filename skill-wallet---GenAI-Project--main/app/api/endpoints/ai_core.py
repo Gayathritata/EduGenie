@@ -55,7 +55,7 @@ def summarize_text(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
-    """Summarizes text using the LaMini NLP model."""
+    """Summarizes text using Google Gemini."""
     try:
         result = EduService.summarize_text(db, current_user.id, payload.text, payload.target_length)
         return result

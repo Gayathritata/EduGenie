@@ -1,89 +1,507 @@
 <!-- File: app/templates/landing.html -->
-<!-- Landing Page for EduGenie educational assistant -->
+<!-- Premium Landing Page for EduGenie -->
 {% extends "base.html" %}
 
-{% block title %}EduGenie – AI Powered Learning Assistant{% endblock %}
+{% block title %}EduGenie – Google Gemini Powered Learning Assistant{% endblock %}
 
 {% block content %}
-<div class="hero">
-    <!-- Glowing background elements -->
-    <div class="hero-glow-1"></div>
-    <div class="hero-glow-2"></div>
-    
-    <!-- Top Nav -->
-    <nav class="landing-nav glass-panel" style="border-radius: var(--radius-md); padding: 14px 30px; margin-top: 20px; width: 88%;">
-        <div class="brand">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="url(#cyan-grad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                <defs>
-                    <linearGradient id="cyan-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#4facfe" />
-                        <stop offset="100%" stop-color="#00f2fe" />
-                    </linearGradient>
-                </defs>
-            </svg>
-            Edu<span class="brand-accent">Genie</span>
-        </div>
-        <div style="display:flex; gap:16px;">
-            <a href="/login" class="btn-secondary" style="padding: 10px 24px; font-size: 0.85rem;">Login</a>
-            <a href="/register" class="btn-primary" style="padding: 10px 24px; font-size: 0.85rem;">Register</a>
-        </div>
-    </nav>
-    
-    <!-- Main Hero Text Section -->
-    <h1 class="float-effect" style="margin-top: 100px;">Intelligent Co-Pilot for <span class="brand-accent" style="font-weight: 800; background: linear-gradient(135deg, #00f2fe, #4facfe); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Personalized Learning</span></h1>
-    <p>Unlock the power of Google Gemini & LaMini-Flan-T5 to construct custom roadmaps, explain complex concepts with analogies, and challenge yourself with dynamic quizzes.</p>
-    
-    <div class="hero-actions">
-        <a href="/login" class="btn-primary" style="text-decoration:none;">Start Learning Free</a>
-        <a href="#features" class="btn-secondary" style="text-decoration:none;">Explore Features</a>
-    </div>
-    
-    <!-- Features Highlight Grid Section -->
-    <div class="features-grid" id="features">
-        <div class="glass-panel feature-card animated" style="animation-delay: 0.1s;">
-            <div class="icon-box">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+<div class="landing-page-wrapper">
+    <!-- Premium background glowing blobs -->
+    <div class="glow-orb orb-1" aria-hidden="true"></div>
+    <div class="glow-orb orb-2" aria-hidden="true"></div>
+    <div class="glow-orb orb-3" aria-hidden="true"></div>
+
+    <!-- Header / Nav -->
+    <header class="landing-header">
+        <nav class="landing-nav glass-panel" role="navigation" aria-label="Main navigation">
+            <div class="brand">
+                <svg class="logo-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#cyan-grad-landing)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    <defs>
+                        <linearGradient id="cyan-grad-landing" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#4facfe" />
+                            <stop offset="100%" stop-color="#00f2fe" />
+                        </linearGradient>
+                    </defs>
                 </svg>
+                <span>Edu<span class="brand-accent">Genie</span></span>
             </div>
-            <h3>Smart Q&A</h3>
-            <p>Get instant answers to difficult academic inquiries with optional textbook context integration.</p>
-        </div>
-        
-        <div class="glass-panel feature-card animated" style="animation-delay: 0.2s;">
-            <div class="icon-box">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-                </svg>
+            <div class="nav-actions" role="list">
+                <a href="/login" class="btn-secondary nav-btn" role="listitem">Sign In</a>
+                <a href="/register" class="btn-primary nav-btn" role="listitem">Register</a>
             </div>
-            <h3>Personalized Roadmaps</h3>
-            <p>Generate step-by-step weekly milestone guides tailored to your experience and difficulty level.</p>
-        </div>
-        
-        <div class="glass-panel feature-card animated" style="animation-delay: 0.3s;">
-            <div class="icon-box">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
-                </svg>
+        </nav>
+    </header>
+
+    <!-- Main Hero Section -->
+    <main class="hero-section">
+        <div class="hero-content animated">
+            <h1 class="float-effect hero-title">
+                Intelligent Co-Pilot for <br>
+                <span class="brand-accent-gradient">Personalized Learning</span>
+            </h1>
+            <p class="hero-subtitle">
+                Unlock the power of Google Gemini &amp; LaMini-Flan-T5 to construct custom roadmaps, explain complex concepts with analogies, and challenge yourself with dynamic quizzes.
+            </p>
+            
+            <div class="hero-actions">
+                <a href="/login" class="btn-primary btn-lg" style="text-decoration:none;">Start Learning Free</a>
+                <a href="#features" class="btn-secondary btn-lg" style="text-decoration:none;">Explore Features</a>
             </div>
-            <h3>Concept Explanations</h3>
-            <p>Break down complex terms into simple analogies tailored specifically to your background.</p>
         </div>
-        
-        <div class="glass-panel feature-card animated" style="animation-delay: 0.4s;">
-            <div class="icon-box">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
-                </svg>
+
+        <!-- Trust / Stats Strip -->
+        <div class="stats-strip animated" style="animation-delay: 0.1s;">
+            <div class="stat-pill">
+                <span class="stat-pill-value">5+</span>
+                <span class="stat-pill-label">AI Modules</span>
             </div>
-            <h3>Dynamic Quizzes</h3>
-            <p>Test your conceptual retention with interactive multiple-choice tests followed by explanations.</p>
+            <div class="stat-pill">
+                <span class="stat-pill-value">Gemini</span>
+                <span class="stat-pill-label">Powered</span>
+            </div>
+            <div class="stat-pill">
+                <span class="stat-pill-value">LaMini</span>
+                <span class="stat-pill-label">Flan-T5</span>
+            </div>
+            <div class="stat-pill">
+                <span class="stat-pill-value">Instant</span>
+                <span class="stat-pill-label">Feedback</span>
+            </div>
         </div>
-    </div>
-    
-    <footer style="color:#64748b; font-size:0.85rem; padding: 40px 0; border-top:1px solid var(--border-color); width:100%; max-width:1200px;">
-        &copy; 2026 EduGenie. Built under SmartBridge production standards. All rights reserved.
+
+        <!-- Features Highlight Grid Section -->
+        <section class="features-section" id="features" aria-label="Feature highlights">
+            <div class="section-intro">
+                <h2>Empower Your Academic Journey</h2>
+                <p>Everything you need to master new subjects, consolidate documentation, and evaluate your knowledge retention.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="glass-panel feature-card animated" style="animation-delay: 0.15s;">
+                    <div class="icon-box" aria-hidden="true" style="--card-theme: var(--accent-primary);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                    </div>
+                    <h3>Smart Q&amp;A</h3>
+                    <p>Get instant answers to difficult academic inquiries with optional textbook context integration.</p>
+                </div>
+                
+                <div class="glass-panel feature-card animated" style="animation-delay: 0.25s;">
+                    <div class="icon-box" aria-hidden="true" style="--card-theme: var(--accent-secondary);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                        </svg>
+                    </div>
+                    <h3>Personalized Roadmaps</h3>
+                    <p>Generate step-by-step weekly milestone guides tailored to your experience and difficulty level.</p>
+                </div>
+                
+                <div class="glass-panel feature-card animated" style="animation-delay: 0.35s;">
+                    <div class="icon-box" aria-hidden="true" style="--card-theme: var(--accent-purple);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                        </svg>
+                    </div>
+                    <h3>Concept Explanations</h3>
+                    <p>Break down complex terms into simple analogies tailored specifically to your background.</p>
+                </div>
+                
+                <div class="glass-panel feature-card animated" style="animation-delay: 0.45s;">
+                    <div class="icon-box" aria-hidden="true" style="--card-theme: var(--accent-success);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h3>Dynamic Quizzes</h3>
+                    <p>Test your conceptual retention with interactive multiple-choice tests followed by AI explanations.</p>
+                </div>
+
+                <div class="glass-panel feature-card animated" style="animation-delay: 0.55s;">
+                    <div class="icon-box" aria-hidden="true" style="--card-theme: var(--accent-warning);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                    </div>
+                    <h3>Text Summarization</h3>
+                    <p>Paste any long document or article and get concise, structured summaries in seconds.</p>
+                </div>
+
+                <div class="glass-panel feature-card animated" style="animation-delay: 0.65s;">
+                    <div class="icon-box" aria-hidden="true" style="--card-theme: #f43f5e;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Saved Bookmarks</h3>
+                    <p>Bookmark any AI response for quick access later. Build your personal knowledge library.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="landing-footer" role="contentinfo">
+        <div class="footer-bottom">
+            <span>&copy; 2026 EduGenie. Developed for SmartBridge Final Evaluation.</span>
+            <div class="footer-links">
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+                <a href="#features">Features</a>
+            </div>
+        </div>
     </footer>
 </div>
+
+<style>
+/* -----------------------------------------------------
+   Landing Page Scoped Styles
+   ----------------------------------------------------- */
+.landing-page-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 4%;
+    background-color: var(--bg-base);
+}
+
+/* Sticky Premium Navbar */
+.landing-header {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 24px;
+    z-index: 100;
+}
+
+.landing-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    border-radius: var(--radius-md);
+    background: rgba(16, 22, 38, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    width: 100%;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.nav-btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    height: auto;
+}
+
+/* Background Glowing Orbs */
+.glow-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(150px);
+    pointer-events: none;
+    z-index: -2;
+    opacity: 0.6;
+}
+
+.orb-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(79, 172, 254, 0.12) 0%, transparent 70%);
+    top: -100px;
+    left: -100px;
+}
+
+.orb-2 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 242, 254, 0.08) 0%, transparent 70%);
+    bottom: -150px;
+    right: -100px;
+}
+
+.orb-3 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(127, 0, 255, 0.05) 0%, transparent 70%);
+    top: 40%;
+    left: 30%;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 100px;
+}
+
+.hero-content {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.brand-accent-gradient {
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    max-width: 650px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.btn-lg {
+    padding: 14px 32px;
+    font-size: 1rem;
+}
+
+/* Logo Animation */
+.logo-svg {
+    transition: transform var(--transition-slow);
+}
+
+.brand:hover .logo-svg {
+    transform: rotate(360deg);
+}
+
+/* Stats Pill */
+.stats-strip {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 80px 0;
+    width: 100%;
+}
+
+.stat-pill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 18px 36px;
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(10px);
+    min-width: 160px;
+    transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.stat-pill:hover {
+    border-color: rgba(0, 242, 254, 0.2);
+    transform: translateY(-2px);
+}
+
+.stat-pill-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-pill-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #64748b;
+}
+
+/* Features Grid */
+.features-section {
+    width: 100%;
+    margin-bottom: 120px;
+}
+
+.section-intro {
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.section-intro h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+}
+
+.section-intro p {
+    font-size: 1rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    width: 100%;
+}
+
+.feature-card {
+    padding: 40px 30px;
+    background: rgba(16, 22, 38, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-lg);
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent 60%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 242, 254, 0.2);
+    box-shadow: 0 12px 30px rgba(0, 242, 254, 0.05);
+    background: rgba(16, 22, 38, 0.6);
+}
+
+.feature-card .icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    color: var(--card-theme);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all var(--transition-fast);
+}
+
+.feature-card:hover .icon-box {
+    background: var(--card-theme);
+    color: #050510;
+    box-shadow: 0 0 15px var(--card-theme);
+    border-color: transparent;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* Footer styling */
+.landing-footer {
+    width: 100%;
+    max-width: 1200px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px 0;
+    margin-top: auto;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-links a {
+    color: #64748b;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--accent-primary);
+}
+
+/* Smooth scroll behaviour */
+html {
+    scroll-behavior: smooth;
+}
+
+/* -----------------------------------------------------
+   Responsive Adaptation
+   ----------------------------------------------------- */
+@media (max-width: 1024px) {
+    .hero-title { font-size: 3.2rem; }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .hero-title { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1.05rem; }
+    .hero-actions { flex-direction: column; width: 100%; max-width: 320px; }
+    .hero-actions a { width: 100%; text-align: center; }
+    .features-grid { grid-template-columns: 1fr; }
+    .landing-nav { padding: 12px 20px; }
+    .logo-svg { width: 24px; height: 24px; }
+    .brand { font-size: 1.3rem; }
+    .stats-strip { gap: 15px; margin: 50px 0; }
+    .stat-pill { min-width: 130px; padding: 14px 20px; }
+}
+
+@media (max-width: 480px) {
+    .hero-title { font-size: 2rem; }
+    .section-intro h2 { font-size: 1.8rem; }
+    .feature-card { padding: 30px 20px; }
+}
+</style>
 {% endblock %}

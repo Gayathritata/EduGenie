@@ -31,10 +31,11 @@ def get_password_hash(password: str) -> str:
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -> str:
     """Generate a signed HS256 JWT access token."""
     to_encode = data.copy()
+    import time
     if expires_delta:
-        expire = datetime.utcnow() + expires_delta
+        expire = int(time.time() + expires_delta.total_seconds())
     else:
-        expire = datetime.utcnow() + timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
+        expire = int(time.time() + (settings.ACCESS_TOKEN_EXPIRE_MINUTES * 60))
     to_encode.update({"exp": expire})
     encoded_jwt = jwt.encode(to_encode, settings.SECRET_KEY, algorithm="HS256")
     return encoded_jwt
@@ -58,10 +59,15 @@ def get_current_user(
     
     # Extract token
     actual_token = token
+    if not isinstance(actual_token, str):
+        actual_token = None
+        
     if not actual_token:
         # Fallback to Cookie (for Jinja2 Web Views compatibility)
         cookie_token = request.cookies.get("access_token")
         if cookie_token:
+            if cookie_token.startswith('"') and cookie_token.endswith('"'):
+                cookie_token = cookie_token[1:-1]
             if cookie_token.startswith("Bearer "):
                 actual_token = cookie_token.split(" ")[1]
             else:
@@ -85,4 +91,10 @@ def get_current_user(
     user = db.query(User).filter(User.id == token_data.user_id).first()
     if user is None:
         raise credentials_exception
+    # Reject deactivated accounts — even with a valid token
+    if not user.is_active:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="This account has been deactivated. Please contact support."
+        )
     return user
