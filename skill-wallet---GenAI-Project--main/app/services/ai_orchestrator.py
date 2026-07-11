@@ -1,13 +1,15 @@
 # File: app/services/ai_orchestrator.py
 # Part of EduGenie SmartBridge Project
 
+from app.services import prompt_manager
+from app.models import response
 import logging
 import time
 import json
 import requests
 from google import genai
 from app.config import settings
-
+from datetime import datetime, timedelta
 logger = logging.getLogger("edugenie")
 
 # Retry configuration constants
@@ -17,9 +19,13 @@ _RETRY_BASE_DELAY = 1.5     # Base delay in seconds (doubles per retry)
 
 
 class AIOrchestrator:
+
     def __init__(self):
         self.gemini_enabled = False
         self._client = None
+        # Circuit Breaker
+        self.gemini_available = True
+        self.gemini_disabled_until = None
         gemini_key = settings.GEMINI_API_KEY
         if (
             gemini_key 
@@ -43,33 +49,120 @@ class AIOrchestrator:
     # ─────────────────────────────────────────────────────────────────────────
     def query_gemini(self, prompt: str) -> str:
         """
-        Queries Google Gemini 2.0 Flash with exponential-backoff retry.
-        Max 2 retries on transient failures before raising RuntimeError.
+        Queries Google Gemini with intelligent retry logic.
+        Retries only for temporary failures.
+        Falls back to LaMini when quota is exhausted.
         """
+        if (
+            not self.gemini_available
+            and self.gemini_disabled_until
+            and datetime.now() < self.gemini_disabled_until
+        ):
+            logger.info("Gemini temporarily disabled. Using LaMini.")
+            return self.query_lamini(prompt)
+
+    # Re-enable Gemini after cooldown
+        if (
+            self.gemini_disabled_until
+            and datetime.now() >= self.gemini_disabled_until
+        ):
+            self.gemini_available = True
+            self.gemini_disabled_until = None
         if not self.gemini_enabled:
             return self._get_offline_response(prompt, "gemini")
 
         last_error = None
-        for attempt in range(1, _GEMINI_MAX_RETRIES + 2):  # attempts: 1, 2, 3
+
+        for attempt in range(1, _GEMINI_MAX_RETRIES + 2):
+
             try:
                 response = self._client.models.generate_content(
                     model="gemini-2.0-flash",
                     contents=prompt
                 )
-                return self._clean_markdown_fencing(response.text.strip())
-            except Exception as e:
-                last_error = e
-                if attempt <= _GEMINI_MAX_RETRIES:
-                    delay = _RETRY_BASE_DELAY * (2 ** (attempt - 1))  # 1.5s, 3.0s
-                    logger.warning(
-                        f"Gemini attempt {attempt}/{_GEMINI_MAX_RETRIES + 1} failed: {e}. "
-                        f"Retrying in {delay:.1f}s..."
-                    )
-                    time.sleep(delay)
-                else:
-                    logger.error(f"Gemini all {_GEMINI_MAX_RETRIES + 1} attempts exhausted: {e}", exc_info=True)
+                self.gemini_available = True
+                self.gemini_disabled_until = None
 
-        raise RuntimeError(f"Google Gemini model execution failed after retries: {str(last_error)}")
+                return self._clean_markdown_fencing(response.text.strip())
+
+            except Exception as e:
+
+                last_error = e
+                error_message = str(e)
+
+            # ---------------------------------------------------------
+            # CASE 1 : Daily Quota Exhausted (DO NOT RETRY)
+            # ---------------------------------------------------------
+            if any(keyword in error_message for keyword in [
+                "RESOURCE_EXHAUSTED",
+                "quota exceeded",
+                "429",
+                "GenerateRequestsPerDay",
+                "GenerateRequestsPerMinute",
+                "GenerateContentInputTokens",
+                "QuotaFailure"
+            ]):
+
+                logger.warning(
+                    "Gemini quota exhausted. Disabling Gemini for 15 minutes."
+                )
+
+                self.gemini_available = False
+                self.gemini_disabled_until = datetime.now() + timedelta(minutes=15)
+
+                logger.info("Using LaMini fallback.")
+                return self.query_lamini(prompt)
+
+            # ---------------------------------------------------------
+            # CASE 2 : Invalid API Key (DO NOT RETRY)
+            # ---------------------------------------------------------
+            if (
+                "401" in error_message
+                or "UNAUTHENTICATED" in error_message
+            ):
+
+                logger.error("Invalid Gemini API Key.")
+
+                return self.query_lamini(prompt)
+
+            # ---------------------------------------------------------
+            # CASE 3 : Permission Denied (DO NOT RETRY)
+            # ---------------------------------------------------------
+            if (
+                "403" in error_message
+                or "PERMISSION_DENIED" in error_message
+            ):
+
+                logger.error("Gemini permission denied.")
+
+                return self.query_lamini(prompt)
+
+            # ---------------------------------------------------------
+            # CASE 4 : Retry only temporary failures
+            # ---------------------------------------------------------
+            if attempt <= _GEMINI_MAX_RETRIES:
+
+                delay = _RETRY_BASE_DELAY * (2 ** (attempt - 1))
+
+                logger.warning(
+                    f"[Gemini Retry] "
+                    f"Attempt {attempt}/{_GEMINI_MAX_RETRIES + 1} | "
+                    f"Delay={delay:.1f}s | "
+                    f"Error={error_message}"
+                )
+
+                time.sleep(delay)
+
+            else:
+
+                logger.error(
+                    "Gemini retries exhausted. Using LaMini.",
+                    exc_info=True
+                )
+
+                return self.query_lamini(prompt)
+
+        return self.query_lamini(prompt)
 
     # ─────────────────────────────────────────────────────────────────────────
     # LAMINI — Concept Explanation ONLY
@@ -230,7 +323,7 @@ class AIOrchestrator:
         # ── Roadmap ────────────────────────────────────────────────────────────
         if "roadmap" in prompt_lower or "learning path" in prompt_lower or "learning coach" in prompt_lower:
             return json.dumps({
-                "topic": "FastAPI Web Development (Offline Demo)",
+                "topic": "FastAPI Web Development",
                 "difficulty": "Beginner",
                 "estimated_time": "8 Weeks (10 hours/week)",
                 "overview": "A structured foundational track covering FastAPI routing, Pydantic validation, SQLite ORM, JWT authentication, and AI API integration. By the end you will be able to build and deploy a full-stack API backend.",
@@ -309,7 +402,7 @@ class AIOrchestrator:
             elif "advanced" in prompt_lower:
                 difficulty = "Advanced"
             return json.dumps({
-                "topic": "Python Programming (Offline Demo)",
+                "topic": "Python Programming",
                 "difficulty": difficulty,
                 "questions": [
                     {
@@ -339,7 +432,7 @@ class AIOrchestrator:
         # ── Summarize ─────────────────────────────────────────────────────────
         elif "summarize" in prompt_lower or "summarization engine" in prompt_lower:
             return json.dumps({
-                "summary": "This is an offline demonstration summary. The provided text covers key concepts in software architecture and API design. To generate a real summary, configure your GEMINI_API_KEY in the .env file.",
+                "summary": "This is a demonstration summary. The provided text covers key concepts in software architecture and API design. To generate a real summary, configure your GEMINI_API_KEY in the .env file.",
                 "bullet_points": [
                     "The text introduces foundational software engineering principles.",
                     "Key architectural patterns are discussed with practical examples.",
@@ -368,10 +461,9 @@ class AIOrchestrator:
                         break
 
             return (
-                f"## {concept.title()} — Concept Explanation (Offline Demo)\n\n"
+                f"## {concept.title()} — Concept Explanation\n\n"
                 f"**1. Simple Definition**\n"
-                f"{concept.title()} is a fundamental concept in computer science and software engineering. "
-                f"(Configure your HF_API_KEY in .env to get a live AI-generated explanation.)\n\n"
+                f"{concept.title()} is a fundamental concept in computer science and software engineering.\n\n "
                 f"**2. How It Works**\n"
                 f"It operates by combining structured inputs, defined rules, and logical processing to produce predictable outputs.\n\n"
                 f"**3. Real-World Analogy**\n"
