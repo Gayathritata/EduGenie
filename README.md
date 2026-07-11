@@ -192,3 +192,31 @@ To scale EduGenie beyond a desktop assistant into an enterprise-level SaaS platf
 2. **Vector Indexing (RAG)**: Integrate **ChromaDB** or **FAISS** with LangChain, enabling students to upload custom PDF textbook chapters and execute semantic searches.
 3. **Advanced Analytics**: Integrate **Charts.js** to render weekly academic statistics, tracking response bookmarks count, quiz averages, and study times.
 4. **Offline Local Models**: Integrate a local **Ollama** server connection to run open-weight models (like Llama 3 or Phi 3) locally on the student's GPU.
+
+---
+
+## 8. Screenshots & Media Placeholder
+
+Below are visual showcases demonstrating the premium user experience across all key student workflows:
+- **Interactive Workspace & AI Copilot**: *(Image placeholder for future deployment renders)*
+- **Smart Quiz Generator & Timeline Tracker**: *(Image placeholder for future deployment renders)*
+
+---
+
+## 9. Project License
+
+This repository is licensed under the terms of the MIT License. See below for details:
+
+```text
+Copyright (c) 2026 EduGenie Developers
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+```
