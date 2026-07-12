@@ -6,8 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!document.querySelector('.dashboard-container')) return;
 
     initNavigation();
-    loadDashboardHome();
     initMobileMenu();
+
+    const params = new URLSearchParams(window.location.search);
+    const initialSection = params.get('section') || 'dashboard-home';
+    navigateToDashboardSection(initialSection, false);
+
+    window.addEventListener('popstate', () => {
+        const currentParams = new URLSearchParams(window.location.search);
+        const section = currentParams.get('section') || 'dashboard-home';
+        navigateToDashboardSection(section, false);
+    });
 });
 
 /* Navigation Router */
@@ -16,22 +25,42 @@ function initNavigation() {
     const sidebar = document.querySelector('.sidebar');
     const overlay = document.querySelector('.sidebar-overlay');
 
+    const closeSidebar = () => {
+        if (sidebar) sidebar.classList.remove('open');
+        if (overlay) overlay.classList.remove('active');
+    };
+
     menuItems.forEach(item => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
-            
-            // Switch active classes
-            menuItems.forEach(i => i.classList.remove('active'));
-            item.classList.add('active');
-
-            // Close mobile sidebar if open
-            if (sidebar) sidebar.classList.remove('open');
-            if (overlay) overlay.classList.remove('active');
-            
-            const targetSection = item.dataset.section;
-            switchSection(targetSection);
+            closeSidebar();
+            navigateToDashboardSection(item.dataset.section, true);
         });
     });
+
+    document.querySelectorAll('[data-dashboard-section]').forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeSidebar();
+            navigateToDashboardSection(item.dataset.dashboardSection, true);
+        });
+    });
+}
+
+function navigateToDashboardSection(sectionName, shouldPushState = true) {
+    const normalizedSection = (sectionName || 'dashboard-home').toLowerCase();
+    const menuItems = document.querySelectorAll('.menu-item[data-section]');
+    menuItems.forEach(item => {
+        item.classList.toggle('active', item.dataset.section === normalizedSection);
+    });
+
+    if (shouldPushState) {
+        const nextUrl = new URL(window.location.href);
+        nextUrl.searchParams.set('section', normalizedSection);
+        window.history.pushState({}, '', `${nextUrl.pathname}${nextUrl.search}`);
+    }
+
+    switchSection(normalizedSection);
 }
 
 function initMobileMenu() {
@@ -57,12 +86,56 @@ function initMobileMenu() {
     }
 }
 
+function hasAuthenticatedSession() {
+    const container = document.querySelector('.dashboard-container');
+    if (container && container.dataset.authenticated === 'true') {
+        return true;
+    }
+
+    return document.cookie.split(';').some(cookie => cookie.trim().startsWith('access_token='));
+}
+
+function renderAuthRequiredState(container, featureName = 'this feature') {
+    container.innerHTML = `
+        <div class="animated">
+            <div class="glass-panel input-panel">
+                <div class="section-header">
+                    <h2>Please sign in</h2>
+                    <p>Sign in to use ${featureName}. Your learning features will be available after authentication.</p>
+                </div>
+                <a href="/login" class="btn-primary" style="display:inline-block; text-decoration:none;">Sign In</a>
+            </div>
+        </div>
+    `;
+}
+
+function showGuestPrompt(container, featureName) {
+    container.style.display = 'block';
+    renderAuthRequiredState(container, featureName);
+}
+
 function switchSection(sectionName) {
     const titleElement = document.querySelector('.navbar-title');
     const contentArea = document.getElementById('dynamic-workspace-content');
+    const protectedSections = {
+        qa: 'Smart Q&A',
+        explain: 'Concept Explainer',
+        summarize: 'Text Summarizer',
+        roadmap: 'Study Roadmap',
+        quiz: 'Dynamic Quiz',
+        history: 'Timeline Log',
+        saved: 'Bookmarks',
+        profile: 'My Profile'
+    };
     
     // Set Header
     titleElement.textContent = capitalizeFirstLetter(sectionName.replace('-', ' '));
+
+    if (protectedSections[sectionName] && !hasAuthenticatedSession()) {
+        titleElement.textContent = 'Sign In';
+        renderAuthRequiredState(contentArea, protectedSections[sectionName]);
+        return;
+    }
     
     // Clear and mount sections dynamically
     contentArea.innerHTML = getLoadingSpinnerHTML("Consulting EduGenie AI Engine...");
@@ -161,26 +234,26 @@ async function loadDashboardHome() {
                         Select a feature below or from the left sidebar to begin your learning session.
                     </p>
                     <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap:12px;">
-                        <button class="btn-secondary" style="padding:12px 16px; text-align:left; gap:10px; flex-direction:column; align-items:flex-start; height:auto;" onclick="document.querySelector('[data-section=\'qa\']').click()">
+                        <a href="#" class="btn-secondary" data-dashboard-section="qa" style="padding:12px 16px; text-align:left; gap:10px; flex-direction:column; align-items:flex-start; height:auto; text-decoration:none;">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                             <span style="font-size:0.85rem;">Ask a Question</span>
-                        </button>
-                        <button class="btn-secondary" style="padding:12px 16px; text-align:left; gap:10px; flex-direction:column; align-items:flex-start; height:auto;" onclick="document.querySelector('[data-section=\'explain\']').click()">
+                        </a>
+                        <a href="#" class="btn-secondary" data-dashboard-section="explain" style="padding:12px 16px; text-align:left; gap:10px; flex-direction:column; align-items:flex-start; height:auto; text-decoration:none;">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-secondary)" stroke-width="2" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
                             <span style="font-size:0.85rem;">Explain a Concept</span>
-                        </button>
-                        <button class="btn-secondary" style="padding:12px 16px; text-align:left; gap:10px; flex-direction:column; align-items:flex-start; height:auto;" onclick="document.querySelector('[data-section=\'roadmap\']').click()">
+                        </a>
+                        <a href="#" class="btn-secondary" data-dashboard-section="roadmap" style="padding:12px 16px; text-align:left; gap:10px; flex-direction:column; align-items:flex-start; height:auto; text-decoration:none;">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-purple)" stroke-width="2" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                             <span style="font-size:0.85rem;">Generate Roadmap</span>
-                        </button>
-                        <button class="btn-secondary" style="padding:12px 16px; text-align:left; gap:10px; flex-direction:column; align-items:flex-start; height:auto;" onclick="document.querySelector('[data-section=\'quiz\']').click()">
+                        </a>
+                        <a href="#" class="btn-secondary" data-dashboard-section="quiz" style="padding:12px 16px; text-align:left; gap:10px; flex-direction:column; align-items:flex-start; height:auto; text-decoration:none;">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-success)" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                             <span style="font-size:0.85rem;">Take a Quiz</span>
-                        </button>
-                        <button class="btn-secondary" style="padding:12px 16px; text-align:left; gap:10px; flex-direction:column; align-items:flex-start; height:auto;" onclick="document.querySelector('[data-section=\'summarize\']').click()">
+                        </a>
+                        <a href="#" class="btn-secondary" data-dashboard-section="summarize" style="padding:12px 16px; text-align:left; gap:10px; flex-direction:column; align-items:flex-start; height:auto; text-decoration:none;">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-warning)" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                             <span style="font-size:0.85rem;">Summarize Text</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -218,6 +291,11 @@ function mountQAForm(container) {
         const submitBtn = document.getElementById('qa-submit-btn');
 
         if (!question) return;
+
+        if (!hasAuthenticatedSession()) {
+            showGuestPrompt(outputDiv, 'Smart Q&A');
+            return;
+        }
 
         setLoadingBtn(submitBtn, true);
         outputDiv.style.display = 'block';
@@ -277,6 +355,11 @@ function mountExplainForm(container) {
 
         if (!concept) return;
 
+        if (!hasAuthenticatedSession()) {
+            showGuestPrompt(outputDiv, 'Concept Explainer');
+            return;
+        }
+
         setLoadingBtn(submitBtn, true);
         outputDiv.style.display = 'block';
         outputDiv.innerHTML = getLoadingSpinnerHTML("Analyzing and generating explanations...");
@@ -334,6 +417,11 @@ function mountSummarizeForm(container) {
         const submitBtn = document.getElementById('summ-submit-btn');
 
         if (!text || text.length < 10) return;
+
+        if (!hasAuthenticatedSession()) {
+            showGuestPrompt(outputDiv, 'Text Summarizer');
+            return;
+        }
 
         setLoadingBtn(submitBtn, true);
         outputDiv.style.display = 'block';

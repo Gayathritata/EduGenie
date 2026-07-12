@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const response = await fetch('/auth/login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include',
+                    cache: 'no-store',
                     body: JSON.stringify({ username: usernameInput, password: passwordInput })
                 });
                 
@@ -90,18 +92,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 3. Logout Button Click Handler
-    const logoutBtn = document.getElementById('logout-btn');
+    const logoutBtn = document.getElementById('logout-btn') || document.getElementById('dashboard-logout-btn');
     if (logoutBtn) {
         logoutBtn.addEventListener('click', async (e) => {
             e.preventDefault();
             try {
-                await fetch('/auth/logout', { method: 'POST' });
+                await fetch('/auth/logout', { method: 'POST', credentials: 'include', cache: 'no-store' });
             } catch (err) {
                 console.error('Logout error:', err);
             }
-            // Clear local states and redirect
             document.cookie = "access_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-            window.location.href = '/login?msg=logged_out';
+            window.location.replace('/');
         });
     }
 });

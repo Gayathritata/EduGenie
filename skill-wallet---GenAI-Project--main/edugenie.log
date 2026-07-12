@@ -4430,3 +4430,1185 @@ google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429,
 2026-07-09 13:48:28,329 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 304 | Duration: 0.0094s
 2026-07-09 13:48:30,834 [INFO] edugenie: Method: GET | Path: /register | Status: 200 | Duration: 0.0059s
 2026-07-09 13:50:25,110 [INFO] edugenie: EduGenie application shutting down.
+2026-07-12 10:43:20,859 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 10:43:37,949 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 10:43:37,980 [INFO] edugenie: Initializing database tables...
+2026-07-12 10:43:37,984 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 10:47:59,911 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 10:48:17,090 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 10:48:17,123 [INFO] edugenie: Initializing database tables...
+2026-07-12 10:48:17,126 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 10:50:37,988 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 10:50:56,138 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0945s
+2026-07-12 10:50:56,319 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0668s
+2026-07-12 10:50:56,321 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0669s
+2026-07-12 10:51:27,192 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0530s
+2026-07-12 10:51:27,220 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0039s
+2026-07-12 10:51:27,222 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0034s
+2026-07-12 10:52:11,029 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 401 | Duration: 0.0751s
+2026-07-12 10:52:25,399 [INFO] edugenie: Method: GET | Path: /register | Status: 200 | Duration: 0.0196s
+2026-07-12 10:52:56,911 [INFO] edugenie: Method: GET | Path: /docs | Status: 200 | Duration: 0.0006s
+2026-07-12 10:52:58,042 [INFO] edugenie: Method: GET | Path: /openapi.json | Status: 200 | Duration: 0.0846s
+2026-07-12 10:55:28,388 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 201 | Duration: 0.3057s
+2026-07-12 10:55:28,402 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0018s
+2026-07-12 10:55:42,803 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.3031s
+2026-07-12 10:55:42,872 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0247s
+2026-07-12 10:55:42,891 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0052s
+2026-07-12 10:55:42,893 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0054s
+2026-07-12 10:55:42,895 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0060s
+2026-07-12 10:55:42,897 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0087s
+2026-07-12 10:55:42,954 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0060s
+2026-07-12 10:55:42,969 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0064s
+2026-07-12 10:56:17,671 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0048s
+2026-07-12 10:56:17,685 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0043s
+2026-07-12 10:56:17,713 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0022s
+2026-07-12 10:56:17,727 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0056s
+2026-07-12 10:56:17,728 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0052s
+2026-07-12 10:56:17,731 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0066s
+2026-07-12 10:56:23,647 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0030s
+2026-07-12 10:56:39,696 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.6064s
+2026-07-12 10:56:39,721 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0069s
+2026-07-12 10:56:39,742 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0071s
+2026-07-12 10:56:39,743 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0080s
+2026-07-12 10:56:39,745 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0078s
+2026-07-12 10:56:39,746 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0070s
+2026-07-12 10:56:39,814 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0046s
+2026-07-12 10:56:39,863 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0042s
+2026-07-12 10:56:54,267 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 10:56:54,758 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-12 10:56:54,760 [WARNING] edugenie: Gemini attempt 1/3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}. Retrying in 1.5s...
+2026-07-12 10:56:56,262 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 10:56:56,344 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-12 10:56:56,346 [WARNING] edugenie: Gemini attempt 2/3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}. Retrying in 3.0s...
+2026-07-12 10:56:59,347 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 10:56:59,426 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-12 10:56:59,428 [ERROR] edugenie: Gemini all 3 attempts exhausted: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+Traceback (most recent call last):
+  File "D:\EduGenie\skill-wallet---GenAI-Project--main\app\services\ai_orchestrator.py", line 55, in query_gemini
+    response = self._client.models.generate_content(
+        model="gemini-2.0-flash",
+        contents=prompt
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\models.py", line 6549, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config_to_call
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\models.py", line 4977, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1650, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1443, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1420, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+2026-07-12 10:56:59,481 [INFO] edugenie: Method: POST | Path: /qa | Status: 500 | Duration: 5.2378s
+2026-07-12 10:59:13,954 [WARNING] edugenie: LaMini attempt 1/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 1.5s...
+2026-07-12 10:59:15,457 [WARNING] edugenie: LaMini attempt 2/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 3.0s...
+2026-07-12 10:59:18,508 [WARNING] edugenie: LaMini all retries exhausted after network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Falling back to offline.
+2026-07-12 10:59:18,509 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are an expert educator. Explain the concept of 'python' ...'
+2026-07-12 10:59:18,537 [INFO] edugenie: Method: POST | Path: /explain | Status: 200 | Duration: 4.6714s
+2026-07-12 10:59:31,599 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 10:59:31,651 [INFO] edugenie: Initializing database tables...
+2026-07-12 10:59:31,661 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 11:06:34,027 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 401 | Duration: 0.1059s
+2026-07-12 11:06:34,058 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0250s
+2026-07-12 11:06:34,073 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 401 | Duration: 0.0119s
+2026-07-12 11:06:34,077 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0013s
+2026-07-12 11:11:39,651 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 11:11:39,703 [INFO] edugenie: Initializing database tables...
+2026-07-12 11:11:39,706 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 11:12:33,492 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 201 | Duration: 0.3197s
+2026-07-12 11:12:33,777 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2814s
+2026-07-12 11:12:33,807 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0264s
+2026-07-12 11:12:34,118 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.3071s
+2026-07-12 11:12:34,127 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0046s
+2026-07-12 11:13:23,114 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 11:13:23,165 [INFO] edugenie: Initializing database tables...
+2026-07-12 11:13:23,179 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 11:14:29,414 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0328s
+2026-07-12 11:14:29,428 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0097s
+2026-07-12 11:14:32,481 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0046s
+2026-07-12 11:14:39,014 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0021s
+2026-07-12 11:14:53,358 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.9166s
+2026-07-12 11:14:53,384 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0104s
+2026-07-12 11:14:53,405 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0072s
+2026-07-12 11:14:53,414 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0055s
+2026-07-12 11:15:02,995 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0036s
+2026-07-12 11:15:03,018 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0073s
+2026-07-12 11:15:03,032 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0082s
+2026-07-12 11:15:04,931 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0088s
+2026-07-12 11:15:04,955 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0059s
+2026-07-12 11:15:04,964 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0059s
+2026-07-12 11:15:12,261 [INFO] edugenie: Method: GET | Path: /login | Status: 307 | Duration: 0.0038s
+2026-07-12 11:15:12,275 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0053s
+2026-07-12 11:15:12,304 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0061s
+2026-07-12 11:15:12,313 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0055s
+2026-07-12 11:15:22,095 [WARNING] edugenie: LaMini attempt 1/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 1.5s...
+2026-07-12 11:15:23,600 [WARNING] edugenie: LaMini attempt 2/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 3.0s...
+2026-07-12 11:15:26,619 [WARNING] edugenie: LaMini all retries exhausted after network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Falling back to offline.
+2026-07-12 11:15:26,620 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are an expert educator. Explain the concept of 'what is ...'
+2026-07-12 11:15:26,894 [INFO] edugenie: Method: POST | Path: /explain | Status: 200 | Duration: 5.2239s
+2026-07-12 11:15:33,350 [WARNING] edugenie: LaMini attempt 1/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 1.5s...
+2026-07-12 11:15:34,857 [WARNING] edugenie: LaMini attempt 2/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 3.0s...
+2026-07-12 11:15:37,861 [WARNING] edugenie: LaMini all retries exhausted after network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Falling back to offline.
+2026-07-12 11:15:37,862 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are an expert educator. Explain the concept of 'what is ...'
+2026-07-12 11:15:37,963 [INFO] edugenie: Method: POST | Path: /explain | Status: 200 | Duration: 4.9632s
+2026-07-12 11:15:49,111 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI teaching assistant specializi...'
+2026-07-12 11:15:49,125 [INFO] edugenie: Method: POST | Path: /qa | Status: 200 | Duration: 0.0331s
+2026-07-12 11:26:47,385 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 11:26:47,408 [INFO] edugenie: Initializing database tables...
+2026-07-12 11:26:47,425 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 11:26:54,708 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0451s
+2026-07-12 11:26:54,775 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0553s
+2026-07-12 11:26:54,776 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0553s
+2026-07-12 11:28:11,413 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 11:28:11,432 [INFO] edugenie: Initializing database tables...
+2026-07-12 11:28:11,435 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 11:28:20,026 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0324s
+2026-07-12 11:28:33,268 [INFO] edugenie: Method: GET | Path: / | Status: 307 | Duration: 0.0437s
+2026-07-12 11:28:33,280 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0080s
+2026-07-12 11:28:33,313 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0097s
+2026-07-12 11:28:33,363 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0073s
+2026-07-12 11:32:29,862 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 11:32:29,897 [INFO] edugenie: Initializing database tables...
+2026-07-12 11:32:29,900 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 11:32:30,625 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0295s
+2026-07-12 11:32:30,630 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0013s
+2026-07-12 11:32:57,222 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0015s
+2026-07-12 11:35:46,328 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 11:35:46,358 [INFO] edugenie: Initializing database tables...
+2026-07-12 11:35:46,374 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 11:36:02,971 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 11:36:03,000 [INFO] edugenie: Initializing database tables...
+2026-07-12 11:36:03,012 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 11:36:05,938 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0289s
+2026-07-12 11:36:05,942 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.0013s
+2026-07-12 11:36:54,561 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0017s
+2026-07-12 11:37:16,589 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0020s
+2026-07-12 11:37:30,196 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0121s
+2026-07-12 11:37:36,982 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0013s
+2026-07-12 11:37:56,207 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.3978s
+2026-07-12 11:37:56,227 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0093s
+2026-07-12 11:37:56,245 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0066s
+2026-07-12 11:37:56,257 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0058s
+2026-07-12 11:41:09,480 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0065s
+2026-07-12 11:41:09,489 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0052s
+2026-07-12 11:41:23,738 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 11:41:24,092 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-12 11:41:24,094 [WARNING] edugenie: Gemini attempt 1/3 failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 35.638524809s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '35s'}]}}. Retrying in 1.5s...
+2026-07-12 11:41:25,595 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 11:41:25,780 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-12 11:41:25,781 [WARNING] edugenie: Gemini attempt 2/3 failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 33.947580718s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '33s'}]}}. Retrying in 3.0s...
+2026-07-12 11:41:28,782 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 11:41:28,966 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-12 11:41:28,967 [ERROR] edugenie: Gemini all 3 attempts exhausted: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 30.776133245s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '30s'}]}}
+Traceback (most recent call last):
+  File "D:\EduGenie\skill-wallet---GenAI-Project--main\app\services\ai_orchestrator.py", line 55, in query_gemini
+    response = self._client.models.generate_content(
+        model="gemini-2.0-flash",
+        contents=prompt
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\models.py", line 6549, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config_to_call
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\models.py", line 4977, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1650, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1443, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1420, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 30.776133245s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '30s'}]}}
+2026-07-12 11:41:29,123 [INFO] edugenie: Method: POST | Path: /learn | Status: 500 | Duration: 5.4050s
+2026-07-12 11:41:36,860 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0098s
+2026-07-12 11:41:36,875 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0092s
+2026-07-12 11:41:39,044 [INFO] edugenie: Method: GET | Path: /profile | Status: 200 | Duration: 0.0046s
+2026-07-12 11:41:42,595 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0127s
+2026-07-12 11:41:42,607 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0064s
+2026-07-12 11:41:52,523 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 11:41:52,553 [INFO] edugenie: Initializing database tables...
+2026-07-12 11:41:52,571 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 11:41:54,337 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0249s
+2026-07-12 11:41:54,345 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0054s
+2026-07-12 11:42:01,914 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0028s
+2026-07-12 11:42:06,495 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0020s
+2026-07-12 11:42:06,524 [INFO] edugenie: Method: GET | Path: /history | Status: 401 | Duration: 0.0020s
+2026-07-12 11:42:06,548 [INFO] edugenie: Method: GET | Path: /save | Status: 401 | Duration: 0.0051s
+2026-07-12 11:42:06,554 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0091s
+2026-07-12 11:42:06,564 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0013s
+2026-07-12 11:42:10,899 [INFO] edugenie: Method: GET | Path: /history | Status: 401 | Duration: 0.0013s
+2026-07-12 11:42:10,914 [INFO] edugenie: Method: GET | Path: /save | Status: 401 | Duration: 0.0037s
+2026-07-12 11:42:10,916 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0033s
+2026-07-12 11:42:10,928 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0023s
+2026-07-12 11:42:20,355 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0300s
+2026-07-12 11:42:20,374 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0065s
+2026-07-12 11:42:20,389 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0045s
+2026-07-12 11:42:43,161 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0022s
+2026-07-12 11:42:52,886 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0018s
+2026-07-12 11:42:52,907 [INFO] edugenie: Method: GET | Path: /history | Status: 401 | Duration: 0.0019s
+2026-07-12 11:42:52,924 [INFO] edugenie: Method: GET | Path: /save | Status: 401 | Duration: 0.0023s
+2026-07-12 11:42:52,930 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0015s
+2026-07-12 11:42:52,944 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0012s
+2026-07-12 11:42:59,868 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0022s
+2026-07-12 11:43:06,312 [INFO] edugenie: Method: GET | Path: /logi. | Status: 404 | Duration: 0.0009s
+2026-07-12 11:43:06,344 [INFO] edugenie: Method: GET | Path: /favicon.ico | Status: 404 | Duration: 0.0004s
+2026-07-12 11:43:12,214 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0017s
+2026-07-12 11:46:42,817 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 11:46:42,918 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0269s
+2026-07-12 11:46:42,921 [INFO] httpx: HTTP Request: GET http://testserver/dashboard "HTTP/1.1 200 OK"
+2026-07-12 11:48:30,774 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 11:48:30,851 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0264s
+2026-07-12 11:48:30,853 [INFO] httpx: HTTP Request: GET http://testserver/dashboard "HTTP/1.1 200 OK"
+2026-07-12 11:49:42,976 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 11:49:43,008 [INFO] edugenie: Initializing database tables...
+2026-07-12 11:49:43,010 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 11:49:43,011 [INFO] edugenie: EduGenie application shutting down.
+2026-07-12 11:52:26,663 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 11:52:26,696 [INFO] edugenie: Initializing database tables...
+2026-07-12 11:52:26,698 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 11:52:26,699 [INFO] edugenie: EduGenie application shutting down.
+2026-07-12 11:53:18,447 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 11:53:18,478 [INFO] edugenie: Initializing database tables...
+2026-07-12 11:53:18,482 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 11:54:00,312 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0293s
+2026-07-12 11:54:02,172 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0048s
+2026-07-12 11:54:18,478 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.3024s
+2026-07-12 11:54:18,494 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0074s
+2026-07-12 11:54:18,520 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0061s
+2026-07-12 11:54:18,535 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0059s
+2026-07-12 11:59:16,084 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 11:59:16,139 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0262s
+2026-07-12 11:59:16,141 [INFO] httpx: HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-07-12 11:59:16,150 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0064s
+2026-07-12 11:59:16,152 [INFO] httpx: HTTP Request: GET http://testserver/dashboard "HTTP/1.1 200 OK"
+2026-07-12 12:00:47,289 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 12:00:47,319 [INFO] edugenie: Initializing database tables...
+2026-07-12 12:00:47,321 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 12:00:47,322 [INFO] edugenie: EduGenie application shutting down.
+2026-07-12 12:01:17,895 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 12:01:17,929 [INFO] edugenie: Initializing database tables...
+2026-07-12 12:01:17,933 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 12:02:44,157 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0388s
+2026-07-12 12:02:47,469 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0052s
+2026-07-12 12:02:50,196 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.3766s
+2026-07-12 12:02:50,216 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0115s
+2026-07-12 12:02:50,237 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0077s
+2026-07-12 12:02:50,250 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0063s
+2026-07-12 12:03:53,224 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0056s
+2026-07-12 12:03:53,245 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0053s
+2026-07-12 12:03:53,262 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0052s
+2026-07-12 12:06:27,427 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 12:06:27,517 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0262s
+2026-07-12 12:06:27,520 [INFO] httpx: HTTP Request: GET http://testserver/dashboard "HTTP/1.1 200 OK"
+2026-07-12 12:06:27,541 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 401 | Duration: 0.0183s
+2026-07-12 12:06:27,542 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 401 Unauthorized"
+2026-07-12 12:07:17,512 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 12:07:17,595 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0260s
+2026-07-12 12:07:17,597 [INFO] httpx: HTTP Request: GET http://testserver/dashboard "HTTP/1.1 200 OK"
+2026-07-12 12:07:17,871 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 201 | Duration: 0.2704s
+2026-07-12 12:07:17,872 [INFO] httpx: HTTP Request: POST http://testserver/auth/register "HTTP/1.1 201 Created"
+2026-07-12 12:07:18,140 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2657s
+2026-07-12 12:07:18,143 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-12 12:07:18,148 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0033s
+2026-07-12 12:07:18,150 [INFO] httpx: HTTP Request: GET http://testserver/dashboard "HTTP/1.1 200 OK"
+2026-07-12 12:07:47,338 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0078s
+2026-07-12 12:07:47,354 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0058s
+2026-07-12 12:07:47,364 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0044s
+2026-07-12 12:07:48,536 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0038s
+2026-07-12 12:07:48,555 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0038s
+2026-07-12 12:07:48,562 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0039s
+2026-07-12 12:07:56,535 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0026s
+2026-07-12 12:08:01,264 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0030s
+2026-07-12 12:08:04,180 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0024s
+2026-07-12 12:08:04,194 [INFO] edugenie: Method: GET | Path: /history | Status: 401 | Duration: 0.0015s
+2026-07-12 12:08:04,204 [INFO] edugenie: Method: GET | Path: /save | Status: 401 | Duration: 0.0026s
+2026-07-12 12:08:04,214 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0025s
+2026-07-12 12:08:04,229 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0016s
+2026-07-12 12:08:07,468 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0025s
+2026-07-12 12:08:15,145 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0042s
+2026-07-12 12:08:18,243 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.3315s
+2026-07-12 12:08:18,255 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0024s
+2026-07-12 12:08:18,274 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0036s
+2026-07-12 12:08:18,289 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0033s
+2026-07-12 12:08:45,012 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 12:08:45,059 [INFO] edugenie: Initializing database tables...
+2026-07-12 12:08:45,075 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 12:09:03,850 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0313s
+2026-07-12 12:09:18,166 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0032s
+2026-07-12 12:09:21,483 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0139s
+2026-07-12 12:09:24,334 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.3702s
+2026-07-12 12:09:24,356 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0109s
+2026-07-12 12:09:24,388 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0076s
+2026-07-12 12:09:24,401 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0088s
+2026-07-12 12:09:38,983 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0017s
+2026-07-12 12:09:52,885 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2709s
+2026-07-12 12:09:52,895 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0020s
+2026-07-12 12:09:52,921 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0054s
+2026-07-12 12:09:52,935 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0038s
+2026-07-12 12:11:16,233 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0021s
+2026-07-12 12:11:16,404 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.1282s
+2026-07-12 12:11:16,406 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.1254s
+2026-07-12 12:11:16,408 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.1298s
+2026-07-12 12:11:16,409 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.1283s
+2026-07-12 12:13:07,741 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 401 | Duration: 0.0180s
+2026-07-12 12:18:31,379 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 401 | Duration: 0.0166s
+2026-07-12 12:19:35,873 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 12:19:36,036 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0473s
+2026-07-12 12:19:36,040 [INFO] httpx: HTTP Request: GET http://testserver/dashboard "HTTP/1.1 200 OK"
+2026-07-12 12:19:36,581 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 201 | Duration: 0.5360s
+2026-07-12 12:19:36,584 [INFO] httpx: HTTP Request: POST http://testserver/auth/register "HTTP/1.1 201 Created"
+2026-07-12 12:19:37,932 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 1.3444s
+2026-07-12 12:19:37,940 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-12 12:19:37,967 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0165s
+2026-07-12 12:19:37,975 [INFO] httpx: HTTP Request: GET http://testserver/dashboard "HTTP/1.1 200 OK"
+2026-07-12 12:21:20,106 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 12:21:20,163 [INFO] edugenie: Initializing database tables...
+2026-07-12 12:21:20,181 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 12:23:56,926 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 12:23:56,982 [INFO] edugenie: Initializing database tables...
+2026-07-12 12:23:57,002 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 12:24:35,330 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.3153s
+2026-07-12 12:24:35,413 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0226s
+2026-07-12 12:24:35,444 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0116s
+2026-07-12 12:24:46,065 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0232s
+2026-07-12 12:24:49,534 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0259s
+2026-07-12 12:24:52,847 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.8090s
+2026-07-12 12:24:52,875 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0053s
+2026-07-12 12:24:52,914 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0080s
+2026-07-12 12:24:52,946 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0080s
+2026-07-12 12:38:36,075 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0032s
+2026-07-12 12:38:38,763 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0062s
+2026-07-12 12:38:43,799 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 1.0466s
+2026-07-12 12:38:43,824 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0049s
+2026-07-12 12:38:43,869 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0114s
+2026-07-12 12:38:43,900 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0091s
+2026-07-12 12:38:57,538 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 12:38:58,185 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-12 12:38:58,188 [WARNING] edugenie: Gemini attempt 1/3 failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 1.684356532s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '1s'}]}}. Retrying in 1.5s...
+2026-07-12 12:38:59,689 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 12:38:59,928 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-12 12:38:59,930 [WARNING] edugenie: Gemini attempt 2/3 failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 59.80929878s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '59s'}]}}. Retrying in 3.0s...
+2026-07-12 12:39:02,932 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 12:39:03,214 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-12 12:39:03,216 [ERROR] edugenie: Gemini all 3 attempts exhausted: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 56.602010059s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '56s'}]}}
+Traceback (most recent call last):
+  File "D:\EduGenie\skill-wallet---GenAI-Project--main\app\services\ai_orchestrator.py", line 55, in query_gemini
+    response = self._client.models.generate_content(
+        model="gemini-2.0-flash",
+        contents=prompt
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\models.py", line 6549, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config_to_call
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\models.py", line 4977, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1650, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1443, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1420, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 56.602010059s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '56s'}]}}
+2026-07-12 12:39:03,238 [INFO] edugenie: Method: POST | Path: /qa | Status: 500 | Duration: 10.9644s
+2026-07-12 12:39:53,597 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0080s
+2026-07-12 12:39:53,630 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0092s
+2026-07-12 12:39:53,643 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0079s
+2026-07-12 12:40:03,190 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 12:40:03,619 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-12 12:40:03,621 [WARNING] edugenie: Gemini attempt 1/3 failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 56.189021743s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '56s'}]}}. Retrying in 1.5s...
+2026-07-12 12:40:05,122 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 12:40:05,364 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-12 12:40:05,366 [WARNING] edugenie: Gemini attempt 2/3 failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 54.402500089s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '54s'}]}}. Retrying in 3.0s...
+2026-07-12 12:40:08,367 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 12:40:08,558 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-12 12:40:08,561 [ERROR] edugenie: Gemini all 3 attempts exhausted: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 51.147737854s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '51s'}]}}
+Traceback (most recent call last):
+  File "D:\EduGenie\skill-wallet---GenAI-Project--main\app\services\ai_orchestrator.py", line 55, in query_gemini
+    response = self._client.models.generate_content(
+        model="gemini-1.5-flash",
+        contents=prompt
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\models.py", line 6549, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config_to_call
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\models.py", line 4977, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1650, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1443, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1420, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 51.147737854s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '51s'}]}}
+2026-07-12 12:40:08,570 [INFO] edugenie: Method: POST | Path: /qa | Status: 500 | Duration: 5.4009s
+2026-07-12 12:42:44,291 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 12:42:44,331 [INFO] edugenie: Initializing database tables...
+2026-07-12 12:42:44,362 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 12:43:08,377 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0536s
+2026-07-12 12:43:08,531 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.1276s
+2026-07-12 12:43:08,536 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.1334s
+2026-07-12 12:43:13,737 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0224s
+2026-07-12 12:43:14,106 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0076s
+2026-07-12 12:43:14,112 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0129s
+2026-07-12 12:43:27,715 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.8493s
+2026-07-12 12:43:27,763 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0288s
+2026-07-12 12:43:27,785 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0082s
+2026-07-12 12:43:27,788 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0106s
+2026-07-12 12:43:27,793 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0116s
+2026-07-12 12:43:27,795 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0134s
+2026-07-12 12:43:27,863 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0322s
+2026-07-12 12:43:27,881 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0131s
+2026-07-12 12:45:29,348 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0058s
+2026-07-12 12:45:35,170 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0056s
+2026-07-12 12:45:51,361 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.6795s
+2026-07-12 12:45:51,382 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0041s
+2026-07-12 12:45:51,403 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 304 | Duration: 0.0042s
+2026-07-12 12:45:51,448 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0087s
+2026-07-12 12:45:51,463 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0090s
+2026-07-12 12:46:19,911 [INFO] edugenie: Method: POST | Path: /auth/logout | Status: 200 | Duration: 0.0247s
+2026-07-12 12:46:19,960 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0073s
+2026-07-12 12:47:37,961 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0058s
+2026-07-12 12:47:38,033 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0082s
+2026-07-12 12:47:38,037 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0134s
+2026-07-12 12:47:38,122 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0038s
+2026-07-12 12:47:38,150 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0042s
+2026-07-12 12:47:38,155 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0081s
+2026-07-12 12:47:38,286 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0025s
+2026-07-12 12:47:38,307 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0041s
+2026-07-12 12:47:38,312 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0077s
+2026-07-12 12:47:38,429 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0035s
+2026-07-12 12:47:38,512 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0033s
+2026-07-12 12:47:38,515 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0075s
+2026-07-12 12:47:38,585 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0032s
+2026-07-12 12:47:38,720 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0029s
+2026-07-12 12:47:38,727 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0107s
+2026-07-12 12:47:38,760 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0027s
+2026-07-12 12:47:38,785 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0034s
+2026-07-12 12:47:38,789 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0078s
+2026-07-12 12:47:38,896 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0025s
+2026-07-12 12:47:38,916 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0042s
+2026-07-12 12:47:38,919 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0080s
+2026-07-12 12:47:40,239 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0045s
+2026-07-12 12:47:40,288 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0087s
+2026-07-12 12:47:40,296 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0184s
+2026-07-12 12:47:40,421 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0039s
+2026-07-12 12:47:40,483 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0036s
+2026-07-12 12:47:40,487 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0080s
+2026-07-12 12:47:40,709 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0029s
+2026-07-12 12:47:40,731 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0040s
+2026-07-12 12:47:40,735 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0091s
+2026-07-12 12:47:40,946 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0028s
+2026-07-12 12:47:40,965 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0052s
+2026-07-12 12:47:40,968 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0074s
+2026-07-12 12:47:41,158 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0027s
+2026-07-12 12:47:41,178 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0048s
+2026-07-12 12:47:41,182 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0081s
+2026-07-12 12:47:41,356 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0028s
+2026-07-12 12:47:41,410 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0056s
+2026-07-12 12:47:41,414 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0090s
+2026-07-12 12:47:41,523 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0038s
+2026-07-12 12:47:41,549 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0053s
+2026-07-12 12:47:41,556 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0108s
+2026-07-12 13:05:42,288 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0043s
+2026-07-12 13:05:42,331 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0136s
+2026-07-12 13:05:42,337 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0185s
+2026-07-12 13:05:42,633 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0036s
+2026-07-12 13:05:42,662 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0063s
+2026-07-12 13:05:42,668 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0126s
+2026-07-12 13:05:42,872 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0036s
+2026-07-12 13:05:42,908 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0048s
+2026-07-12 13:05:42,917 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0135s
+2026-07-12 13:05:43,014 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0040s
+2026-07-12 13:05:43,050 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0049s
+2026-07-12 13:05:43,060 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0145s
+2026-07-12 13:05:43,174 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0035s
+2026-07-12 13:05:43,216 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0092s
+2026-07-12 13:05:43,225 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0163s
+2026-07-12 13:05:43,348 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0030s
+2026-07-12 13:05:43,503 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0058s
+2026-07-12 13:05:43,506 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0080s
+2026-07-12 13:05:43,531 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0034s
+2026-07-12 13:05:43,560 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0083s
+2026-07-12 13:05:43,571 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0179s
+2026-07-12 13:05:43,687 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0032s
+2026-07-12 13:05:43,771 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0032s
+2026-07-12 13:05:43,782 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0065s
+2026-07-12 13:05:43,843 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0044s
+2026-07-12 13:05:43,881 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0085s
+2026-07-12 13:05:43,888 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0148s
+2026-07-12 13:05:43,999 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0036s
+2026-07-12 13:05:44,035 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0046s
+2026-07-12 13:05:44,045 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0172s
+2026-07-12 13:05:44,150 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0030s
+2026-07-12 13:05:44,417 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0183s
+2026-07-12 13:05:44,458 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0585s
+2026-07-12 13:05:44,473 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0063s
+2026-07-12 13:05:44,538 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0051s
+2026-07-12 13:05:44,543 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0096s
+2026-07-12 13:05:44,840 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0031s
+2026-07-12 13:05:44,875 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0086s
+2026-07-12 13:05:44,880 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0142s
+2026-07-12 13:05:45,026 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0041s
+2026-07-12 13:05:45,104 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0054s
+2026-07-12 13:05:45,107 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0070s
+2026-07-12 13:05:45,225 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0038s
+2026-07-12 13:05:45,251 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0057s
+2026-07-12 13:05:45,255 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0088s
+2026-07-12 13:05:45,420 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0039s
+2026-07-12 13:05:45,443 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0044s
+2026-07-12 13:05:45,449 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0086s
+2026-07-12 13:05:45,594 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0037s
+2026-07-12 13:05:45,615 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0042s
+2026-07-12 13:05:45,617 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0062s
+2026-07-12 13:05:54,874 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0045s
+2026-07-12 13:05:54,894 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 304 | Duration: 0.0047s
+2026-07-12 13:05:54,898 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 304 | Duration: 0.0097s
+2026-07-12 13:06:08,513 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.4653s
+2026-07-12 13:06:08,541 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0067s
+2026-07-12 13:06:08,569 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 304 | Duration: 0.0125s
+2026-07-12 13:06:08,573 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 304 | Duration: 0.0154s
+2026-07-12 13:06:08,577 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 304 | Duration: 0.0154s
+2026-07-12 13:06:08,580 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0183s
+2026-07-12 13:06:08,617 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0087s
+2026-07-12 13:06:08,632 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0069s
+2026-07-12 13:06:16,713 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0079s
+2026-07-12 13:06:16,729 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0078s
+2026-07-12 13:06:19,706 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0090s
+2026-07-12 13:06:19,722 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0099s
+2026-07-12 13:06:22,602 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0102s
+2026-07-12 13:06:22,619 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0092s
+2026-07-12 13:06:24,983 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0100s
+2026-07-12 13:06:24,999 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0095s
+2026-07-12 13:06:34,291 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 13:06:34,711 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent "HTTP/1.1 404 Not Found"
+2026-07-12 13:06:34,715 [WARNING] edugenie: Gemini attempt 1/3 failed: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}. Retrying in 1.5s...
+2026-07-12 13:06:36,218 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 13:06:36,390 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent "HTTP/1.1 404 Not Found"
+2026-07-12 13:06:36,394 [WARNING] edugenie: Gemini attempt 2/3 failed: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}. Retrying in 3.0s...
+2026-07-12 13:06:39,401 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 13:06:39,584 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent "HTTP/1.1 404 Not Found"
+2026-07-12 13:06:39,588 [ERROR] edugenie: Gemini all 3 attempts exhausted: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+Traceback (most recent call last):
+  File "D:\EduGenie\skill-wallet---GenAI-Project--main\app\services\ai_orchestrator.py", line 55, in query_gemini
+    response = self._client.models.generate_content(
+        model="gemini-1.5-flash",
+        contents=prompt
+    )
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\models.py", line 6549, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config_to_call
+    )
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\models.py", line 4977, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\_api_client.py", line 1650, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\_api_client.py", line 1443, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\_api_client.py", line 1420, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-07-12 13:06:39,632 [INFO] edugenie: Method: POST | Path: /qa | Status: 500 | Duration: 5.3681s
+2026-07-12 13:07:36,932 [INFO] edugenie: EduGenie application shutting down.
+2026-07-12 13:07:48,708 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 13:07:48,751 [INFO] edugenie: Initializing database tables...
+2026-07-12 13:07:48,772 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 13:08:32,898 [INFO] edugenie: EduGenie application shutting down.
+2026-07-12 13:08:40,517 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 13:08:40,568 [INFO] edugenie: Initializing database tables...
+2026-07-12 13:08:40,573 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 13:10:14,667 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.2182s
+2026-07-12 13:10:14,905 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.1812s
+2026-07-12 13:10:14,907 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.1941s
+2026-07-12 13:10:14,912 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.1877s
+2026-07-12 13:10:14,914 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.1898s
+2026-07-12 13:10:14,917 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.1914s
+2026-07-12 13:10:14,919 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.2042s
+2026-07-12 13:10:14,944 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0153s
+2026-07-12 13:10:14,948 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0142s
+2026-07-12 13:10:14,953 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0211s
+2026-07-12 13:10:15,011 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0096s
+2026-07-12 13:10:15,016 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0157s
+2026-07-12 13:10:15,020 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0151s
+2026-07-12 13:10:15,023 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0180s
+2026-07-12 13:10:15,027 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0223s
+2026-07-12 13:10:15,031 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0278s
+2026-07-12 13:10:15,046 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0079s
+2026-07-12 13:10:15,050 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0099s
+2026-07-12 13:10:15,272 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0047s
+2026-07-12 13:10:15,307 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0109s
+2026-07-12 13:10:15,314 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0150s
+2026-07-12 13:10:15,317 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0188s
+2026-07-12 13:10:15,321 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0235s
+2026-07-12 13:10:15,324 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0243s
+2026-07-12 13:10:15,327 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0259s
+2026-07-12 13:10:15,341 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0054s
+2026-07-12 13:10:15,344 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0068s
+2026-07-12 13:10:16,313 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0101s
+2026-07-12 13:10:16,377 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0184s
+2026-07-12 13:10:16,381 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0199s
+2026-07-12 13:10:16,385 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0267s
+2026-07-12 13:10:16,387 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0320s
+2026-07-12 13:10:16,390 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0265s
+2026-07-12 13:10:16,393 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0298s
+2026-07-12 13:10:16,408 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0056s
+2026-07-12 13:10:16,410 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0083s
+2026-07-12 13:10:16,639 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0068s
+2026-07-12 13:10:16,672 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0095s
+2026-07-12 13:10:16,678 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0151s
+2026-07-12 13:10:16,682 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0165s
+2026-07-12 13:10:16,684 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0174s
+2026-07-12 13:10:16,686 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0193s
+2026-07-12 13:10:16,688 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0246s
+2026-07-12 13:10:16,703 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0065s
+2026-07-12 13:10:16,706 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0072s
+2026-07-12 13:10:16,905 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0055s
+2026-07-12 13:10:16,940 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0103s
+2026-07-12 13:10:16,948 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0165s
+2026-07-12 13:10:16,951 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0184s
+2026-07-12 13:10:16,953 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0197s
+2026-07-12 13:10:16,959 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0258s
+2026-07-12 13:10:16,961 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0278s
+2026-07-12 13:10:16,973 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0040s
+2026-07-12 13:10:16,976 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0072s
+2026-07-12 13:10:17,168 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0066s
+2026-07-12 13:10:17,198 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0082s
+2026-07-12 13:10:17,203 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0093s
+2026-07-12 13:10:17,206 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0122s
+2026-07-12 13:10:17,213 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0193s
+2026-07-12 13:10:17,215 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0231s
+2026-07-12 13:10:17,218 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0252s
+2026-07-12 13:10:17,231 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0061s
+2026-07-12 13:10:17,233 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0061s
+2026-07-12 13:10:17,508 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0052s
+2026-07-12 13:10:17,546 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0119s
+2026-07-12 13:10:17,550 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0141s
+2026-07-12 13:10:17,555 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0207s
+2026-07-12 13:10:17,559 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0261s
+2026-07-12 13:10:17,562 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0263s
+2026-07-12 13:10:17,565 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0293s
+2026-07-12 13:10:17,581 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0083s
+2026-07-12 13:10:17,584 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0058s
+2026-07-12 13:10:26,601 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 13:10:27,162 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 404 Not Found"
+2026-07-12 13:10:27,165 [WARNING] edugenie: Gemini attempt 1/3 failed: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}. Retrying in 1.5s...
+2026-07-12 13:10:28,668 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 13:10:29,109 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 404 Not Found"
+2026-07-12 13:10:29,113 [WARNING] edugenie: Gemini attempt 2/3 failed: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}. Retrying in 3.0s...
+2026-07-12 13:10:32,117 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 13:10:32,590 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 404 Not Found"
+2026-07-12 13:10:32,593 [ERROR] edugenie: Gemini all 3 attempts exhausted: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
+Traceback (most recent call last):
+  File "D:\EduGenie\skill-wallet---GenAI-Project--main\app\services\ai_orchestrator.py", line 55, in query_gemini
+    response = self._client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=prompt
+    )
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\models.py", line 6549, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config_to_call
+    )
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\models.py", line 4977, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\_api_client.py", line 1650, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\_api_client.py", line 1443, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\_api_client.py", line 1420, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
+2026-07-12 13:10:32,636 [INFO] edugenie: Method: POST | Path: /qa | Status: 500 | Duration: 6.0608s
+2026-07-12 13:10:49,789 [INFO] edugenie: EduGenie application shutting down.
+2026-07-12 13:11:19,905 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 13:11:19,961 [INFO] edugenie: Initializing database tables...
+2026-07-12 13:11:19,982 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 13:11:46,444 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0307s
+2026-07-12 13:11:54,234 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0261s
+2026-07-12 13:12:13,651 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.9321s
+2026-07-12 13:12:13,689 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0183s
+2026-07-12 13:12:13,726 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0111s
+2026-07-12 13:12:13,754 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0121s
+2026-07-12 13:12:24,488 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 13:12:24,958 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-12 13:12:24,962 [WARNING] edugenie: Gemini attempt 1/3 failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 34.425556476s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '34s'}]}}. Retrying in 1.5s...
+2026-07-12 13:12:26,472 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 13:12:26,666 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-12 13:12:26,670 [WARNING] edugenie: Gemini attempt 2/3 failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 32.719497618s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '32s'}]}}. Retrying in 3.0s...
+2026-07-12 13:12:29,680 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 13:12:29,906 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-12 13:12:29,911 [ERROR] edugenie: Gemini all 3 attempts exhausted: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 29.534029768s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '29s'}]}}
+Traceback (most recent call last):
+  File "D:\EduGenie\skill-wallet---GenAI-Project--main\app\services\ai_orchestrator.py", line 55, in query_gemini
+    response = self._client.models.generate_content(
+        model="gemini-2.0-flash-lite",
+        contents=prompt
+    )
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\models.py", line 6549, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config_to_call
+    )
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\models.py", line 4977, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\_api_client.py", line 1650, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\_api_client.py", line 1443, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\_api_client.py", line 1420, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 29.534029768s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '29s'}]}}
+2026-07-12 13:12:29,958 [INFO] edugenie: Method: POST | Path: /qa | Status: 500 | Duration: 5.4953s
+2026-07-12 13:13:50,821 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0117s
+2026-07-12 13:13:51,048 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.1772s
+2026-07-12 13:13:51,112 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.2279s
+2026-07-12 13:13:51,120 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.2434s
+2026-07-12 13:13:51,122 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.2359s
+2026-07-12 13:13:51,124 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.2386s
+2026-07-12 13:13:51,127 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.2402s
+2026-07-12 13:13:51,147 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0098s
+2026-07-12 13:13:51,178 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0424s
+2026-07-12 13:13:51,180 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0413s
+2026-07-12 13:13:51,209 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0096s
+2026-07-12 13:13:51,212 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0137s
+2026-07-12 13:13:51,214 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0136s
+2026-07-12 13:13:51,218 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0160s
+2026-07-12 13:13:51,221 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0168s
+2026-07-12 13:13:51,224 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0195s
+2026-07-12 13:13:51,236 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0047s
+2026-07-12 13:13:51,238 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0058s
+2026-07-12 13:13:51,302 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0051s
+2026-07-12 13:13:51,332 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0103s
+2026-07-12 13:13:51,336 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0105s
+2026-07-12 13:13:51,338 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0140s
+2026-07-12 13:13:51,343 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0168s
+2026-07-12 13:13:51,345 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0221s
+2026-07-12 13:13:51,347 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0196s
+2026-07-12 13:13:51,373 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0114s
+2026-07-12 13:13:51,375 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0165s
+2026-07-12 13:13:51,460 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0137s
+2026-07-12 13:13:51,501 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0097s
+2026-07-12 13:13:51,507 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0167s
+2026-07-12 13:13:51,509 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0176s
+2026-07-12 13:13:51,513 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0194s
+2026-07-12 13:13:51,515 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0204s
+2026-07-12 13:13:51,517 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0213s
+2026-07-12 13:13:51,531 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0055s
+2026-07-12 13:13:51,533 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0057s
+2026-07-12 13:13:51,715 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0047s
+2026-07-12 13:13:51,751 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0077s
+2026-07-12 13:13:51,758 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0161s
+2026-07-12 13:13:51,762 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0160s
+2026-07-12 13:13:51,763 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0193s
+2026-07-12 13:13:51,765 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0198s
+2026-07-12 13:13:51,767 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0209s
+2026-07-12 13:13:51,780 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0070s
+2026-07-12 13:13:51,783 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0054s
+2026-07-12 13:13:59,462 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 13:13:59,846 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-12 13:13:59,851 [WARNING] edugenie: Gemini attempt 1/3 failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 59.60591173s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '59s'}]}}. Retrying in 1.5s...
+2026-07-12 13:14:01,398 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 13:14:01,604 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-12 13:14:01,607 [WARNING] edugenie: Gemini attempt 2/3 failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 57.77998111s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '57s'}]}}. Retrying in 3.0s...
+2026-07-12 13:14:04,618 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 13:14:04,864 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-12 13:14:04,870 [ERROR] edugenie: Gemini all 3 attempts exhausted: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 54.574672216s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '54s'}]}}
+Traceback (most recent call last):
+  File "D:\EduGenie\skill-wallet---GenAI-Project--main\app\services\ai_orchestrator.py", line 55, in query_gemini
+    response = self._client.models.generate_content(
+        model="gemini-2.0-flash-lite",
+        contents=prompt
+    )
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\models.py", line 6549, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config_to_call
+    )
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\models.py", line 4977, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\_api_client.py", line 1650, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\_api_client.py", line 1443, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\_api_client.py", line 1420, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 54.574672216s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '54s'}]}}
+2026-07-12 13:14:04,959 [INFO] edugenie: Method: POST | Path: /qa | Status: 500 | Duration: 5.5154s
+2026-07-12 13:14:37,752 [INFO] edugenie: EduGenie application shutting down.
+2026-07-12 13:14:55,133 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 13:14:55,162 [INFO] edugenie: Initializing database tables...
+2026-07-12 13:14:55,177 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 13:15:28,958 [INFO] edugenie: EduGenie application shutting down.
+2026-07-12 13:17:35,667 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 13:17:35,708 [INFO] edugenie: Initializing database tables...
+2026-07-12 13:17:35,717 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 13:18:08,063 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0411s
+2026-07-12 13:19:20,227 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0078s
+2026-07-12 13:19:20,405 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.1379s
+2026-07-12 13:19:20,409 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.1391s
+2026-07-12 13:19:20,597 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0070s
+2026-07-12 13:19:20,673 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0045s
+2026-07-12 13:19:20,676 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0068s
+2026-07-12 13:19:20,899 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0025s
+2026-07-12 13:19:20,921 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0036s
+2026-07-12 13:19:20,925 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0086s
+2026-07-12 13:19:21,213 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0034s
+2026-07-12 13:19:21,233 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0053s
+2026-07-12 13:19:21,237 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0071s
+2026-07-12 13:19:21,492 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0028s
+2026-07-12 13:19:21,520 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0043s
+2026-07-12 13:19:21,530 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0135s
+2026-07-12 13:19:21,773 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0023s
+2026-07-12 13:19:21,793 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0039s
+2026-07-12 13:19:21,796 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0078s
+2026-07-12 13:19:22,097 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0031s
+2026-07-12 13:19:22,155 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0049s
+2026-07-12 13:19:22,159 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0076s
+2026-07-12 13:19:22,312 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0027s
+2026-07-12 13:19:22,337 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0046s
+2026-07-12 13:19:22,342 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0104s
+2026-07-12 13:19:22,644 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0035s
+2026-07-12 13:19:22,667 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0052s
+2026-07-12 13:19:22,671 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0083s
+2026-07-12 13:21:13,593 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0259s
+2026-07-12 13:21:37,437 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0042s
+2026-07-12 13:21:42,388 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0023s
+2026-07-12 13:21:44,061 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0057s
+2026-07-12 13:21:52,508 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0101s
+2026-07-12 13:21:53,988 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0057s
+2026-07-12 13:21:54,037 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0115s
+2026-07-12 13:21:54,045 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0174s
+2026-07-12 13:21:54,242 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0040s
+2026-07-12 13:21:54,264 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0055s
+2026-07-12 13:21:54,268 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0102s
+2026-07-12 13:21:54,354 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0086s
+2026-07-12 13:21:54,401 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0034s
+2026-07-12 13:21:54,404 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0077s
+2026-07-12 13:21:54,506 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0033s
+2026-07-12 13:21:54,524 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0059s
+2026-07-12 13:21:54,527 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0065s
+2026-07-12 13:21:54,649 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0032s
+2026-07-12 13:21:54,674 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0040s
+2026-07-12 13:21:54,679 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0109s
+2026-07-12 13:21:56,807 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0052s
+2026-07-12 13:22:12,356 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0025s
+2026-07-12 13:22:14,433 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0066s
+2026-07-12 13:22:18,497 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0061s
+2026-07-12 13:22:22,097 [INFO] edugenie: Method: GET | Path: /register | Status: 200 | Duration: 0.0188s
+2026-07-12 13:22:28,778 [INFO] edugenie: Method: GET | Path: /register | Status: 200 | Duration: 0.0030s
+2026-07-12 13:22:38,518 [INFO] edugenie: Method: GET | Path: /register | Status: 200 | Duration: 0.0116s
+2026-07-12 13:23:04,479 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 201 | Duration: 0.7538s
+2026-07-12 13:23:04,499 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0031s
+2026-07-12 13:23:22,340 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0027s
+2026-07-12 13:23:23,051 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0031s
+2026-07-12 13:23:54,102 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0085s
+2026-07-12 13:23:57,582 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.7442s
+2026-07-12 13:23:57,624 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0228s
+2026-07-12 13:23:57,662 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0148s
+2026-07-12 13:23:57,693 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0130s
+2026-07-12 13:24:12,209 [WARNING] edugenie: LaMini attempt 1/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 1.5s...
+2026-07-12 13:24:13,718 [WARNING] edugenie: LaMini attempt 2/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 3.0s...
+2026-07-12 13:24:16,726 [WARNING] edugenie: LaMini all retries exhausted after network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Falling back to offline.
+2026-07-12 13:24:16,730 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are an expert educator. Explain the concept of 'python' ...'
+2026-07-12 13:24:16,758 [INFO] edugenie: Method: POST | Path: /explain | Status: 200 | Duration: 5.6077s
+2026-07-12 13:24:31,878 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0138s
+2026-07-12 13:24:38,482 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0139s
+2026-07-12 13:24:47,211 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 13:24:51,116 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-12 13:24:51,122 [WARNING] edugenie: Gemini attempt 1/3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}. Retrying in 1.5s...
+2026-07-12 13:24:52,631 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 13:24:56,355 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-12 13:24:56,358 [WARNING] edugenie: Gemini attempt 2/3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}. Retrying in 3.0s...
+2026-07-12 13:24:59,363 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 13:24:59,960 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-12 13:24:59,964 [ERROR] edugenie: Gemini all 3 attempts exhausted: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+Traceback (most recent call last):
+  File "D:\EduGenie\skill-wallet---GenAI-Project--main\app\services\ai_orchestrator.py", line 55, in query_gemini
+    response = self._client.models.generate_content(
+        model="gemini-2.0-flash-lite",
+        contents=prompt
+    )
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\models.py", line 6549, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config_to_call
+    )
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\models.py", line 4977, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\_api_client.py", line 1650, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\_api_client.py", line 1443, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\_api_client.py", line 1420, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+2026-07-12 13:25:00,067 [INFO] edugenie: Method: POST | Path: /qa | Status: 500 | Duration: 12.9047s
+2026-07-12 13:26:16,364 [INFO] edugenie: EduGenie application shutting down.
+2026-07-12 13:26:23,944 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 13:26:23,982 [INFO] edugenie: Initializing database tables...
+2026-07-12 13:26:23,992 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 13:26:53,622 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-12 13:26:53,995 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-12 13:26:54,011 [WARNING] edugenie: Invalid API Key detected. Falling back to offline mode.
+2026-07-12 13:26:54,017 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI teaching assistant specializi...'
+2026-07-12 13:26:54,045 [INFO] edugenie: Method: POST | Path: /qa | Status: 200 | Duration: 0.5432s
+2026-07-12 13:27:57,213 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0318s
+2026-07-12 13:28:08,772 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0226s
+2026-07-12 13:28:11,953 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.8037s
+2026-07-12 13:28:11,990 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0181s
+2026-07-12 13:28:12,025 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0113s
+2026-07-12 13:28:12,053 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0106s
+2026-07-12 13:28:28,048 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI teaching assistant specializi...'
+2026-07-12 13:28:28,065 [INFO] edugenie: Method: POST | Path: /qa | Status: 200 | Duration: 0.0341s
+2026-07-12 13:28:40,441 [WARNING] edugenie: LaMini attempt 1/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 1.5s...
+2026-07-12 13:28:41,967 [WARNING] edugenie: LaMini attempt 2/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 3.0s...
+2026-07-12 13:28:44,977 [WARNING] edugenie: LaMini all retries exhausted after network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Falling back to offline.
+2026-07-12 13:28:44,979 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are an expert educator. Explain the concept of 'python' ...'
+2026-07-12 13:28:44,998 [INFO] edugenie: Method: POST | Path: /explain | Status: 200 | Duration: 4.6302s
+2026-07-12 13:28:52,981 [WARNING] edugenie: LaMini attempt 1/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 1.5s...
+2026-07-12 13:28:54,488 [WARNING] edugenie: LaMini attempt 2/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 3.0s...
+2026-07-12 13:28:57,934 [WARNING] edugenie: LaMini all retries exhausted after network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Falling back to offline.
+2026-07-12 13:28:57,937 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are an expert educator. Explain the concept of 'python' ...'
+2026-07-12 13:28:57,956 [INFO] edugenie: Method: POST | Path: /explain | Status: 200 | Duration: 5.1596s
+2026-07-12 13:29:12,737 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, a personalized learning coach. Generate a ...'
+2026-07-12 13:29:12,777 [INFO] edugenie: Method: POST | Path: /learn | Status: 200 | Duration: 0.0688s
+2026-07-12 13:29:33,774 [INFO] edugenie: Method: POST | Path: /save | Status: 201 | Duration: 0.0272s
+2026-07-12 13:29:42,935 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0153s
+2026-07-12 13:29:50,758 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0132s
+2026-07-12 13:29:54,958 [INFO] edugenie: Method: GET | Path: /profile | Status: 200 | Duration: 0.0141s
+2026-07-12 13:29:59,021 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0181s
+2026-07-12 13:29:59,055 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0068s

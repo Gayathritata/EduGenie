@@ -13,49 +13,36 @@ templates = Jinja2Templates(directory="app/templates")
 
 @router.get("/", response_class=HTMLResponse, tags=["Views"])
 def get_landing(request: Request, db: Session = Depends(get_db)):
-    """Serve the Landing page view."""
-    try:
-        get_current_user(request, db)
-        return RedirectResponse(url="/dashboard")
-    except Exception:
-        response = templates.TemplateResponse(request, "landing.html")
-        if request.cookies.get("access_token"):
-            response.delete_cookie("access_token")
-        return response
+    """Serve the landing page as the default entry point."""
+    response = templates.TemplateResponse(request, "landing.html")
+    if request.cookies.get("access_token"):
+        response.delete_cookie("access_token", path="/")
+    return response
 
 @router.get("/login", response_class=HTMLResponse, tags=["Views"])
 def get_login(request: Request, db: Session = Depends(get_db)):
-    """Serve the Login view."""
-    try:
-        get_current_user(request, db)
-        return RedirectResponse(url="/dashboard")
-    except Exception:
-        response = templates.TemplateResponse(request, "auth/login.html")
-        if request.cookies.get("access_token"):
-            response.delete_cookie("access_token")
-        return response
+    """Serve the login view without forcing the dashboard."""
+    response = templates.TemplateResponse(request, "auth/login.html")
+    if request.cookies.get("access_token"):
+        response.delete_cookie("access_token", path="/")
+    return response
 
 @router.get("/register", response_class=HTMLResponse, tags=["Views"])
 def get_register(request: Request, db: Session = Depends(get_db)):
-    """Serve the Registration view."""
-    try:
-        get_current_user(request, db)
-        return RedirectResponse(url="/dashboard")
-    except Exception:
-        response = templates.TemplateResponse(request, "auth/register.html")
-        if request.cookies.get("access_token"):
-            response.delete_cookie("access_token")
-        return response
+    """Serve the registration view without forcing the dashboard."""
+    response = templates.TemplateResponse(request, "auth/register.html")
+    if request.cookies.get("access_token"):
+        response.delete_cookie("access_token", path="/")
+    return response
 
 @router.get("/dashboard", response_class=HTMLResponse, tags=["Views"])
 def get_dashboard(request: Request, db: Session = Depends(get_db)):
-    """Serve the authenticated Dashboard workspace."""
+    """Serve the dashboard workspace for both guests and signed-in users."""
     try:
         current_user = get_current_user(request, db)
         return templates.TemplateResponse(request, "dashboard/index.html", {"user": current_user})
     except Exception:
-        # Redirect to login page if user session is invalid
-        response = RedirectResponse(url="/login?msg=unauthorized")
+        response = templates.TemplateResponse(request, "dashboard/index.html", {"user": None})
         if request.cookies.get("access_token"):
-            response.delete_cookie("access_token")
+            response.delete_cookie("access_token", path="/")
         return response

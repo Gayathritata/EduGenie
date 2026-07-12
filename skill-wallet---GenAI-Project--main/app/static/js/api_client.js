@@ -10,7 +10,9 @@ class APIClient {
 
         const config = {
             method,
-            headers
+            headers,
+            credentials: 'include',
+            cache: 'no-store'
         };
 
         if (body && (method === 'POST' || method === 'PUT')) {
@@ -22,10 +24,9 @@ class APIClient {
             const data = await response.json();
 
             if (!response.ok) {
-                // If 401 Unauthorized, wipe cookies and route to login
                 if (response.status === 401) {
-                    APIClient.logoutUserLocal();
-                    return;
+                    APIClient.clearAuthCookie();
+                    throw new Error('Please sign in to use this feature.');
                 }
                 
                 const errorMsg = data.detail || 'An unexpected error occurred.';
@@ -51,10 +52,12 @@ class APIClient {
         return APIClient.request(endpoint, 'DELETE');
     }
 
-    static logoutUserLocal() {
-        // Wipe local authorization and redirect to login screen
+    static clearAuthCookie() {
         document.cookie = "access_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        window.location.href = '/login?msg=Session expired. Please log in.';
+    }
+
+    static logoutUserLocal() {
+        APIClient.clearAuthCookie();
     }
 }
 
