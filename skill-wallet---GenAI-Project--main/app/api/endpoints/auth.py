@@ -2,6 +2,7 @@
 # Part of EduGenie SmartBridge Project
 
 from fastapi import APIRouter, Depends, HTTPException, status, Response, Request
+from sqlalchemy import func
 from sqlalchemy.orm import Session
 from app.database.session import get_db
 from app.models.user import User
@@ -53,10 +54,15 @@ def login(
     db: Session = Depends(get_db)
 ):
     """Authenticate student, issue JWT access token, and set HttpOnly session cookie."""
-    # Retrieve user by username or email
+    # Retrieve user by username or email in a case-insensitive way
+    login_value = login_data.username.strip().lower()
     user = db.query(User).filter(
-        (User.username == login_data.username) | (User.email == login_data.username)
+        func.lower(User.username) == login_value
     ).first()
+    if not user:
+        user = db.query(User).filter(
+            func.lower(User.email) == login_value
+        ).first()
     
     if not user or not verify_password(login_data.password, user.password_hash):
         # Audit failed attempt
@@ -83,7 +89,8 @@ def login(
         httponly=True,
         max_age=1440 * 60,  # 24 hours
         samesite="lax",
-        secure=False  # Set True in production over HTTPS
+        secure=False,  # Set True in production over HTTPS
+        path="/"
     )
     
     # Audit log
@@ -128,7 +135,7 @@ def logout(
         # Swallow auth errors — always clear the cookie regardless
         pass
 
-    response.delete_cookie("access_token")
+    response.delete_cookie("access_token", path="/")
     return {"status": "success", "message": "Successfully logged out"}
 
 @router.get("/profile", response_model=UserOut)

@@ -47,9 +47,16 @@ function mountQuizView(container) {
         const topic = document.getElementById('quiz-topic').value.trim();
         const difficulty = document.getElementById('quiz-diff').value;
         const count = document.getElementById('quiz-count').value;
+        const outputDiv = document.getElementById('quiz-output');
         
         if (!topic) {
             showNotification('Please enter a study topic.', 'error');
+            return;
+        }
+
+        if (!hasAuthCookie()) {
+            outputDiv.style.display = 'block';
+            renderAuthRequiredState(outputDiv, 'Dynamic Quiz');
             return;
         }
 
