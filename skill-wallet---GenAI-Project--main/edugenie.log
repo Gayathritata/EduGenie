@@ -6729,3 +6729,23 @@ google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429,
 2026-07-13 14:44:26,959 [WARNING] edugenie: Gemini API key invalid, rate-limited, or leaked. Falling back to offline mode: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 32.667628725s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '32s'}]}}
 2026-07-13 14:44:26,972 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI teaching assistant specializi...'
 2026-07-13 14:44:27,013 [INFO] edugenie: Method: POST | Path: /qa | Status: 200 | Duration: 0.9189s
+2026-07-13 15:15:55,953 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 15:15:55,982 [INFO] edugenie: Initializing database tables...
+2026-07-13 15:15:56,001 [INFO] edugenie: Database tables initialized successfully.
+2026-07-13 15:16:47,331 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0064s
+2026-07-13 15:16:47,444 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0813s
+2026-07-13 15:16:47,448 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0010s
+2026-07-13 15:16:49,842 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0030s
+2026-07-13 15:16:49,857 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0038s
+2026-07-13 15:16:49,859 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0062s
+2026-07-13 15:17:17,927 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 401 | Duration: 0.6355s
+2026-07-13 15:17:25,784 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.6510s
+2026-07-13 15:17:25,798 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0035s
+2026-07-13 15:17:25,809 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0028s
+2026-07-13 15:17:25,811 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0043s
+2026-07-13 15:17:25,819 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0028s
+2026-07-13 15:17:25,821 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0042s
+2026-07-13 15:17:25,841 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0058s
+2026-07-13 15:17:25,850 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0059s
+2026-07-13 15:17:37,556 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI teaching assistant specializi...'
+2026-07-13 15:17:37,571 [INFO] edugenie: Method: POST | Path: /qa | Status: 200 | Duration: 0.0337s
