@@ -6,6 +6,7 @@ import time
 import json
 import requests
 from google import genai
+from google.genai import types
 from app.config import settings
 
 logger = logging.getLogger("edugenie")
@@ -19,6 +20,8 @@ _RETRY_BASE_DELAY = 1.5     # Base delay in seconds (doubles per retry)
 class AIOrchestrator:
     def __init__(self):
         self.gemini_enabled = False
+        self.gemini_configured = False
+        self.gemini_config_error = None
         self._client = None
         gemini_key = settings.GEMINI_API_KEY
         if (
@@ -26,11 +29,13 @@ class AIOrchestrator:
             and gemini_key != "your-gemini-api-key-here"
             and gemini_key != "YOUR_GOOGLE_API_KEY"
         ):
+            self.gemini_configured = True
             try:
                 self._client = genai.Client(api_key=gemini_key)
                 self.gemini_enabled = True
                 logger.info("Google Gemini API successfully configured.")
             except Exception as e:
+                self.gemini_config_error = str(e)
                 logger.error(f"Error configuring Google Gemini: {e}")
         else:
             logger.warning(
@@ -54,14 +59,23 @@ class AIOrchestrator:
             try:
                 response = self._client.models.generate_content(
                     model="gemini-2.0-flash-lite",
-                    contents=prompt
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        max_output_tokens=150,
+                        system_instruction="Give very short answers. You must still adhere strictly to any requested JSON schema structure if specified in the prompt."
+                    )
                 )
                 return self._clean_markdown_fencing(response.text.strip())
             except Exception as e:
                 error_str = str(e)
-                if "400" in error_str and ("API_KEY_INVALID" in error_str or "API key not valid" in error_str):
-                    logger.warning("Invalid API Key detected. Falling back to offline mode.")
+                if (
+                    ("400" in error_str and ("API_KEY_INVALID" in error_str or "API key not valid" in error_str)) or
+                    ("403" in error_str and "leaked" in error_str.lower()) or
+                    ("429" in error_str or "RESOURCE_EXHAUSTED" in error_str)
+                ):
+                    logger.warning(f"Gemini API key invalid, rate-limited, or leaked. Falling back to offline mode: {error_str}")
                     self.gemini_enabled = False
+                    self.gemini_config_error = error_str
                     return self._get_offline_response(prompt, "gemini")
                 
                 last_error = e
@@ -297,6 +311,17 @@ class AIOrchestrator:
             elif "advanced" in prompt_lower:
                 difficulty = "Advanced"
 
+            # Parse num_questions from prompt if possible
+            num_questions = 2
+            import re
+            match = re.search(r"exactly\s+(\d+)\s+question", prompt_lower)
+            if match:
+                num_questions = int(match.group(1))
+            else:
+                match = re.search(r"exactly\s+(\d+)\s+quiz", prompt_lower)
+                if match:
+                    num_questions = int(match.group(1))
+
             topic = "FastAPI"
             q1 = "What is FastAPI?"
             a1 = "A Python web framework"
@@ -321,25 +346,29 @@ class AIOrchestrator:
                 q1 = "What keyword defines a function?"
                 a1 = "def"
 
+            questions = []
+            for idx in range(1, num_questions + 1):
+                if idx == 1:
+                    questions.append({
+                        "id": 1,
+                        "question": q1,
+                        "choices": [a1, "Incorrect Option A", "Incorrect Option B", "Incorrect Option C"],
+                        "correct_key": "A",
+                        "explanation": f"The correct answer is {a1}."
+                    })
+                else:
+                    questions.append({
+                        "id": idx,
+                        "question": f"Which is a key concept of {topic} (Question {idx})?",
+                        "choices": ["Wrong Distractor X", "Correct Concept Y", "Wrong Distractor Z", "Wrong Distractor W"],
+                        "correct_key": "B",
+                        "explanation": f"Correct Concept Y is essential in {topic}."
+                    })
+
             return json.dumps({
                 "topic": f"{topic}",
                 "difficulty": difficulty,
-                "questions": [
-                    {
-                        "id": 1,
-                        "question": q1,
-                        "choices": [a1, "Incorrect A", "Incorrect B", "Incorrect C"],
-                        "correct_key": "A",
-                        "explanation": f"The correct answer is {a1}."
-                    },
-                    {
-                        "id": 2,
-                        "question": f"Which is a key concept of {topic}?",
-                        "choices": ["Wrong", "Correct Concept", "False", "None"],
-                        "correct_key": "B",
-                        "explanation": f"Correct Concept is essential in {topic}."
-                    }
-                ]
+                "questions": questions
             })
 
         # ── Summarize ─────────────────────────────────────────────────────────
@@ -393,12 +422,14 @@ class AIOrchestrator:
                 f"Shelves, racks, and catalog systems are the data structures.\n"
                 f"Because books are organized properly, you can quickly find, add, or remove a book.Without organization, finding a book would take much longer.\n\n"
                 f"**4. Example**\n\n"
-                f"```python\n# Example demonstrating {concept}\nUse an array for fast access by index.
-Use a linked list when frequent insertions and deletions are needed.
-Use a stack for undo operations.
-Use a queue for scheduling tasks.
-Use a tree to represent hierarchical data.
-Use a graph to model networks like roads or social media connections.\nprint(result)```"
+                f"```python\n# Example demonstrating {concept}\n"
+                f"Use an array for fast access by index.\n"
+                f"Use a linked list when frequent insertions and deletions are needed.\n"
+                f"Use a stack for undo operations.\n"
+                f"Use a queue for scheduling tasks.\n"
+                f"Use a tree to represent hierarchical data.\n"
+                f"Use a graph to model networks like roads or social media connections.\n"
+                f"print(result)```"
                 # f"**5. Applications**\n"
                 # f"Used widely in web development, data processing, and system design patterns.\n\n"
                 # f"**6. Advantages**\n"
@@ -415,16 +446,25 @@ Use a graph to model networks like roads or social media connections.\nprint(res
 
         # ── Q&A default fallback ──────────────────────────────────────────────
         else:
+            if self.gemini_config_error:
+                error_message = f"However, the Google Gemini API returned an error: `{self.gemini_config_error}`. This usually indicates that the key is rate-limited/exhausted, invalid, or has been reported as leaked by Google's security systems."
+            elif self.gemini_configured:
+                error_message = "Your GEMINI_API_KEY is configured in your `.env` file, but there was an issue connecting to the Gemini service. Please check your network connection."
+            else:
+                error_message = "The `GEMINI_API_KEY` environment variable is not configured or using default placeholders."
+
             return json.dumps({
                 "answer": (
                     "## EduGenie — \n\n"
-                    "Hello! I am your AI learning assistant "
-                    "because the `GEMINI_API_KEY` is not configured.\n\n"
+                    f"Hello! I am your AI learning assistant running in **Offline Demo Mode**.\n\n"
+                    f"{error_message}\n\n"
                     "### How to Enable Live AI\n"
-                    "1. Copy `.env.example` to `.env`\n"
-                    "2. Add your Gemini API key: `GEMINI_API_KEY=your-actual-key`\n"
-                    "3. Restart the server: `uvicorn app.main:app --reload`\n\n"
-                    "Get your free Gemini API key at [aistudio.google.com](https://aistudio.google.com/)"
+                    "1. Get a free Gemini API key from [Google AI Studio](https://aistudio.google.com/).\n"
+                    "2. Update the `GEMINI_API_KEY` in your `.env` file:\n"
+                    "   ```env\n"
+                    "   GEMINI_API_KEY=your-actual-key-here\n"
+                    "   ```\n"
+                    "3. Make sure to restart the server after editing the file: `uvicorn app.main:app --reload`"
                 ),
                 "key_concepts": ["API Configuration", "Environment Variables", "Offline Mode"],
                 "follow_up_questions": [

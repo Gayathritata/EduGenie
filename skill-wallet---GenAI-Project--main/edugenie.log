@@ -6061,3 +6061,671 @@ google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, '
 2026-07-13 09:20:45,549 [INFO] edugenie: Database tables initialized successfully.
 2026-07-13 09:21:11,466 [INFO] edugenie: EduGenie application shutting down.
 2026-07-13 09:21:11,530 [INFO] edugenie: EduGenie application shutting down.
+2026-07-13 13:58:36,178 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 14:01:37,103 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 14:04:15,600 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 14:04:15,755 [INFO] edugenie: Method: GET | Path: /health | Status: 200 | Duration: 0.0334s
+2026-07-13 14:04:15,757 [INFO] httpx: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-07-13 14:04:15,763 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 422 | Duration: 0.0031s
+2026-07-13 14:04:15,764 [INFO] httpx: HTTP Request: POST http://testserver/auth/register "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:04:15,809 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 422 | Duration: 0.0430s
+2026-07-13 14:04:15,810 [INFO] httpx: HTTP Request: POST http://testserver/auth/register "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:04:16,365 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 201 | Duration: 0.5522s
+2026-07-13 14:04:16,366 [INFO] httpx: HTTP Request: POST http://testserver/auth/register "HTTP/1.1 201 Created"
+2026-07-13 14:04:16,371 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 400 | Duration: 0.0030s
+2026-07-13 14:04:16,373 [INFO] httpx: HTTP Request: POST http://testserver/auth/register "HTTP/1.1 400 Bad Request"
+2026-07-13 14:04:17,059 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 401 | Duration: 0.6835s
+2026-07-13 14:04:17,065 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 401 Unauthorized"
+2026-07-13 14:04:17,647 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.5741s
+2026-07-13 14:04:17,649 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:04:17,661 [INFO] edugenie: Method: GET | Path: /profile | Status: 200 | Duration: 0.0078s
+2026-07-13 14:04:17,664 [INFO] httpx: HTTP Request: GET http://testserver/profile "HTTP/1.1 200 OK"
+2026-07-13 14:04:18,166 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.4978s
+2026-07-13 14:04:18,169 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:04:18,204 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0290s
+2026-07-13 14:04:18,207 [INFO] httpx: HTTP Request: GET http://testserver/dashboard "HTTP/1.1 200 OK"
+2026-07-13 14:04:18,216 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0046s
+2026-07-13 14:04:18,218 [INFO] httpx: HTTP Request: GET http://testserver/dashboard "HTTP/1.1 200 OK"
+2026-07-13 14:04:18,842 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.6207s
+2026-07-13 14:04:18,848 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:04:18,860 [INFO] edugenie: Method: POST | Path: /qa | Status: 422 | Duration: 0.0077s
+2026-07-13 14:04:18,862 [INFO] httpx: HTTP Request: POST http://testserver/qa "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:04:18,916 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 14:04:20,429 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 14:04:20,435 [WARNING] edugenie: Gemini attempt 1/3 failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 38.917056056s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '38s'}]}}. Retrying in 1.5s...
+2026-07-13 14:04:21,936 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 14:04:22,227 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 14:04:22,229 [WARNING] edugenie: Gemini attempt 2/3 failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 37.10804417s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '37s'}]}}. Retrying in 3.0s...
+2026-07-13 14:04:25,230 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 14:04:25,580 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 14:04:25,584 [ERROR] edugenie: Gemini all 3 attempts exhausted: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 33.81106683s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '33s'}]}}
+Traceback (most recent call last):
+  File "D:\EduGenie\skill-wallet---GenAI-Project--main\app\services\ai_orchestrator.py", line 56, in query_gemini
+    response = self._client.models.generate_content(
+        model="gemini-2.0-flash-lite",
+    ...<4 lines>...
+        )
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\models.py", line 6549, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config_to_call
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\models.py", line 4977, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1650, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1443, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1420, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 33.81106683s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '33s'}]}}
+2026-07-13 14:04:25,911 [INFO] edugenie: Method: POST | Path: /qa | Status: 500 | Duration: 7.0454s
+2026-07-13 14:04:25,913 [INFO] httpx: HTTP Request: POST http://testserver/qa "HTTP/1.1 500 Internal Server Error"
+2026-07-13 14:04:25,921 [INFO] edugenie: Method: GET | Path: /profile | Status: 401 | Duration: 0.0024s
+2026-07-13 14:04:25,923 [INFO] httpx: HTTP Request: GET http://testserver/profile "HTTP/1.1 401 Unauthorized"
+2026-07-13 14:04:25,928 [INFO] edugenie: Method: GET | Path: /profile | Status: 401 | Duration: 0.0023s
+2026-07-13 14:04:25,929 [INFO] httpx: HTTP Request: GET http://testserver/profile "HTTP/1.1 401 Unauthorized"
+2026-07-13 14:04:26,523 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.5909s
+2026-07-13 14:04:26,528 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:04:26,545 [INFO] edugenie: Method: POST | Path: /explain | Status: 422 | Duration: 0.0128s
+2026-07-13 14:04:26,547 [INFO] httpx: HTTP Request: POST http://testserver/explain "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:04:26,554 [INFO] edugenie: Method: POST | Path: /explain | Status: 422 | Duration: 0.0044s
+2026-07-13 14:04:26,556 [INFO] httpx: HTTP Request: POST http://testserver/explain "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:04:27,625 [WARNING] edugenie: LaMini attempt 1/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 1.5s...
+2026-07-13 14:04:29,131 [WARNING] edugenie: LaMini attempt 2/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 3.0s...
+2026-07-13 14:04:32,144 [WARNING] edugenie: LaMini all retries exhausted after network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Falling back to offline.
+2026-07-13 14:04:32,145 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are an expert educator. Explain the concept of 'Recursio...'
+2026-07-13 14:04:32,177 [INFO] edugenie: Method: POST | Path: /explain | Status: 200 | Duration: 5.6182s
+2026-07-13 14:04:32,180 [INFO] httpx: HTTP Request: POST http://testserver/explain "HTTP/1.1 200 OK"
+2026-07-13 14:04:32,623 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.4391s
+2026-07-13 14:04:32,631 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:04:32,661 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 14:04:34,434 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 14:04:34,435 [WARNING] edugenie: Gemini attempt 1/3 failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 24.912048216s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '24s'}]}}. Retrying in 1.5s...
+2026-07-13 14:04:35,937 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 14:04:36,187 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 14:04:36,191 [WARNING] edugenie: Gemini attempt 2/3 failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 23.167509954s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '23s'}]}}. Retrying in 3.0s...
+2026-07-13 14:04:39,193 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 14:04:46,127 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 14:04:46,129 [ERROR] edugenie: Gemini all 3 attempts exhausted: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 13.22985066s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '13s'}]}}
+Traceback (most recent call last):
+  File "D:\EduGenie\skill-wallet---GenAI-Project--main\app\services\ai_orchestrator.py", line 56, in query_gemini
+    response = self._client.models.generate_content(
+        model="gemini-2.0-flash-lite",
+    ...<4 lines>...
+        )
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\models.py", line 6549, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config_to_call
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\models.py", line 4977, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1650, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1443, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1420, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 13.22985066s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '13s'}]}}
+2026-07-13 14:04:46,142 [INFO] edugenie: Method: POST | Path: /quiz | Status: 500 | Duration: 13.5009s
+2026-07-13 14:04:46,146 [INFO] httpx: HTTP Request: POST http://testserver/quiz "HTTP/1.1 500 Internal Server Error"
+2026-07-13 14:04:46,494 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.3405s
+2026-07-13 14:04:46,501 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:04:46,529 [INFO] edugenie: Method: POST | Path: /summarize | Status: 422 | Duration: 0.0167s
+2026-07-13 14:04:46,535 [INFO] httpx: HTTP Request: POST http://testserver/summarize "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:04:46,584 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 14:04:53,638 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 14:04:53,642 [WARNING] edugenie: Gemini attempt 1/3 failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 5.827253122s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '5s'}]}}. Retrying in 1.5s...
+2026-07-13 14:04:55,144 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 14:05:00,136 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 14:05:00,139 [WARNING] edugenie: Gemini attempt 2/3 failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 59.206368307s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '59s'}]}}. Retrying in 3.0s...
+2026-07-13 14:05:03,140 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 14:05:03,394 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 14:05:03,395 [ERROR] edugenie: Gemini all 3 attempts exhausted: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 55.960306278s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '55s'}]}}
+Traceback (most recent call last):
+  File "D:\EduGenie\skill-wallet---GenAI-Project--main\app\services\ai_orchestrator.py", line 56, in query_gemini
+    response = self._client.models.generate_content(
+        model="gemini-2.0-flash-lite",
+    ...<4 lines>...
+        )
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\models.py", line 6549, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config_to_call
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\models.py", line 4977, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1650, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1443, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1420, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 55.960306278s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '55s'}]}}
+2026-07-13 14:05:05,841 [INFO] edugenie: Method: POST | Path: /summarize | Status: 500 | Duration: 19.2958s
+2026-07-13 14:05:05,845 [INFO] httpx: HTTP Request: POST http://testserver/summarize "HTTP/1.1 500 Internal Server Error"
+2026-07-13 14:05:06,454 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.6015s
+2026-07-13 14:05:06,462 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:05:06,501 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 14:05:07,363 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 14:05:07,368 [WARNING] edugenie: Gemini attempt 1/3 failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 51.989899938s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '51s'}]}}. Retrying in 1.5s...
+2026-07-13 14:05:08,870 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 14:05:10,180 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 14:05:10,181 [WARNING] edugenie: Gemini attempt 2/3 failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 49.178386918s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '49s'}]}}. Retrying in 3.0s...
+2026-07-13 14:05:13,183 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 14:05:15,635 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 14:05:15,639 [ERROR] edugenie: Gemini all 3 attempts exhausted: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 43.710843348s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '43s'}]}}
+Traceback (most recent call last):
+  File "D:\EduGenie\skill-wallet---GenAI-Project--main\app\services\ai_orchestrator.py", line 56, in query_gemini
+    response = self._client.models.generate_content(
+        model="gemini-2.0-flash-lite",
+    ...<4 lines>...
+        )
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\models.py", line 6549, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config_to_call
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\models.py", line 4977, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1650, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1443, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1420, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 43.710843348s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '43s'}]}}
+2026-07-13 14:05:15,652 [INFO] edugenie: Method: POST | Path: /learn | Status: 500 | Duration: 9.1813s
+2026-07-13 14:05:15,655 [INFO] httpx: HTTP Request: POST http://testserver/learn "HTTP/1.1 500 Internal Server Error"
+2026-07-13 14:05:15,929 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2697s
+2026-07-13 14:05:15,932 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:05:15,941 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0065s
+2026-07-13 14:05:15,943 [INFO] httpx: HTTP Request: GET http://testserver/history "HTTP/1.1 200 OK"
+2026-07-13 14:05:15,969 [INFO] edugenie: Method: POST | Path: /save | Status: 201 | Duration: 0.0235s
+2026-07-13 14:05:15,973 [INFO] httpx: HTTP Request: POST http://testserver/save "HTTP/1.1 201 Created"
+2026-07-13 14:05:15,983 [INFO] edugenie: Method: GET | Path: /saved | Status: 200 | Duration: 0.0063s
+2026-07-13 14:05:15,985 [INFO] httpx: HTTP Request: GET http://testserver/saved "HTTP/1.1 200 OK"
+2026-07-13 14:05:16,007 [INFO] edugenie: Method: DELETE | Path: /save/3 | Status: 200 | Duration: 0.0203s
+2026-07-13 14:05:16,009 [INFO] httpx: HTTP Request: DELETE http://testserver/save/3 "HTTP/1.1 200 OK"
+2026-07-13 14:05:16,015 [INFO] edugenie: Method: GET | Path: /saved | Status: 200 | Duration: 0.0034s
+2026-07-13 14:05:16,017 [INFO] httpx: HTTP Request: GET http://testserver/saved "HTTP/1.1 200 OK"
+2026-07-13 14:05:16,029 [INFO] edugenie: Method: POST | Path: /auth/logout | Status: 200 | Duration: 0.0111s
+2026-07-13 14:05:16,032 [INFO] httpx: HTTP Request: POST http://testserver/auth/logout "HTTP/1.1 200 OK"
+2026-07-13 14:05:32,214 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 14:05:32,284 [INFO] edugenie: Method: GET | Path: /health | Status: 200 | Duration: 0.0176s
+2026-07-13 14:05:32,286 [INFO] httpx: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-07-13 14:05:32,293 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 422 | Duration: 0.0031s
+2026-07-13 14:05:32,295 [INFO] httpx: HTTP Request: POST http://testserver/auth/register "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:05:32,301 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 422 | Duration: 0.0044s
+2026-07-13 14:05:32,302 [INFO] httpx: HTTP Request: POST http://testserver/auth/register "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:05:32,583 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 201 | Duration: 0.2790s
+2026-07-13 14:05:32,584 [INFO] httpx: HTTP Request: POST http://testserver/auth/register "HTTP/1.1 201 Created"
+2026-07-13 14:05:32,590 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 400 | Duration: 0.0033s
+2026-07-13 14:05:32,591 [INFO] httpx: HTTP Request: POST http://testserver/auth/register "HTTP/1.1 400 Bad Request"
+2026-07-13 14:05:32,864 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 401 | Duration: 0.2713s
+2026-07-13 14:05:32,866 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 401 Unauthorized"
+2026-07-13 14:05:33,142 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2740s
+2026-07-13 14:05:33,145 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:05:33,152 [INFO] edugenie: Method: GET | Path: /profile | Status: 200 | Duration: 0.0042s
+2026-07-13 14:05:33,154 [INFO] httpx: HTTP Request: GET http://testserver/profile "HTTP/1.1 200 OK"
+2026-07-13 14:05:33,431 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2728s
+2026-07-13 14:05:33,434 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:05:33,452 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0147s
+2026-07-13 14:05:33,454 [INFO] httpx: HTTP Request: GET http://testserver/dashboard "HTTP/1.1 200 OK"
+2026-07-13 14:05:33,459 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0026s
+2026-07-13 14:05:33,461 [INFO] httpx: HTTP Request: GET http://testserver/dashboard "HTTP/1.1 200 OK"
+2026-07-13 14:05:33,738 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2743s
+2026-07-13 14:05:33,740 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:05:33,749 [INFO] edugenie: Method: POST | Path: /qa | Status: 422 | Duration: 0.0049s
+2026-07-13 14:05:33,750 [INFO] httpx: HTTP Request: POST http://testserver/qa "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:05:33,769 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 14:05:35,310 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 14:05:35,314 [WARNING] edugenie: Invalid API Key detected. Falling back to offline mode.
+2026-07-13 14:05:35,315 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI teaching assistant specializi...'
+2026-07-13 14:05:35,354 [INFO] edugenie: Method: POST | Path: /qa | Status: 200 | Duration: 1.6019s
+2026-07-13 14:05:35,359 [INFO] httpx: HTTP Request: POST http://testserver/qa "HTTP/1.1 200 OK"
+2026-07-13 14:05:35,368 [INFO] edugenie: Method: GET | Path: /profile | Status: 401 | Duration: 0.0036s
+2026-07-13 14:05:35,371 [INFO] httpx: HTTP Request: GET http://testserver/profile "HTTP/1.1 401 Unauthorized"
+2026-07-13 14:05:35,378 [INFO] edugenie: Method: GET | Path: /profile | Status: 401 | Duration: 0.0034s
+2026-07-13 14:05:35,381 [INFO] httpx: HTTP Request: GET http://testserver/profile "HTTP/1.1 401 Unauthorized"
+2026-07-13 14:05:35,671 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2869s
+2026-07-13 14:05:35,675 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:05:35,695 [INFO] edugenie: Method: POST | Path: /explain | Status: 422 | Duration: 0.0157s
+2026-07-13 14:05:35,697 [INFO] httpx: HTTP Request: POST http://testserver/explain "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:05:35,705 [INFO] edugenie: Method: POST | Path: /explain | Status: 422 | Duration: 0.0036s
+2026-07-13 14:05:35,706 [INFO] httpx: HTTP Request: POST http://testserver/explain "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:05:35,739 [WARNING] edugenie: LaMini attempt 1/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 1.5s...
+2026-07-13 14:05:37,243 [WARNING] edugenie: LaMini attempt 2/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 3.0s...
+2026-07-13 14:05:40,256 [WARNING] edugenie: LaMini all retries exhausted after network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Falling back to offline.
+2026-07-13 14:05:40,256 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are an expert educator. Explain the concept of 'Recursio...'
+2026-07-13 14:05:40,276 [INFO] edugenie: Method: POST | Path: /explain | Status: 200 | Duration: 4.5684s
+2026-07-13 14:05:40,278 [INFO] httpx: HTTP Request: POST http://testserver/explain "HTTP/1.1 200 OK"
+2026-07-13 14:05:40,601 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.3190s
+2026-07-13 14:05:40,605 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:05:40,645 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert exam creator. Generate a rigorou...'
+2026-07-13 14:05:40,662 [INFO] edugenie: Method: POST | Path: /quiz | Status: 200 | Duration: 0.0519s
+2026-07-13 14:05:40,663 [INFO] httpx: HTTP Request: POST http://testserver/quiz "HTTP/1.1 200 OK"
+2026-07-13 14:05:40,935 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2684s
+2026-07-13 14:05:40,939 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:05:40,949 [INFO] edugenie: Method: POST | Path: /summarize | Status: 422 | Duration: 0.0054s
+2026-07-13 14:05:40,951 [INFO] httpx: HTTP Request: POST http://testserver/summarize "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:05:40,966 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI summarization engine for stud...'
+2026-07-13 14:05:40,979 [INFO] edugenie: Method: POST | Path: /summarize | Status: 200 | Duration: 0.0260s
+2026-07-13 14:05:40,981 [INFO] httpx: HTTP Request: POST http://testserver/summarize "HTTP/1.1 200 OK"
+2026-07-13 14:05:41,252 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2685s
+2026-07-13 14:05:41,256 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:05:41,279 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, a personalized learning coach. Generate a ...'
+2026-07-13 14:05:41,294 [INFO] edugenie: Method: POST | Path: /learn | Status: 200 | Duration: 0.0339s
+2026-07-13 14:05:41,297 [INFO] httpx: HTTP Request: POST http://testserver/learn "HTTP/1.1 200 OK"
+2026-07-13 14:05:41,565 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2648s
+2026-07-13 14:05:41,567 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:05:41,578 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0073s
+2026-07-13 14:05:41,580 [INFO] httpx: HTTP Request: GET http://testserver/history "HTTP/1.1 200 OK"
+2026-07-13 14:05:41,598 [INFO] edugenie: Method: POST | Path: /save | Status: 201 | Duration: 0.0159s
+2026-07-13 14:05:41,599 [INFO] httpx: HTTP Request: POST http://testserver/save "HTTP/1.1 201 Created"
+2026-07-13 14:05:41,607 [INFO] edugenie: Method: GET | Path: /saved | Status: 200 | Duration: 0.0052s
+2026-07-13 14:05:41,609 [INFO] httpx: HTTP Request: GET http://testserver/saved "HTTP/1.1 200 OK"
+2026-07-13 14:05:41,631 [INFO] edugenie: Method: DELETE | Path: /save/3 | Status: 200 | Duration: 0.0186s
+2026-07-13 14:05:41,633 [INFO] httpx: HTTP Request: DELETE http://testserver/save/3 "HTTP/1.1 200 OK"
+2026-07-13 14:05:41,639 [INFO] edugenie: Method: GET | Path: /saved | Status: 200 | Duration: 0.0037s
+2026-07-13 14:05:41,641 [INFO] httpx: HTTP Request: GET http://testserver/saved "HTTP/1.1 200 OK"
+2026-07-13 14:05:41,655 [INFO] edugenie: Method: POST | Path: /auth/logout | Status: 200 | Duration: 0.0118s
+2026-07-13 14:05:41,657 [INFO] httpx: HTTP Request: POST http://testserver/auth/logout "HTTP/1.1 200 OK"
+2026-07-13 14:11:11,653 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 14:11:11,684 [INFO] edugenie: Initializing database tables...
+2026-07-13 14:11:11,693 [INFO] edugenie: Database tables initialized successfully.
+2026-07-13 14:12:17,676 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0369s
+2026-07-13 14:12:17,743 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 304 | Duration: 0.0545s
+2026-07-13 14:12:17,744 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 304 | Duration: 0.0555s
+2026-07-13 14:12:20,120 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0019s
+2026-07-13 14:12:26,624 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0176s
+2026-07-13 14:12:26,657 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 304 | Duration: 0.0069s
+2026-07-13 14:12:26,659 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 304 | Duration: 0.0106s
+2026-07-13 14:12:30,142 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.6966s
+2026-07-13 14:12:30,182 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0196s
+2026-07-13 14:12:30,202 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 304 | Duration: 0.0062s
+2026-07-13 14:12:30,202 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 304 | Duration: 0.0066s
+2026-07-13 14:12:30,205 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 304 | Duration: 0.0064s
+2026-07-13 14:12:30,206 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 304 | Duration: 0.0072s
+2026-07-13 14:12:30,222 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0089s
+2026-07-13 14:12:30,238 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0091s
+2026-07-13 14:12:58,294 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 14:12:58,906 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 14:12:58,910 [WARNING] edugenie: Gemini attempt 1/3 failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 506.967608ms.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '0s'}]}}. Retrying in 1.5s...
+2026-07-13 14:13:00,412 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 14:13:00,747 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 14:13:00,750 [WARNING] edugenie: Gemini attempt 2/3 failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 58.645664414s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '58s'}]}}. Retrying in 3.0s...
+2026-07-13 14:13:03,751 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 14:13:04,026 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 14:13:04,029 [ERROR] edugenie: Gemini all 3 attempts exhausted: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 55.35198567s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '55s'}]}}
+Traceback (most recent call last):
+  File "D:\EduGenie\skill-wallet---GenAI-Project--main\app\services\ai_orchestrator.py", line 56, in query_gemini
+    response = self._client.models.generate_content(
+        model="gemini-2.0-flash-lite",
+    ...<4 lines>...
+        )
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\models.py", line 6549, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config_to_call
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\models.py", line 4977, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1650, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1443, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Hp\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "D:\EduGenie\.venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\_api_client.py", line 1420, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EduGenie\.venv\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 55.35198567s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '55s'}]}}
+2026-07-13 14:13:04,053 [INFO] edugenie: Method: POST | Path: /qa | Status: 500 | Duration: 5.7831s
+2026-07-13 14:14:50,967 [INFO] edugenie: EduGenie application shutting down.
+2026-07-13 14:19:09,963 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 14:19:10,033 [INFO] edugenie: Initializing database tables...
+2026-07-13 14:19:10,042 [INFO] edugenie: Database tables initialized successfully.
+2026-07-13 14:19:10,270 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0486s
+2026-07-13 14:19:10,373 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0836s
+2026-07-13 14:19:10,375 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0864s
+2026-07-13 14:19:14,545 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0133s
+2026-07-13 14:19:14,562 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0045s
+2026-07-13 14:19:14,564 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0060s
+2026-07-13 14:19:36,977 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 401 | Duration: 0.0944s
+2026-07-13 14:19:59,192 [INFO] edugenie: Method: GET | Path: /register | Status: 200 | Duration: 0.0095s
+2026-07-13 14:20:24,842 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 201 | Duration: 0.6236s
+2026-07-13 14:20:24,851 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0010s
+2026-07-13 14:20:31,393 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.4456s
+2026-07-13 14:20:31,423 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0170s
+2026-07-13 14:20:31,433 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0019s
+2026-07-13 14:20:31,441 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0059s
+2026-07-13 14:20:31,443 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0077s
+2026-07-13 14:20:31,445 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0069s
+2026-07-13 14:20:31,470 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0099s
+2026-07-13 14:20:31,484 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0103s
+2026-07-13 14:20:39,480 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 14:20:40,318 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 14:20:40,322 [WARNING] edugenie: Gemini API key invalid or rate-limited/exhausted. Falling back to offline mode.
+2026-07-13 14:20:40,322 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI teaching assistant specializi...'
+2026-07-13 14:20:40,346 [INFO] edugenie: Method: POST | Path: /qa | Status: 200 | Duration: 0.8897s
+2026-07-13 14:27:02,965 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 14:27:03,083 [INFO] edugenie: Method: GET | Path: /health | Status: 200 | Duration: 0.0210s
+2026-07-13 14:27:03,085 [INFO] httpx: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-07-13 14:27:03,091 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 422 | Duration: 0.0039s
+2026-07-13 14:27:03,093 [INFO] httpx: HTTP Request: POST http://testserver/auth/register "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:27:03,100 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 422 | Duration: 0.0046s
+2026-07-13 14:27:03,101 [INFO] httpx: HTTP Request: POST http://testserver/auth/register "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:27:03,375 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 201 | Duration: 0.2725s
+2026-07-13 14:27:03,378 [INFO] httpx: HTTP Request: POST http://testserver/auth/register "HTTP/1.1 201 Created"
+2026-07-13 14:27:03,384 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 400 | Duration: 0.0036s
+2026-07-13 14:27:03,386 [INFO] httpx: HTTP Request: POST http://testserver/auth/register "HTTP/1.1 400 Bad Request"
+2026-07-13 14:27:03,657 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 401 | Duration: 0.2682s
+2026-07-13 14:27:03,659 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 401 Unauthorized"
+2026-07-13 14:27:03,954 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2920s
+2026-07-13 14:27:03,957 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:27:03,967 [INFO] edugenie: Method: GET | Path: /profile | Status: 200 | Duration: 0.0063s
+2026-07-13 14:27:03,969 [INFO] httpx: HTTP Request: GET http://testserver/profile "HTTP/1.1 200 OK"
+2026-07-13 14:27:04,257 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2842s
+2026-07-13 14:27:04,260 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:27:04,277 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0141s
+2026-07-13 14:27:04,279 [INFO] httpx: HTTP Request: GET http://testserver/dashboard "HTTP/1.1 200 OK"
+2026-07-13 14:27:04,285 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0028s
+2026-07-13 14:27:04,286 [INFO] httpx: HTTP Request: GET http://testserver/dashboard "HTTP/1.1 200 OK"
+2026-07-13 14:27:04,591 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.3024s
+2026-07-13 14:27:04,593 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:27:04,600 [INFO] edugenie: Method: POST | Path: /qa | Status: 422 | Duration: 0.0039s
+2026-07-13 14:27:04,602 [INFO] httpx: HTTP Request: POST http://testserver/qa "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:27:04,619 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 14:27:05,523 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 14:27:05,527 [WARNING] edugenie: Gemini API key invalid or rate-limited/exhausted. Falling back to offline mode.
+2026-07-13 14:27:05,527 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI teaching assistant specializi...'
+2026-07-13 14:27:05,551 [INFO] edugenie: Method: POST | Path: /qa | Status: 200 | Duration: 0.9467s
+2026-07-13 14:27:05,553 [INFO] httpx: HTTP Request: POST http://testserver/qa "HTTP/1.1 200 OK"
+2026-07-13 14:27:05,559 [INFO] edugenie: Method: GET | Path: /profile | Status: 401 | Duration: 0.0021s
+2026-07-13 14:27:05,560 [INFO] httpx: HTTP Request: GET http://testserver/profile "HTTP/1.1 401 Unauthorized"
+2026-07-13 14:27:05,565 [INFO] edugenie: Method: GET | Path: /profile | Status: 401 | Duration: 0.0024s
+2026-07-13 14:27:05,567 [INFO] httpx: HTTP Request: GET http://testserver/profile "HTTP/1.1 401 Unauthorized"
+2026-07-13 14:27:05,836 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2674s
+2026-07-13 14:27:05,839 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:27:05,852 [INFO] edugenie: Method: POST | Path: /explain | Status: 422 | Duration: 0.0094s
+2026-07-13 14:27:05,854 [INFO] httpx: HTTP Request: POST http://testserver/explain "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:27:05,859 [INFO] edugenie: Method: POST | Path: /explain | Status: 422 | Duration: 0.0036s
+2026-07-13 14:27:05,861 [INFO] httpx: HTTP Request: POST http://testserver/explain "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:27:06,270 [WARNING] edugenie: LaMini attempt 1/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 1.5s...
+2026-07-13 14:27:07,772 [WARNING] edugenie: LaMini attempt 2/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 3.0s...
+2026-07-13 14:27:10,782 [WARNING] edugenie: LaMini all retries exhausted after network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Falling back to offline.
+2026-07-13 14:27:10,783 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are an expert educator. Explain the concept of 'Recursio...'
+2026-07-13 14:27:10,799 [INFO] edugenie: Method: POST | Path: /explain | Status: 200 | Duration: 4.9360s
+2026-07-13 14:27:10,803 [INFO] httpx: HTTP Request: POST http://testserver/explain "HTTP/1.1 200 OK"
+2026-07-13 14:27:11,079 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2718s
+2026-07-13 14:27:11,082 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:27:11,105 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert exam creator. Generate a rigorou...'
+2026-07-13 14:27:11,119 [INFO] edugenie: Method: POST | Path: /quiz | Status: 200 | Duration: 0.0325s
+2026-07-13 14:27:11,122 [INFO] httpx: HTTP Request: POST http://testserver/quiz "HTTP/1.1 200 OK"
+2026-07-13 14:27:11,393 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2679s
+2026-07-13 14:27:11,395 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:27:11,401 [INFO] edugenie: Method: POST | Path: /summarize | Status: 422 | Duration: 0.0037s
+2026-07-13 14:27:11,403 [INFO] httpx: HTTP Request: POST http://testserver/summarize "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:27:11,417 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI summarization engine for stud...'
+2026-07-13 14:27:11,428 [INFO] edugenie: Method: POST | Path: /summarize | Status: 200 | Duration: 0.0226s
+2026-07-13 14:27:11,430 [INFO] httpx: HTTP Request: POST http://testserver/summarize "HTTP/1.1 200 OK"
+2026-07-13 14:27:11,699 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2669s
+2026-07-13 14:27:11,703 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:27:11,724 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, a personalized learning coach. Generate a ...'
+2026-07-13 14:27:11,762 [INFO] edugenie: Method: POST | Path: /learn | Status: 200 | Duration: 0.0546s
+2026-07-13 14:27:11,766 [INFO] httpx: HTTP Request: POST http://testserver/learn "HTTP/1.1 200 OK"
+2026-07-13 14:27:12,067 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2703s
+2026-07-13 14:27:12,069 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:27:12,078 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0061s
+2026-07-13 14:27:12,080 [INFO] httpx: HTTP Request: GET http://testserver/history "HTTP/1.1 200 OK"
+2026-07-13 14:27:12,099 [INFO] edugenie: Method: POST | Path: /save | Status: 201 | Duration: 0.0168s
+2026-07-13 14:27:12,101 [INFO] httpx: HTTP Request: POST http://testserver/save "HTTP/1.1 201 Created"
+2026-07-13 14:27:12,109 [INFO] edugenie: Method: GET | Path: /saved | Status: 200 | Duration: 0.0050s
+2026-07-13 14:27:12,111 [INFO] httpx: HTTP Request: GET http://testserver/saved "HTTP/1.1 200 OK"
+2026-07-13 14:27:12,129 [INFO] edugenie: Method: DELETE | Path: /save/3 | Status: 200 | Duration: 0.0156s
+2026-07-13 14:27:12,131 [INFO] httpx: HTTP Request: DELETE http://testserver/save/3 "HTTP/1.1 200 OK"
+2026-07-13 14:27:12,138 [INFO] edugenie: Method: GET | Path: /saved | Status: 200 | Duration: 0.0044s
+2026-07-13 14:27:12,140 [INFO] httpx: HTTP Request: GET http://testserver/saved "HTTP/1.1 200 OK"
+2026-07-13 14:27:12,156 [INFO] edugenie: Method: POST | Path: /auth/logout | Status: 200 | Duration: 0.0133s
+2026-07-13 14:27:12,158 [INFO] httpx: HTTP Request: POST http://testserver/auth/logout "HTTP/1.1 200 OK"
+2026-07-13 14:32:04,305 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 14:37:47,133 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 14:37:47,205 [INFO] edugenie: Method: GET | Path: /health | Status: 200 | Duration: 0.0205s
+2026-07-13 14:37:47,207 [INFO] httpx: HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-07-13 14:37:47,213 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 422 | Duration: 0.0033s
+2026-07-13 14:37:47,215 [INFO] httpx: HTTP Request: POST http://testserver/auth/register "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:37:47,221 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 422 | Duration: 0.0040s
+2026-07-13 14:37:47,222 [INFO] httpx: HTTP Request: POST http://testserver/auth/register "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:37:47,517 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 201 | Duration: 0.2926s
+2026-07-13 14:37:47,521 [INFO] httpx: HTTP Request: POST http://testserver/auth/register "HTTP/1.1 201 Created"
+2026-07-13 14:37:47,531 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 400 | Duration: 0.0064s
+2026-07-13 14:37:47,534 [INFO] httpx: HTTP Request: POST http://testserver/auth/register "HTTP/1.1 400 Bad Request"
+2026-07-13 14:37:47,816 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 401 | Duration: 0.2781s
+2026-07-13 14:37:47,817 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 401 Unauthorized"
+2026-07-13 14:37:48,108 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2888s
+2026-07-13 14:37:48,112 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:37:48,128 [INFO] edugenie: Method: GET | Path: /profile | Status: 200 | Duration: 0.0093s
+2026-07-13 14:37:48,132 [INFO] httpx: HTTP Request: GET http://testserver/profile "HTTP/1.1 200 OK"
+2026-07-13 14:37:48,488 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.3522s
+2026-07-13 14:37:48,491 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:37:48,515 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0192s
+2026-07-13 14:37:48,517 [INFO] httpx: HTTP Request: GET http://testserver/dashboard "HTTP/1.1 200 OK"
+2026-07-13 14:37:48,523 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0028s
+2026-07-13 14:37:48,525 [INFO] httpx: HTTP Request: GET http://testserver/dashboard "HTTP/1.1 200 OK"
+2026-07-13 14:37:48,797 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2695s
+2026-07-13 14:37:48,800 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:37:48,811 [INFO] edugenie: Method: POST | Path: /qa | Status: 422 | Duration: 0.0059s
+2026-07-13 14:37:48,813 [INFO] httpx: HTTP Request: POST http://testserver/qa "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:37:48,830 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 14:37:49,976 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 14:37:49,981 [WARNING] edugenie: Gemini API key invalid, rate-limited, or leaked. Falling back to offline mode: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 9.360271523s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '9s'}]}}
+2026-07-13 14:37:49,981 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI teaching assistant specializi...'
+2026-07-13 14:37:50,012 [INFO] edugenie: Method: POST | Path: /qa | Status: 200 | Duration: 1.1970s
+2026-07-13 14:37:50,015 [INFO] httpx: HTTP Request: POST http://testserver/qa "HTTP/1.1 200 OK"
+2026-07-13 14:37:50,032 [INFO] edugenie: Method: GET | Path: /profile | Status: 401 | Duration: 0.0060s
+2026-07-13 14:37:50,034 [INFO] httpx: HTTP Request: GET http://testserver/profile "HTTP/1.1 401 Unauthorized"
+2026-07-13 14:37:50,040 [INFO] edugenie: Method: GET | Path: /profile | Status: 401 | Duration: 0.0027s
+2026-07-13 14:37:50,042 [INFO] httpx: HTTP Request: GET http://testserver/profile "HTTP/1.1 401 Unauthorized"
+2026-07-13 14:37:50,353 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.3074s
+2026-07-13 14:37:50,356 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:37:50,369 [INFO] edugenie: Method: POST | Path: /explain | Status: 422 | Duration: 0.0103s
+2026-07-13 14:37:50,371 [INFO] httpx: HTTP Request: POST http://testserver/explain "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:37:50,376 [INFO] edugenie: Method: POST | Path: /explain | Status: 422 | Duration: 0.0033s
+2026-07-13 14:37:50,378 [INFO] httpx: HTTP Request: POST http://testserver/explain "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:37:50,764 [WARNING] edugenie: LaMini attempt 1/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 1.5s...
+2026-07-13 14:37:52,271 [WARNING] edugenie: LaMini attempt 2/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 3.0s...
+2026-07-13 14:37:55,288 [WARNING] edugenie: LaMini all retries exhausted after network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Falling back to offline.
+2026-07-13 14:37:55,288 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are an expert educator. Explain the concept of 'Recursio...'
+2026-07-13 14:37:55,302 [INFO] edugenie: Method: POST | Path: /explain | Status: 200 | Duration: 4.9223s
+2026-07-13 14:37:55,304 [INFO] httpx: HTTP Request: POST http://testserver/explain "HTTP/1.1 200 OK"
+2026-07-13 14:37:55,697 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.3850s
+2026-07-13 14:37:55,701 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:37:55,727 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert exam creator. Generate a rigorou...'
+2026-07-13 14:37:55,747 [INFO] edugenie: Method: POST | Path: /quiz | Status: 200 | Duration: 0.0416s
+2026-07-13 14:37:55,749 [INFO] httpx: HTTP Request: POST http://testserver/quiz "HTTP/1.1 200 OK"
+2026-07-13 14:37:55,770 [INFO] edugenie: Method: POST | Path: /quiz/submit | Status: 200 | Duration: 0.0177s
+2026-07-13 14:37:55,772 [INFO] httpx: HTTP Request: POST http://testserver/quiz/submit "HTTP/1.1 200 OK"
+2026-07-13 14:37:56,071 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2966s
+2026-07-13 14:37:56,073 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:37:56,080 [INFO] edugenie: Method: POST | Path: /summarize | Status: 422 | Duration: 0.0049s
+2026-07-13 14:37:56,082 [INFO] httpx: HTTP Request: POST http://testserver/summarize "HTTP/1.1 422 Unprocessable Entity"
+2026-07-13 14:37:56,100 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI summarization engine for stud...'
+2026-07-13 14:37:56,110 [INFO] edugenie: Method: POST | Path: /summarize | Status: 200 | Duration: 0.0244s
+2026-07-13 14:37:56,112 [INFO] httpx: HTTP Request: POST http://testserver/summarize "HTTP/1.1 200 OK"
+2026-07-13 14:37:56,396 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2811s
+2026-07-13 14:37:56,399 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:37:56,418 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, a personalized learning coach. Generate a ...'
+2026-07-13 14:37:56,431 [INFO] edugenie: Method: POST | Path: /learn | Status: 200 | Duration: 0.0285s
+2026-07-13 14:37:56,433 [INFO] httpx: HTTP Request: POST http://testserver/learn "HTTP/1.1 200 OK"
+2026-07-13 14:37:56,710 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.2734s
+2026-07-13 14:37:56,714 [INFO] httpx: HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2026-07-13 14:37:56,731 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0120s
+2026-07-13 14:37:56,735 [INFO] httpx: HTTP Request: GET http://testserver/history "HTTP/1.1 200 OK"
+2026-07-13 14:37:56,760 [INFO] edugenie: Method: POST | Path: /save | Status: 201 | Duration: 0.0210s
+2026-07-13 14:37:56,762 [INFO] httpx: HTTP Request: POST http://testserver/save "HTTP/1.1 201 Created"
+2026-07-13 14:37:56,768 [INFO] edugenie: Method: GET | Path: /saved | Status: 200 | Duration: 0.0043s
+2026-07-13 14:37:56,770 [INFO] httpx: HTTP Request: GET http://testserver/saved "HTTP/1.1 200 OK"
+2026-07-13 14:37:56,787 [INFO] edugenie: Method: DELETE | Path: /save/3 | Status: 200 | Duration: 0.0155s
+2026-07-13 14:37:56,790 [INFO] httpx: HTTP Request: DELETE http://testserver/save/3 "HTTP/1.1 200 OK"
+2026-07-13 14:37:56,796 [INFO] edugenie: Method: GET | Path: /saved | Status: 200 | Duration: 0.0037s
+2026-07-13 14:37:56,798 [INFO] httpx: HTTP Request: GET http://testserver/saved "HTTP/1.1 200 OK"
+2026-07-13 14:37:56,814 [INFO] edugenie: Method: POST | Path: /auth/logout | Status: 200 | Duration: 0.0124s
+2026-07-13 14:37:56,816 [INFO] httpx: HTTP Request: POST http://testserver/auth/logout "HTTP/1.1 200 OK"
+2026-07-13 14:41:42,984 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 14:41:43,010 [INFO] edugenie: Initializing database tables...
+2026-07-13 14:41:43,014 [INFO] edugenie: Database tables initialized successfully.
+2026-07-13 14:41:43,086 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0249s
+2026-07-13 14:41:44,743 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0132s
+2026-07-13 14:41:47,929 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.3602s
+2026-07-13 14:41:47,967 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0190s
+2026-07-13 14:41:48,029 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0102s
+2026-07-13 14:41:48,080 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0078s
+2026-07-13 14:42:00,623 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 14:42:01,439 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 14:42:01,442 [WARNING] edugenie: Gemini API key invalid, rate-limited, or leaked. Falling back to offline mode: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 57.989395251s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '57s'}]}}
+2026-07-13 14:42:01,448 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI teaching assistant specializi...'
+2026-07-13 14:42:01,476 [INFO] edugenie: Method: POST | Path: /qa | Status: 200 | Duration: 0.8776s
+2026-07-13 14:43:54,484 [INFO] edugenie: EduGenie application shutting down.
+2026-07-13 14:44:03,627 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 14:44:03,703 [INFO] edugenie: Initializing database tables...
+2026-07-13 14:44:03,715 [INFO] edugenie: Database tables initialized successfully.
+2026-07-13 14:44:03,905 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0247s
+2026-07-13 14:44:06,529 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0180s
+2026-07-13 14:44:19,397 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.7095s
+2026-07-13 14:44:19,434 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0198s
+2026-07-13 14:44:19,472 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0092s
+2026-07-13 14:44:19,481 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0064s
+2026-07-13 14:44:26,136 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 14:44:26,952 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 14:44:26,959 [WARNING] edugenie: Gemini API key invalid, rate-limited, or leaked. Falling back to offline mode: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-lite\nPlease retry in 32.667628725s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-lite', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-lite'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '32s'}]}}
+2026-07-13 14:44:26,972 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI teaching assistant specializi...'
+2026-07-13 14:44:27,013 [INFO] edugenie: Method: POST | Path: /qa | Status: 200 | Duration: 0.9189s
