@@ -5351,3 +5351,174 @@ NoneType: None
 2026-07-11 23:03:21,008 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are EduGenie, an expert AI summarization engine for stud...'
 2026-07-11 23:03:21,024 [INFO] edugenie: Method: POST | Path: /summarize | Status: 200 | Duration: 4.6192s
 2026-07-11 23:14:05,278 [INFO] edugenie: EduGenie application shutting down.
+2026-07-13 16:11:08,140 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 16:11:08,213 [INFO] edugenie: Initializing database tables...
+2026-07-13 16:11:08,245 [INFO] edugenie: Database tables initialized successfully.
+2026-07-13 16:11:21,032 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 16:11:21,102 [INFO] edugenie: Initializing database tables...
+2026-07-13 16:11:21,116 [INFO] edugenie: Database tables initialized successfully.
+2026-07-13 16:11:41,816 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.1181s
+2026-07-13 16:11:42,103 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.1970s
+2026-07-13 16:11:42,107 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.1986s
+2026-07-13 16:12:12,856 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0267s
+2026-07-13 16:12:13,099 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0142s
+2026-07-13 16:12:13,099 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0104s
+2026-07-13 16:12:28,850 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.5738s
+2026-07-13 16:12:28,922 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0288s
+2026-07-13 16:12:28,979 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0102s
+2026-07-13 16:12:29,007 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0171s
+2026-07-13 16:12:29,011 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0251s
+2026-07-13 16:12:29,017 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0271s
+2026-07-13 16:12:29,123 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0330s
+2026-07-13 16:12:29,159 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0234s
+2026-07-13 16:12:41,778 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:12:42,174 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:12:42,178 [WARNING] edugenie: [Gemini Retry] Attempt 1/3 | Delay=1.5s | Error=400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+2026-07-13 16:12:43,680 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:12:43,782 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:12:43,786 [WARNING] edugenie: [Gemini Retry] Attempt 2/3 | Delay=3.0s | Error=400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+2026-07-13 16:12:46,792 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:12:46,962 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:12:46,962 [ERROR] edugenie: Gemini retries exhausted. Using LaMini.
+NoneType: None
+2026-07-13 16:12:46,962 [INFO] edugenie: Hugging Face API key not configured. Running LaMini in offline mock mode.
+2026-07-13 16:12:46,962 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are EduGenie, an expert AI teaching assistant specializi...'
+2026-07-13 16:12:46,962 [ERROR] edugenie: Failed parsing inner JSON array: Expecting value: line 1 column 2 (char 1)
+2026-07-13 16:12:46,962 [WARNING] edugenie: Failed to parse Q&A response JSON: AI response text is not valid parseable JSON.. Using raw response.
+2026-07-13 16:12:46,987 [INFO] edugenie: Method: POST | Path: /qa | Status: 200 | Duration: 5.2461s
+2026-07-13 16:13:17,276 [INFO] edugenie: Hugging Face API key not configured. Running LaMini in offline mock mode.
+2026-07-13 16:13:17,277 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are an expert educator. Explain the concept of 'What is ...'
+2026-07-13 16:13:17,303 [INFO] edugenie: Method: POST | Path: /explain | Status: 200 | Duration: 0.2983s
+2026-07-13 16:18:01,326 [INFO] edugenie: EduGenie application shutting down.
+2026-07-13 16:19:27,455 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 16:19:27,555 [INFO] edugenie: Initializing database tables...
+2026-07-13 16:19:27,567 [INFO] edugenie: Database tables initialized successfully.
+2026-07-13 16:19:27,685 [INFO] edugenie: EduGenie application shutting down.
+2026-07-13 16:19:37,916 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 16:19:37,983 [INFO] edugenie: Initializing database tables...
+2026-07-13 16:19:38,006 [INFO] edugenie: Database tables initialized successfully.
+2026-07-13 16:19:38,170 [INFO] edugenie: Hugging Face API key not configured. Running LaMini in offline mock mode.
+2026-07-13 16:19:38,171 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are an expert educator. Explain the concept of 'What is ...'
+2026-07-13 16:19:38,192 [INFO] edugenie: Method: POST | Path: /explain | Status: 200 | Duration: 0.1804s
+2026-07-13 16:19:52,394 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:19:52,847 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:19:52,850 [WARNING] edugenie: [Gemini Retry] Attempt 1/3 | Delay=1.5s | Error=400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+2026-07-13 16:19:54,352 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:19:54,476 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:19:54,479 [WARNING] edugenie: [Gemini Retry] Attempt 2/3 | Delay=3.0s | Error=400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+2026-07-13 16:19:57,482 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:19:57,573 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:19:57,589 [ERROR] edugenie: Gemini retries exhausted. Using LaMini.
+NoneType: None
+2026-07-13 16:19:57,589 [INFO] edugenie: Hugging Face API key not configured. Running LaMini in offline mock mode.
+2026-07-13 16:19:57,589 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are EduGenie, a personalized learning coach. Generate a ...'
+2026-07-13 16:19:57,632 [INFO] edugenie: Method: POST | Path: /learn | Status: 200 | Duration: 5.2659s
+2026-07-13 16:20:46,439 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:20:46,703 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:20:46,703 [WARNING] edugenie: [Gemini Retry] Attempt 1/3 | Delay=1.5s | Error=400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+2026-07-13 16:20:48,206 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:20:48,340 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:20:48,344 [WARNING] edugenie: [Gemini Retry] Attempt 2/3 | Delay=3.0s | Error=400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+2026-07-13 16:20:51,345 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:20:51,448 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:20:51,450 [ERROR] edugenie: Gemini retries exhausted. Using LaMini.
+NoneType: None
+2026-07-13 16:20:51,452 [INFO] edugenie: Hugging Face API key not configured. Running LaMini in offline mock mode.
+2026-07-13 16:20:51,452 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are EduGenie, an expert exam creator. Generate a rigorou...'
+2026-07-13 16:20:51,486 [INFO] edugenie: Method: POST | Path: /quiz | Status: 200 | Duration: 5.0788s
+2026-07-13 16:21:22,111 [INFO] edugenie: Method: POST | Path: /quiz/submit | Status: 200 | Duration: 0.0558s
+2026-07-13 16:21:50,239 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:21:50,602 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:21:50,604 [WARNING] edugenie: [Gemini Retry] Attempt 1/3 | Delay=1.5s | Error=400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+2026-07-13 16:21:52,106 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:21:52,343 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:21:52,349 [WARNING] edugenie: [Gemini Retry] Attempt 2/3 | Delay=3.0s | Error=400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+2026-07-13 16:21:55,351 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:21:55,515 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:21:55,518 [ERROR] edugenie: Gemini retries exhausted. Using LaMini.
+NoneType: None
+2026-07-13 16:21:55,519 [INFO] edugenie: Hugging Face API key not configured. Running LaMini in offline mock mode.
+2026-07-13 16:21:55,520 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are EduGenie, an expert exam creator. Generate a rigorou...'
+2026-07-13 16:21:55,545 [INFO] edugenie: Method: POST | Path: /quiz | Status: 200 | Duration: 5.3316s
+2026-07-13 16:22:24,502 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:22:24,804 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:22:24,806 [WARNING] edugenie: [Gemini Retry] Attempt 1/3 | Delay=1.5s | Error=400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+2026-07-13 16:22:26,308 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:22:26,439 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:22:26,441 [WARNING] edugenie: [Gemini Retry] Attempt 2/3 | Delay=3.0s | Error=400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+2026-07-13 16:22:29,442 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:22:29,543 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:22:29,545 [ERROR] edugenie: Gemini retries exhausted. Using LaMini.
+NoneType: None
+2026-07-13 16:22:29,547 [INFO] edugenie: Hugging Face API key not configured. Running LaMini in offline mock mode.
+2026-07-13 16:22:29,547 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are EduGenie, an expert exam creator. Generate a rigorou...'
+2026-07-13 16:22:29,805 [INFO] edugenie: Method: POST | Path: /quiz | Status: 200 | Duration: 5.3321s
+2026-07-13 16:22:59,295 [INFO] edugenie: EduGenie application shutting down.
+2026-07-13 16:23:09,053 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 16:23:09,128 [INFO] edugenie: Initializing database tables...
+2026-07-13 16:23:09,151 [INFO] edugenie: Database tables initialized successfully.
+2026-07-13 16:24:08,574 [INFO] edugenie: EduGenie application shutting down.
+2026-07-13 16:50:19,845 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 16:50:19,909 [INFO] edugenie: Initializing database tables...
+2026-07-13 16:50:19,936 [INFO] edugenie: Database tables initialized successfully.
+2026-07-13 16:50:20,160 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 307 | Duration: 0.2034s
+2026-07-13 16:50:20,266 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.3122s
+2026-07-13 16:50:20,269 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.3142s
+2026-07-13 16:50:20,270 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:50:20,271 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.3186s
+2026-07-13 16:50:20,279 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.3241s
+2026-07-13 16:50:20,283 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.3287s
+2026-07-13 16:50:20,803 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0269s
+2026-07-13 16:50:20,875 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0167s
+2026-07-13 16:50:22,954 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:50:22,959 [WARNING] edugenie: [Gemini Retry] Attempt 1/3 | Delay=1.5s | Error=400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+2026-07-13 16:50:24,460 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:50:24,561 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:50:24,564 [WARNING] edugenie: [Gemini Retry] Attempt 2/3 | Delay=3.0s | Error=400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+2026-07-13 16:50:27,565 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:50:27,737 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:50:27,742 [ERROR] edugenie: Gemini retries exhausted. Using LaMini.
+NoneType: None
+2026-07-13 16:50:27,742 [INFO] edugenie: Hugging Face API key not configured. Running LaMini in offline mock mode.
+2026-07-13 16:50:27,743 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are EduGenie, an expert exam creator. Generate a rigorou...'
+2026-07-13 16:50:28,079 [INFO] edugenie: Method: POST | Path: /quiz | Status: 200 | Duration: 8.1253s
+2026-07-13 16:50:53,467 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:50:53,740 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:50:53,743 [WARNING] edugenie: [Gemini Retry] Attempt 1/3 | Delay=1.5s | Error=400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+2026-07-13 16:50:55,244 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:50:55,376 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:50:55,379 [WARNING] edugenie: [Gemini Retry] Attempt 2/3 | Delay=3.0s | Error=400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+2026-07-13 16:50:58,380 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:50:58,485 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:50:58,487 [ERROR] edugenie: Gemini retries exhausted. Using LaMini.
+NoneType: None
+2026-07-13 16:50:58,488 [INFO] edugenie: Hugging Face API key not configured. Running LaMini in offline mock mode.
+2026-07-13 16:50:58,489 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are EduGenie, a personalized learning coach. Generate a ...'
+2026-07-13 16:50:58,526 [INFO] edugenie: Method: POST | Path: /learn | Status: 200 | Duration: 5.0868s
+2026-07-13 16:51:10,997 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:51:11,353 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:51:11,355 [WARNING] edugenie: [Gemini Retry] Attempt 1/3 | Delay=1.5s | Error=400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+2026-07-13 16:51:12,857 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:51:12,963 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:51:12,966 [WARNING] edugenie: [Gemini Retry] Attempt 2/3 | Delay=3.0s | Error=400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+2026-07-13 16:51:15,968 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:51:16,162 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:51:16,165 [ERROR] edugenie: Gemini retries exhausted. Using LaMini.
+NoneType: None
+2026-07-13 16:51:16,166 [INFO] edugenie: Hugging Face API key not configured. Running LaMini in offline mock mode.
+2026-07-13 16:51:16,166 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are EduGenie, an expert exam creator. Generate a rigorou...'
+2026-07-13 16:51:16,194 [INFO] edugenie: Method: POST | Path: /quiz | Status: 200 | Duration: 5.2194s
+2026-07-13 16:54:00,775 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:54:00,941 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:54:00,942 [WARNING] edugenie: [Gemini Retry] Attempt 1/3 | Delay=1.5s | Error=400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+2026-07-13 16:54:02,444 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:54:02,568 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:54:02,569 [WARNING] edugenie: [Gemini Retry] Attempt 2/3 | Delay=3.0s | Error=400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+2026-07-13 16:54:05,570 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 16:54:05,662 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 16:54:05,662 [ERROR] edugenie: Gemini retries exhausted. Using LaMini.
+NoneType: None
+2026-07-13 16:54:05,662 [INFO] edugenie: Hugging Face API key not configured. Running LaMini in offline mock mode.
+2026-07-13 16:54:05,662 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are EduGenie, an expert AI summarization engine for stud...'
+2026-07-13 16:54:05,685 [INFO] edugenie: Method: POST | Path: /summarize | Status: 200 | Duration: 4.9218s
+2026-07-13 16:55:08,463 [INFO] edugenie: EduGenie application shutting down.
