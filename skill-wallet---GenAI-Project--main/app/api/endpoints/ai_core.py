@@ -89,7 +89,7 @@ def generate_quiz(
 ):
     """Generates a multiple choice quiz on the requested topic."""
     try:
-        result = EduService.generate_quiz(db, current_user.id, payload.topic, payload.num_questions, payload.difficulty)
+        result = EduService.generate_quiz(db, current_user.id, payload.topic, payload.num_questions, payload.difficulty, payload.context)
         return result
     except Exception as e:
         raise HTTPException(

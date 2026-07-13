@@ -39,7 +39,7 @@ function mountRoadmapView(container) {
             return;
         }
 
-        if (!hasAuthCookie()) {
+        if (!hasAuthenticatedSession()) {
             outputDiv.style.display = 'block';
             renderAuthRequiredState(outputDiv, 'Study Roadmap');
             return;

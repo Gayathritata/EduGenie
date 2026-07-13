@@ -235,75 +235,57 @@ class AIOrchestrator:
 
         # ── Roadmap ────────────────────────────────────────────────────────────
         if "roadmap" in prompt_lower or "learning path" in prompt_lower or "learning coach" in prompt_lower:
+            topic = "FastAPI Web Development"
+            topics_list = ["Installing FastAPI", "Pydantic", "SQLAlchemy", "JWT"]
+            if "machine learning" in prompt_lower:
+                topic = "Machine Learning"
+                topics_list = ["Linear Regression", "Scikit-Learn", "Model Evaluation", "Neural Networks"]
+            elif "deep learning" in prompt_lower:
+                topic = "Deep Learning"
+                topics_list = ["Backpropagation", "CNNs", "RNNs", "Transformers"]
+            elif "knn" in prompt_lower:
+                topic = "K-Nearest Neighbors (KNN)"
+                topics_list = ["Distance Metrics", "Choosing K", "Curse of Dimensionality", "KD-Trees"]
+            elif "kubernetes" in prompt_lower:
+                topic = "Kubernetes"
+                topics_list = ["Pods and Nodes", "Deployments", "Services", "Ingress"]
+            elif "python" in prompt_lower and "fastapi" not in prompt_lower and "fast api" not in prompt_lower:
+                topic = "Python Programming"
+                topics_list = ["Syntax Basics", "Data Structures", "OOP", "Decorators"]
+
             return json.dumps({
-                "topic": "FastAPI Web Development (Offline Demo)",
+                "topic": f"{topic} (Offline Demo)",
                 "difficulty": "Beginner",
                 "estimated_time": "8 Weeks (10 hours/week)",
-                "overview": "A structured foundational track covering FastAPI routing, Pydantic validation, SQLite ORM, JWT authentication, and AI API integration. By the end you will be able to build and deploy a full-stack API backend.",
+                "overview": f"A structured foundational track covering {topic}. By the end you will be able to build and deploy applications.",
                 "progression": {
-                    "beginner": "Learn routing, path/query parameters, and Pydantic schemas. Build your first REST API.",
-                    "intermediate": "Add SQLAlchemy ORM models, database sessions, and JWT authentication middleware.",
-                    "advanced": "Implement async background tasks, CORS policies, file uploads, and WebSocket endpoints."
+                    "beginner": f"Learn basic concepts of {topic}.",
+                    "intermediate": f"Build your first projects in {topic}.",
+                    "advanced": f"Master advanced patterns in {topic}."
                 },
                 "resources": {
-                    "books": [
-                        "FastAPI by Sebastián Ramírez (Official Docs as a book)",
-                        "Python Web Development with FastAPI by Bill Lubanovic",
-                        "Building Data Science Applications with FastAPI by François Voron"
-                    ],
-                    "youtube": [
-                        "FastAPI Full Course — Amigoscode",
-                        "Build APIs with FastAPI — Tech with Tim",
-                        "FastAPI Crash Course — Traversy Media"
-                    ],
-                    "courses": [
-                        "REST APIs with FastAPI and Python (Udemy)",
-                        "FastAPI — The Complete Course (Udemy)"
-                    ],
-                    "certifications": [
-                        "Python Backend Engineer Certificate (LinkedIn Learning)",
-                        "AWS Developer Associate (AWS)"
-                    ]
+                    "books": [f"Intro to {topic}", f"Advanced {topic}"],
+                    "youtube": [f"{topic} Crash Course"],
+                    "courses": [f"{topic} Masterclass (Udemy)"],
+                    "certifications": [f"Certified {topic} Specialist"]
                 },
                 "suggested_projects": [
                     {
-                        "title": "Task Manager REST API",
-                        "description": "Build a CRUD task management API with SQLite, Pydantic schemas, and JWT auth. Beginner-level complexity."
+                        "title": f"{topic} Basics Project",
+                        "description": f"A beginner project to understand {topic}."
                     },
                     {
-                        "title": "AI Study Assistant Backend",
-                        "description": "Create a FastAPI backend that integrates Gemini API for Q&A, quiz generation, and summarization. Intermediate complexity."
-                    },
-                    {
-                        "title": "Real-Time Chat API",
-                        "description": "Implement a WebSocket-based chat system with user authentication and message history. Advanced complexity."
+                        "title": f"Advanced {topic} Implementation",
+                        "description": f"Complex project leveraging {topic}."
                     }
                 ],
                 "weekly_study_plan": [
                     {
-                        "week": 1,
-                        "focus": "FastAPI Fundamentals",
-                        "topics": ["Installing FastAPI and Uvicorn", "Path and query parameters", "First router file"],
-                        "checkpoint_quiz_topic": "FastAPI Basics"
-                    },
-                    {
-                        "week": 2,
-                        "focus": "Pydantic Data Validation",
-                        "topics": ["Pydantic BaseModel", "Request and response schemas", "Field validation"],
-                        "checkpoint_quiz_topic": "Pydantic and Schemas"
-                    },
-                    {
-                        "week": 3,
-                        "focus": "SQLAlchemy ORM",
-                        "topics": ["SQLite engine setup", "ORM models and relationships", "Session dependency"],
-                        "checkpoint_quiz_topic": "SQLAlchemy Basics"
-                    },
-                    {
-                        "week": 4,
-                        "focus": "Authentication and Security",
-                        "topics": ["JWT token generation", "Password hashing with bcrypt", "Protected route dependencies"],
-                        "checkpoint_quiz_topic": "JWT and Auth"
-                    }
+                        "week": i + 1,
+                        "focus": f"{topic} Phase {i + 1}",
+                        "topics": [t],
+                        "checkpoint_quiz_topic": t
+                    } for i, t in enumerate(topics_list)
                 ]
             })
 
@@ -314,51 +296,76 @@ class AIOrchestrator:
                 difficulty = "Beginner"
             elif "advanced" in prompt_lower:
                 difficulty = "Advanced"
+
+            topic = "FastAPI"
+            q1 = "What is FastAPI?"
+            a1 = "A Python web framework"
+            if "machine learning" in prompt_lower:
+                topic = "Machine Learning"
+                q1 = "What is Overfitting?"
+                a1 = "When a model learns training data too well"
+            elif "deep learning" in prompt_lower:
+                topic = "Deep Learning"
+                q1 = "What is a CNN?"
+                a1 = "Convolutional Neural Network"
+            elif "knn" in prompt_lower:
+                topic = "KNN"
+                q1 = "What does K represent in KNN?"
+                a1 = "Number of nearest neighbors"
+            elif "kubernetes" in prompt_lower:
+                topic = "Kubernetes"
+                q1 = "What is a Pod?"
+                a1 = "The smallest deployable unit in Kubernetes"
+            elif "python" in prompt_lower and "fastapi" not in prompt_lower and "fast api" not in prompt_lower:
+                topic = "Python"
+                q1 = "What keyword defines a function?"
+                a1 = "def"
+
             return json.dumps({
-                "topic": "Python Programming (Offline Demo)",
+                "topic": f"{topic} (Offline Demo)",
                 "difficulty": difficulty,
                 "questions": [
                     {
                         "id": 1,
-                        "question": "What keyword is used to define a function in Python?",
-                        "choices": ["function", "def", "define", "lambda"],
-                        "correct_key": "B",
-                        "explanation": "In Python, the 'def' keyword is used to declare a function. 'lambda' creates anonymous functions but is not used for named function definitions."
+                        "question": q1,
+                        "choices": [a1, "Incorrect A", "Incorrect B", "Incorrect C"],
+                        "correct_key": "A",
+                        "explanation": f"The correct answer is {a1}."
                     },
                     {
                         "id": 2,
-                        "question": "Which data type is immutable in Python?",
-                        "choices": ["list", "dict", "set", "tuple"],
-                        "correct_key": "D",
-                        "explanation": "Tuples are immutable — their elements cannot be changed after creation. Lists, dicts, and sets are all mutable."
-                    },
-                    {
-                        "id": 3,
-                        "question": "What does the 'len()' function return for len([1, 2, 3])?",
-                        "choices": ["2", "3", "4", "TypeError"],
+                        "question": f"Which is a key concept of {topic}?",
+                        "choices": ["Wrong", "Correct Concept", "False", "None"],
                         "correct_key": "B",
-                        "explanation": "len() returns the number of elements. The list [1, 2, 3] has 3 elements, so len() returns 3."
+                        "explanation": f"Correct Concept is essential in {topic}."
                     }
                 ]
             })
 
         # ── Summarize ─────────────────────────────────────────────────────────
         elif "summarize" in prompt_lower or "summarization engine" in prompt_lower:
-            return json.dumps({
-                "summary": "This is an offline demonstration summary. The provided text covers key concepts in software architecture and API design. To generate a real summary, configure your GEMINI_API_KEY in the .env file.",
-                "bullet_points": [
+            # Extract the original text if possible
+            original_text = ""
+            if "Text to Summarize:\n" in prompt:
+                original_text = prompt.split("Text to Summarize:\n")[-1].strip()
+            
+            # Split the text into bullet points using dot
+            if original_text:
+                bullet_points = [p.strip() + "." for p in original_text.split(".") if p.strip()]
+            else:
+                bullet_points = [
                     "The text introduces foundational software engineering principles.",
-                    "Key architectural patterns are discussed with practical examples.",
-                    "API design best practices including RESTful conventions are highlighted.",
-                    "Database integration and ORM usage are covered in detail.",
-                    "Security considerations including authentication and input validation are addressed."
-                ],
-                "important_keywords": ["API", "architecture", "database", "authentication", "validation"],
+                    "Key architectural patterns are discussed with practical examples."
+                ]
+                
+            return json.dumps({
+                "summary": "This is an offline demonstration summary. To generate a real AI summary, configure your GEMINI_API_KEY in the .env file.",
+                "bullet_points": bullet_points,
+                "important_keywords": ["offline", "demo", "summarizer"],
                 "key_concepts": [
-                    {"concept": "RESTful API", "definition": "An API architectural style that uses HTTP methods and stateless communication."},
-                    {"concept": "ORM", "definition": "Object-Relational Mapping — a technique to query and manipulate databases using an object-oriented paradigm."}
+                    {"concept": "Offline Mode", "definition": "Fallback mode when API key is missing."}
                 ],
-                "revision_notes": "RESTful APIs use HTTP verbs (GET, POST, PUT, DELETE). ORMs map database tables to Python classes. JWT tokens authenticate users without server-side sessions. Pydantic validates request/response data.",
+                "revision_notes": "Generated from splitting your input text by dots.",
                 "length": "medium"
             })
 

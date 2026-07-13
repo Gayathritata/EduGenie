@@ -51,6 +51,7 @@ class RoadmapResponse(BaseModel):
 # Quiz Schema
 class QuizRequest(BaseModel):
     topic: str = Field(..., min_length=2, description="The subject topic for the quiz")
+    context: Optional[str] = Field(None, description="Optional text context to base the quiz on")
     num_questions: int = Field(5, ge=1, le=10, description="Number of questions to generate (1 to 10)")
     difficulty: str = Field("Intermediate", pattern="^(Beginner|Intermediate|Advanced)$", description="Difficulty level")
 

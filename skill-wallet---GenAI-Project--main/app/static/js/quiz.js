@@ -22,6 +22,10 @@ function mountQuizView(container) {
                     <input type="text" id="quiz-topic" class="form-input" placeholder="e.g. Python List Comprehensions, CSS Grids, DNA Transcription">
                 </div>
                 <div class="form-group">
+                    <label for="quiz-context">Reference Context (Optional)</label>
+                    <textarea id="quiz-context" class="form-input" style="min-height:80px;" placeholder="Paste textbook paragraphs or notes here to generate questions based on it..."></textarea>
+                </div>
+                <div class="form-group">
                     <label for="quiz-diff">Difficulty Level</label>
                     <select id="quiz-diff" class="form-input" style="background:#0d1222;">
                         <option value="Beginner">Beginner (Fundamentals & simple terms)</option>
@@ -45,6 +49,7 @@ function mountQuizView(container) {
 
     document.getElementById('quiz-submit-btn').addEventListener('click', () => {
         const topic = document.getElementById('quiz-topic').value.trim();
+        const context = document.getElementById('quiz-context').value.trim();
         const difficulty = document.getElementById('quiz-diff').value;
         const count = document.getElementById('quiz-count').value;
         const outputDiv = document.getElementById('quiz-output');
@@ -54,29 +59,33 @@ function mountQuizView(container) {
             return;
         }
 
-        if (!hasAuthCookie()) {
+        if (!hasAuthenticatedSession()) {
             outputDiv.style.display = 'block';
             renderAuthRequiredState(outputDiv, 'Dynamic Quiz');
             return;
         }
 
-        generateQuizAction(topic, parseInt(count), difficulty);
+        generateQuizAction(topic, context, parseInt(count), difficulty);
     });
 }
 
-async function generateQuizAction(topic, count, difficulty) {
+async function generateQuizAction(topic, context, count, difficulty) {
     const outputDiv = document.getElementById('quiz-output');
     const submitBtn = document.getElementById('quiz-submit-btn');
 
     // Save params for retry feature
-    lastQuizParams = { topic, count, difficulty };
+    lastQuizParams = { topic, context, count, difficulty };
 
     setLoadingBtn(submitBtn, true);
     outputDiv.style.display = 'block';
     outputDiv.innerHTML = getLoadingSpinnerHTML(`Formulating ${count} ${difficulty} level questions on '${topic}'...`);
 
     try {
-        const data = await APIClient.post('/quiz', { topic, num_questions: count, difficulty });
+        const payload = { topic, num_questions: count, difficulty };
+        if (context) {
+            payload.context = context;
+        }
+        const data = await APIClient.post('/quiz', payload);
         renderQuizQuestions(outputDiv, data);
         showNotification('Quiz successfully generated!', 'success');
     } catch (err) {
@@ -251,7 +260,7 @@ function renderGradedQuizResults(container, graded) {
     // Retry Quiz Action Handler
     document.getElementById('retry-quiz-btn').addEventListener('click', () => {
         if (lastQuizParams) {
-            generateQuizAction(lastQuizParams.topic, lastQuizParams.count, lastQuizParams.difficulty);
+            generateQuizAction(lastQuizParams.topic, lastQuizParams.context, lastQuizParams.count, lastQuizParams.difficulty);
         }
     });
 }

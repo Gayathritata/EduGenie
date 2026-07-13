@@ -118,7 +118,7 @@ class PromptManager:
     # QUIZ GENERATION  (Gemini 2.0 Flash)
     # ─────────────────────────────────────────────────────────────────────────
     @staticmethod
-    def get_quiz_prompt(topic: str, num_questions: int, difficulty: str = "Intermediate") -> str:
+    def get_quiz_prompt(topic: str, num_questions: int, difficulty: str = "Intermediate", context: str = None) -> str:
         """
         Prompt for high-quality multiple-choice quiz generation using Gemini.
         Each question has 4 choices, a correct key (A-D), and an educational explanation.
@@ -155,8 +155,10 @@ class PromptManager:
             "    }\n"
             "  ]\n"
             "}\n"
-            f"Generate exactly {num_questions} question objects in the 'questions' array."
+            f"Generate exactly {num_questions} question objects in the 'questions' array.\n\n"
         )
+        if context:
+            prompt += f"Reference Context (base your questions heavily on this text):\n---\n{context}\n---\n"
         return prompt
 
     # ─────────────────────────────────────────────────────────────────────────

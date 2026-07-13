@@ -310,7 +310,7 @@ class EduService:
         }
 
     @staticmethod
-    def generate_quiz(db: Session, user_id: int, topic: str, num_questions: int, difficulty: str = "Intermediate") -> dict:
+    def generate_quiz(db: Session, user_id: int, topic: str, num_questions: int, difficulty: str = "Intermediate", context: str = None) -> dict:
         """Generate multiple choice quizzes using Google Gemini, save record, and strip correct answers."""
         # 1. Log query input
         query = Query(
@@ -323,7 +323,7 @@ class EduService:
         db.refresh(query)
 
         # 2. Query Gemini
-        prompt = PromptManager.get_quiz_prompt(topic, num_questions, difficulty)
+        prompt = PromptManager.get_quiz_prompt(topic, num_questions, difficulty, context)
         start_time = time.time()
         try:
             response_raw = ai_orchestrator.query_gemini(prompt)

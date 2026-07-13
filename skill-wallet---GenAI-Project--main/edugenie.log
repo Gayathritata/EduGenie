@@ -5612,3 +5612,286 @@ google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, '
 2026-07-12 13:29:54,958 [INFO] edugenie: Method: GET | Path: /profile | Status: 200 | Duration: 0.0141s
 2026-07-12 13:29:59,021 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0181s
 2026-07-12 13:29:59,055 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0068s
+2026-07-12 19:13:38,903 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 19:15:29,887 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-12 19:15:29,933 [INFO] edugenie: Initializing database tables...
+2026-07-12 19:15:29,941 [INFO] edugenie: Database tables initialized successfully.
+2026-07-12 19:15:32,968 [INFO] edugenie: Method: GET | Path: /docs | Status: 200 | Duration: 0.0046s
+2026-07-12 19:15:37,500 [INFO] edugenie: Method: GET | Path: /openapi.json | Status: 200 | Duration: 0.2356s
+2026-07-13 05:40:41,594 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 05:43:44,078 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 05:43:44,120 [INFO] edugenie: Initializing database tables...
+2026-07-13 05:43:44,126 [INFO] edugenie: Database tables initialized successfully.
+2026-07-13 05:43:48,020 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.1959s
+2026-07-13 05:43:48,172 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.1213s
+2026-07-13 05:43:48,174 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.1211s
+2026-07-13 05:43:54,719 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.6680s
+2026-07-13 05:43:54,758 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0098s
+2026-07-13 05:43:54,767 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0158s
+2026-07-13 05:43:59,177 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.7568s
+2026-07-13 05:43:59,253 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0541s
+2026-07-13 05:43:59,282 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0092s
+2026-07-13 05:43:59,285 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0103s
+2026-07-13 05:43:59,288 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0098s
+2026-07-13 05:43:59,289 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0113s
+2026-07-13 05:43:59,516 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0387s
+2026-07-13 05:43:59,537 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0135s
+2026-07-13 05:44:10,899 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 05:44:11,352 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 05:44:11,355 [WARNING] edugenie: Invalid API Key detected. Falling back to offline mode.
+2026-07-13 05:44:11,355 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI teaching assistant specializi...'
+2026-07-13 05:44:11,394 [INFO] edugenie: Method: POST | Path: /qa | Status: 200 | Duration: 0.5233s
+2026-07-13 05:44:22,348 [WARNING] edugenie: LaMini attempt 1/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 1.5s...
+2026-07-13 05:44:23,852 [WARNING] edugenie: LaMini attempt 2/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 3.0s...
+2026-07-13 05:44:26,866 [WARNING] edugenie: LaMini all retries exhausted after network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Falling back to offline.
+2026-07-13 05:44:26,866 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are an expert educator. Explain the concept of 'python' ...'
+2026-07-13 05:44:26,884 [INFO] edugenie: Method: POST | Path: /explain | Status: 200 | Duration: 4.6494s
+2026-07-13 05:48:48,406 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 05:48:48,444 [INFO] edugenie: Initializing database tables...
+2026-07-13 05:48:48,493 [INFO] edugenie: Database tables initialized successfully.
+2026-07-13 05:48:54,549 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 201 | Duration: 0.5969s
+2026-07-13 05:48:54,560 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 422 | Duration: 0.0059s
+2026-07-13 05:49:12,800 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0675s
+2026-07-13 05:49:12,943 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.1240s
+2026-07-13 05:49:12,946 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.1250s
+2026-07-13 05:49:12,959 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0123s
+2026-07-13 05:49:12,964 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0140s
+2026-07-13 05:49:12,966 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0155s
+2026-07-13 05:49:12,968 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0173s
+2026-07-13 05:49:12,979 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0076s
+2026-07-13 05:49:12,981 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0176s
+2026-07-13 05:49:22,198 [INFO] edugenie: Method: POST | Path: /auth/register | Status: 400 | Duration: 0.0059s
+2026-07-13 05:49:22,723 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.5181s
+2026-07-13 05:49:22,750 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 05:49:23,194 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 05:49:23,199 [WARNING] edugenie: Invalid API Key detected. Falling back to offline mode.
+2026-07-13 05:49:23,200 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, a personalized learning coach. Generate a ...'
+2026-07-13 05:49:23,249 [INFO] edugenie: Method: POST | Path: /learn | Status: 200 | Duration: 0.5213s
+2026-07-13 05:50:00,898 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0265s
+2026-07-13 05:52:59,791 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0059s
+2026-07-13 05:52:59,827 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0103s
+2026-07-13 05:52:59,830 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0121s
+2026-07-13 05:52:59,835 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0141s
+2026-07-13 05:52:59,837 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0132s
+2026-07-13 05:52:59,840 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0157s
+2026-07-13 05:52:59,845 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0156s
+2026-07-13 05:52:59,858 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0085s
+2026-07-13 05:52:59,860 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0077s
+2026-07-13 05:53:00,109 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0053s
+2026-07-13 05:53:00,145 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0129s
+2026-07-13 05:53:00,150 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0147s
+2026-07-13 05:53:00,154 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0161s
+2026-07-13 05:53:00,155 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0168s
+2026-07-13 05:53:00,157 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0141s
+2026-07-13 05:53:00,159 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0183s
+2026-07-13 05:53:00,176 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0083s
+2026-07-13 05:53:00,178 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0080s
+2026-07-13 05:53:00,309 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0069s
+2026-07-13 05:53:00,345 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0108s
+2026-07-13 05:53:00,347 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0155s
+2026-07-13 05:53:00,349 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0147s
+2026-07-13 05:53:00,351 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0139s
+2026-07-13 05:53:00,354 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0170s
+2026-07-13 05:53:00,356 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0183s
+2026-07-13 05:53:00,376 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0065s
+2026-07-13 05:53:00,377 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0079s
+2026-07-13 05:53:00,442 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0054s
+2026-07-13 05:53:00,488 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0132s
+2026-07-13 05:53:00,491 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0118s
+2026-07-13 05:53:00,492 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0131s
+2026-07-13 05:53:00,493 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0136s
+2026-07-13 05:53:00,494 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0208s
+2026-07-13 05:53:00,496 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0208s
+2026-07-13 05:53:00,507 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0038s
+2026-07-13 05:53:00,508 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0048s
+2026-07-13 05:53:00,644 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0055s
+2026-07-13 05:53:00,676 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0126s
+2026-07-13 05:53:00,678 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0091s
+2026-07-13 05:53:00,680 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0115s
+2026-07-13 05:53:00,682 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0167s
+2026-07-13 05:53:00,684 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0156s
+2026-07-13 05:53:00,690 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0247s
+2026-07-13 05:53:00,706 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0060s
+2026-07-13 05:53:00,707 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0057s
+2026-07-13 05:53:00,934 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0068s
+2026-07-13 05:53:00,968 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0130s
+2026-07-13 05:53:00,970 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0139s
+2026-07-13 05:53:00,972 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0127s
+2026-07-13 05:53:00,973 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0142s
+2026-07-13 05:53:00,975 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0146s
+2026-07-13 05:53:00,978 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0194s
+2026-07-13 05:53:00,995 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0072s
+2026-07-13 05:53:00,999 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0067s
+2026-07-13 05:53:01,112 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0058s
+2026-07-13 05:53:01,146 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0097s
+2026-07-13 05:53:01,149 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0116s
+2026-07-13 05:53:01,151 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0114s
+2026-07-13 05:53:01,152 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0125s
+2026-07-13 05:53:01,154 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0138s
+2026-07-13 05:53:01,156 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0181s
+2026-07-13 05:53:01,172 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0045s
+2026-07-13 05:53:01,173 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0053s
+2026-07-13 05:53:01,267 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0065s
+2026-07-13 05:53:01,320 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0113s
+2026-07-13 05:53:01,322 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0118s
+2026-07-13 05:53:01,325 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0096s
+2026-07-13 05:53:01,327 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0136s
+2026-07-13 05:53:01,328 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0148s
+2026-07-13 05:53:01,329 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0158s
+2026-07-13 05:53:01,346 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0066s
+2026-07-13 05:53:01,348 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0101s
+2026-07-13 05:53:01,471 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0040s
+2026-07-13 05:53:01,505 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0117s
+2026-07-13 05:53:01,508 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0129s
+2026-07-13 05:53:01,511 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0132s
+2026-07-13 05:53:01,514 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0134s
+2026-07-13 05:53:01,515 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0177s
+2026-07-13 05:53:01,517 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0168s
+2026-07-13 05:53:01,536 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0082s
+2026-07-13 05:53:01,537 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0077s
+2026-07-13 05:53:01,701 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0063s
+2026-07-13 05:53:01,742 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0121s
+2026-07-13 05:53:01,744 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0165s
+2026-07-13 05:53:01,747 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0175s
+2026-07-13 05:53:01,750 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0176s
+2026-07-13 05:53:01,753 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0197s
+2026-07-13 05:53:01,754 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0215s
+2026-07-13 05:53:01,771 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0063s
+2026-07-13 05:53:01,772 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0074s
+2026-07-13 05:53:01,885 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0058s
+2026-07-13 05:53:01,921 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0119s
+2026-07-13 05:53:01,923 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0157s
+2026-07-13 05:53:01,924 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0113s
+2026-07-13 05:53:01,925 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0127s
+2026-07-13 05:53:01,927 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0177s
+2026-07-13 05:53:01,929 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0169s
+2026-07-13 05:53:01,949 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0067s
+2026-07-13 05:53:01,950 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0076s
+2026-07-13 05:53:08,543 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, a personalized learning coach. Generate a ...'
+2026-07-13 05:53:08,562 [INFO] edugenie: Method: POST | Path: /learn | Status: 200 | Duration: 0.1290s
+2026-07-13 05:53:20,594 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI teaching assistant specializi...'
+2026-07-13 05:53:20,613 [INFO] edugenie: Method: POST | Path: /qa | Status: 200 | Duration: 0.0367s
+2026-07-13 05:53:37,475 [WARNING] edugenie: LaMini attempt 1/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 1.5s...
+2026-07-13 05:53:38,988 [WARNING] edugenie: LaMini attempt 2/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 3.0s...
+2026-07-13 05:53:41,991 [WARNING] edugenie: LaMini all retries exhausted after network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Falling back to offline.
+2026-07-13 05:53:41,992 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are an expert educator. Explain the concept of 'python' ...'
+2026-07-13 05:53:42,009 [INFO] edugenie: Method: POST | Path: /explain | Status: 200 | Duration: 4.6507s
+2026-07-13 05:53:54,373 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, a personalized learning coach. Generate a ...'
+2026-07-13 05:53:54,389 [INFO] edugenie: Method: POST | Path: /learn | Status: 200 | Duration: 0.0327s
+2026-07-13 05:54:21,018 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert exam creator. Generate a rigorou...'
+2026-07-13 05:54:21,042 [INFO] edugenie: Method: POST | Path: /quiz | Status: 200 | Duration: 0.0420s
+2026-07-13 05:54:24,379 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert exam creator. Generate a rigorou...'
+2026-07-13 05:54:24,395 [INFO] edugenie: Method: POST | Path: /quiz | Status: 200 | Duration: 0.0365s
+2026-07-13 05:54:47,215 [INFO] edugenie: Method: POST | Path: /quiz/submit | Status: 200 | Duration: 0.0299s
+2026-07-13 05:57:31,739 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0146s
+2026-07-13 05:57:31,773 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0127s
+2026-07-13 05:57:31,778 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0163s
+2026-07-13 05:57:31,783 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0123s
+2026-07-13 05:57:31,785 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0135s
+2026-07-13 05:57:31,786 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0122s
+2026-07-13 05:57:31,787 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0137s
+2026-07-13 05:57:31,803 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0080s
+2026-07-13 05:57:31,804 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0111s
+2026-07-13 05:57:31,908 [INFO] edugenie: EduGenie application shutting down.
+2026-07-13 05:58:33,229 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 05:58:33,269 [INFO] edugenie: Initializing database tables...
+2026-07-13 05:58:33,277 [INFO] edugenie: Database tables initialized successfully.
+2026-07-13 05:58:39,163 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0776s
+2026-07-13 05:58:43,402 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0133s
+2026-07-13 05:58:46,290 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.7435s
+2026-07-13 05:58:46,337 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0251s
+2026-07-13 05:58:46,489 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 304 | Duration: 0.1365s
+2026-07-13 05:58:46,490 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 304 | Duration: 0.1389s
+2026-07-13 05:58:46,515 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0154s
+2026-07-13 05:58:46,531 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0119s
+2026-07-13 05:59:01,081 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 05:59:01,533 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 05:59:01,535 [WARNING] edugenie: Invalid API Key detected. Falling back to offline mode.
+2026-07-13 05:59:01,535 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI teaching assistant specializi...'
+2026-07-13 05:59:03,034 [INFO] edugenie: Method: POST | Path: /qa | Status: 200 | Duration: 4.2588s
+2026-07-13 05:59:13,029 [WARNING] edugenie: LaMini attempt 1/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 1.5s...
+2026-07-13 05:59:14,533 [WARNING] edugenie: LaMini attempt 2/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 3.0s...
+2026-07-13 05:59:17,606 [WARNING] edugenie: LaMini all retries exhausted after network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Falling back to offline.
+2026-07-13 05:59:17,607 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are an expert educator. Explain the concept of 'python' ...'
+2026-07-13 05:59:17,761 [INFO] edugenie: Method: POST | Path: /explain | Status: 200 | Duration: 5.0774s
+2026-07-13 05:59:28,180 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, a personalized learning coach. Generate a ...'
+2026-07-13 05:59:28,203 [INFO] edugenie: Method: POST | Path: /learn | Status: 200 | Duration: 0.0480s
+2026-07-13 05:59:50,782 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI summarization engine for stud...'
+2026-07-13 05:59:50,811 [INFO] edugenie: Method: POST | Path: /summarize | Status: 200 | Duration: 0.1476s
+2026-07-13 06:00:51,592 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI summarization engine for stud...'
+2026-07-13 06:00:51,611 [INFO] edugenie: Method: POST | Path: /summarize | Status: 200 | Duration: 0.0393s
+2026-07-13 06:01:01,389 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert exam creator. Generate a rigorou...'
+2026-07-13 06:01:01,419 [INFO] edugenie: Method: POST | Path: /quiz | Status: 200 | Duration: 0.0520s
+2026-07-13 06:01:17,589 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert exam creator. Generate a rigorou...'
+2026-07-13 06:01:17,610 [INFO] edugenie: Method: POST | Path: /quiz | Status: 200 | Duration: 0.0471s
+2026-07-13 06:01:29,006 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.5175s
+2026-07-13 06:01:29,027 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI summarization engine for stud...'
+2026-07-13 06:01:29,042 [INFO] edugenie: Method: POST | Path: /summarize | Status: 200 | Duration: 0.0297s
+2026-07-13 06:02:12,978 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0106s
+2026-07-13 06:02:13,014 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0144s
+2026-07-13 06:02:13,015 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0149s
+2026-07-13 06:02:13,019 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0127s
+2026-07-13 06:02:13,020 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0140s
+2026-07-13 06:02:13,022 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0155s
+2026-07-13 06:02:13,025 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0182s
+2026-07-13 06:02:13,039 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0074s
+2026-07-13 06:02:13,041 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0075s
+2026-07-13 06:02:13,703 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0085s
+2026-07-13 06:02:13,772 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 200 | Duration: 0.0145s
+2026-07-13 06:02:13,778 [INFO] edugenie: Method: GET | Path: /static/css/variables.css | Status: 200 | Duration: 0.0306s
+2026-07-13 06:02:13,780 [INFO] edugenie: Method: GET | Path: /static/css/dashboard.css | Status: 200 | Duration: 0.0278s
+2026-07-13 06:02:13,781 [INFO] edugenie: Method: GET | Path: /static/js/auth.js | Status: 200 | Duration: 0.0224s
+2026-07-13 06:02:13,784 [INFO] edugenie: Method: GET | Path: /static/js/api_client.js | Status: 200 | Duration: 0.0253s
+2026-07-13 06:02:13,785 [INFO] edugenie: Method: GET | Path: /static/css/main.css | Status: 200 | Duration: 0.0343s
+2026-07-13 06:02:13,801 [INFO] edugenie: Method: GET | Path: /static/js/ai_features.js | Status: 200 | Duration: 0.0049s
+2026-07-13 06:02:13,803 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.0099s
+2026-07-13 06:02:22,972 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI summarization engine for stud...'
+2026-07-13 06:02:22,998 [INFO] edugenie: Method: POST | Path: /summarize | Status: 200 | Duration: 0.0571s
+2026-07-13 06:07:09,661 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0100s
+2026-07-13 06:07:09,685 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 304 | Duration: 0.0043s
+2026-07-13 06:07:09,688 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 304 | Duration: 0.0057s
+2026-07-13 06:07:09,809 [INFO] edugenie: EduGenie application shutting down.
+2026-07-13 06:08:18,442 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 06:08:18,485 [INFO] edugenie: Initializing database tables...
+2026-07-13 06:08:18,493 [INFO] edugenie: Database tables initialized successfully.
+2026-07-13 06:08:18,658 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0831s
+2026-07-13 06:08:22,404 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0211s
+2026-07-13 06:08:25,498 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.7537s
+2026-07-13 06:08:25,541 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0235s
+2026-07-13 06:08:25,582 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0170s
+2026-07-13 06:08:25,610 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0141s
+2026-07-13 06:08:45,091 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 06:08:45,634 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 06:08:45,639 [WARNING] edugenie: Invalid API Key detected. Falling back to offline mode.
+2026-07-13 06:08:45,640 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, a personalized learning coach. Generate a ...'
+2026-07-13 06:08:45,679 [INFO] edugenie: Method: POST | Path: /learn | Status: 200 | Duration: 0.6163s
+2026-07-13 06:08:54,310 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert exam creator. Generate a rigorou...'
+2026-07-13 06:08:54,338 [INFO] edugenie: Method: POST | Path: /quiz | Status: 200 | Duration: 0.0461s
+2026-07-13 06:09:59,492 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert exam creator. Generate a rigorou...'
+2026-07-13 06:09:59,513 [INFO] edugenie: Method: POST | Path: /quiz | Status: 200 | Duration: 0.0512s
+2026-07-13 06:10:47,920 [INFO] edugenie: EduGenie application shutting down.
+2026-07-13 06:11:53,596 [INFO] edugenie: Static files directory mounted successfully.
+2026-07-13 06:11:53,640 [INFO] edugenie: Initializing database tables...
+2026-07-13 06:11:53,647 [INFO] edugenie: Database tables initialized successfully.
+2026-07-13 06:11:56,667 [INFO] edugenie: Method: GET | Path: / | Status: 200 | Duration: 0.0834s
+2026-07-13 06:11:59,139 [INFO] edugenie: Method: GET | Path: /login | Status: 200 | Duration: 0.0127s
+2026-07-13 06:12:01,915 [INFO] edugenie: Method: POST | Path: /auth/login | Status: 200 | Duration: 0.7114s
+2026-07-13 06:12:01,959 [INFO] edugenie: Method: GET | Path: /dashboard | Status: 200 | Duration: 0.0236s
+2026-07-13 06:12:02,106 [INFO] edugenie: Method: GET | Path: /static/js/roadmap.js | Status: 304 | Duration: 0.1342s
+2026-07-13 06:12:02,107 [INFO] edugenie: Method: GET | Path: /static/js/quiz.js | Status: 200 | Duration: 0.1343s
+2026-07-13 06:12:02,144 [INFO] edugenie: Method: GET | Path: /history | Status: 200 | Duration: 0.0241s
+2026-07-13 06:12:02,165 [INFO] edugenie: Method: GET | Path: /save | Status: 200 | Duration: 0.0129s
+2026-07-13 06:12:18,351 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-07-13 06:12:18,721 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-13 06:12:18,725 [WARNING] edugenie: Invalid API Key detected. Falling back to offline mode.
+2026-07-13 06:12:18,726 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, a personalized learning coach. Generate a ...'
+2026-07-13 06:12:18,812 [INFO] edugenie: Method: POST | Path: /learn | Status: 200 | Duration: 0.4874s
+2026-07-13 06:12:25,384 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert exam creator. Generate a rigorou...'
+2026-07-13 06:12:25,406 [INFO] edugenie: Method: POST | Path: /quiz | Status: 200 | Duration: 0.0409s
+2026-07-13 06:12:43,197 [WARNING] edugenie: LaMini attempt 1/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 1.5s...
+2026-07-13 06:12:44,708 [WARNING] edugenie: LaMini attempt 2/3 network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Retrying in 3.0s...
+2026-07-13 06:12:47,712 [WARNING] edugenie: LaMini all retries exhausted after network error: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Max retries exceeded with url: /models/MBZUAI/LaMini-Flan-T5-783M (Caused by NameResolutionError("HTTPSConnection(host='api-inference.huggingface.co', port=443): Failed to resolve 'api-inference.huggingface.co' ([Errno 11001] getaddrinfo failed)")). Falling back to offline.
+2026-07-13 06:12:47,712 [INFO] edugenie: Generating offline mock response for provider='lamini' prompt_preview='You are an expert educator. Explain the concept of 'python' ...'
+2026-07-13 06:12:47,731 [INFO] edugenie: Method: POST | Path: /explain | Status: 200 | Duration: 4.6138s
+2026-07-13 06:12:56,747 [INFO] edugenie: Generating offline mock response for provider='gemini' prompt_preview='You are EduGenie, an expert AI teaching assistant specializi...'
+2026-07-13 06:12:56,763 [INFO] edugenie: Method: POST | Path: /qa | Status: 200 | Duration: 0.0379s
