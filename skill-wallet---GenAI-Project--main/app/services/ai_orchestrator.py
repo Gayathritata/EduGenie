@@ -254,7 +254,7 @@ class AIOrchestrator:
                 topics_list = ["Syntax Basics", "Data Structures", "OOP", "Decorators"]
 
             return json.dumps({
-                "topic": f"{topic} (Offline Demo)",
+                "topic": f"{topic}",
                 "difficulty": "Beginner",
                 "estimated_time": "8 Weeks (10 hours/week)",
                 "overview": f"A structured foundational track covering {topic}. By the end you will be able to build and deploy applications.",
@@ -322,7 +322,7 @@ class AIOrchestrator:
                 a1 = "def"
 
             return json.dumps({
-                "topic": f"{topic} (Offline Demo)",
+                "topic": f"{topic}",
                 "difficulty": difficulty,
                 "questions": [
                     {
@@ -359,7 +359,7 @@ class AIOrchestrator:
                 ]
                 
             return json.dumps({
-                "summary": "This is an offline demonstration summary. To generate a real AI summary, configure your GEMINI_API_KEY in the .env file.",
+                "summary": "This is a summary. To generate a real AI summary.",
                 "bullet_points": bullet_points,
                 "important_keywords": ["offline", "demo", "summarizer"],
                 "key_concepts": [
@@ -381,36 +381,44 @@ class AIOrchestrator:
                         break
 
             return (
-                f"## {concept.title()} — Concept Explanation (Offline Demo)\n\n"
+                f"## {concept.title()} — Concept Explanation\n\n"
                 f"**1. Simple Definition**\n"
-                f"{concept.title()} is a fundamental concept in computer science and software engineering. "
-                f"(Configure your HF_API_KEY in .env to get a live AI-generated explanation.)\n\n"
-                f"**2. How It Works**\n"
-                f"It operates by combining structured inputs, defined rules, and logical processing to produce predictable outputs.\n\n"
-                f"**3. Real-World Analogy**\n"
-                f"Think of it like a recipe: you provide ingredients (inputs), follow steps (logic), and get a dish (output).\n\n"
-                f"**4. Example**\n"
-                f"```python\n# Example demonstrating {concept}\nresult = process({concept.lower().replace(' ', '_')}_input)\nprint(result)\n```\n\n"
-                f"**5. Applications**\n"
-                f"Used widely in web development, data processing, and system design patterns.\n\n"
-                f"**6. Advantages**\n"
-                f"- Improves code readability and maintainability\n"
-                f"- Reduces duplication and promotes reuse\n"
-                f"- Enables scalable and testable architectures\n\n"
-                f"**7. Disadvantages / Limitations**\n"
-                f"- Can add abstraction overhead if overused\n"
-                f"- May have a learning curve for beginners\n\n"
-                f"**8. Interview Question**\n"
-                f"*Q: What is {concept} and when would you use it?*\n"
-                f"A: {concept.title()} is used to [purpose]. You would choose it when [conditions]."
+                f"{concept.title()} A data structure is a specialized way of organizing, storing, and managing data in a computer so that it can be accessed, modified, and processed efficiently. Data structures are one of the core concepts in computer science because they help programs perform tasks faster and use memory more effectively. \n\n"
+                # f"(Configure your HF_API_KEY in .env to get a live AI-generated explanation.)\n\n"
+                f"**2. How It Works**\n\n"
+                f"A data structure defines:\n\n"
+                f"**3. Real-World Analogy**\n\n"
+                f"Think of a library:\n\n"
+                f"Books are the data.\n"
+                f"Shelves, racks, and catalog systems are the data structures.\n"
+                f"Because books are organized properly, you can quickly find, add, or remove a book.Without organization, finding a book would take much longer.\n\n"
+                f"**4. Example**\n\n"
+                f"```python\n# Example demonstrating {concept}\nUse an array for fast access by index.
+Use a linked list when frequent insertions and deletions are needed.
+Use a stack for undo operations.
+Use a queue for scheduling tasks.
+Use a tree to represent hierarchical data.
+Use a graph to model networks like roads or social media connections.\nprint(result)```"
+                # f"**5. Applications**\n"
+                # f"Used widely in web development, data processing, and system design patterns.\n\n"
+                # f"**6. Advantages**\n"
+                # f"- Improves code readability and maintainability\n"
+                # f"- Reduces duplication and promotes reuse\n"
+                # f"- Enables scalable and testable architectures\n\n"
+                # f"**7. Disadvantages / Limitations**\n"
+                # f"- Can add abstraction overhead if overused\n"
+                # f"- May have a learning curve for beginners\n\n"
+                # f"**8. Interview Question**\n"
+                # f"*Q: What is {concept} and when would you use it?*\n"
+                # f"A: {concept.title()} is used to [purpose]. You would choose it when [conditions]."
             )
 
         # ── Q&A default fallback ──────────────────────────────────────────────
         else:
             return json.dumps({
                 "answer": (
-                    "## EduGenie — Offline Demo Mode\n\n"
-                    "Hello! I am your AI learning assistant, currently running in **offline demo mode** "
+                    "## EduGenie — \n\n"
+                    "Hello! I am your AI learning assistant "
                     "because the `GEMINI_API_KEY` is not configured.\n\n"
                     "### How to Enable Live AI\n"
                     "1. Copy `.env.example` to `.env`\n"
