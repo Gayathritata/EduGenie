@@ -135,7 +135,35 @@ class TestEduGenieE2E(unittest.TestCase):
         self.assertEqual(profile_res.status_code, 200)
         self.assertEqual(profile_res.json()["username"], self.username)
 
-    def test_04_route_protection(self):
+    def test_04_dashboard_logout_control(self):
+        print("Testing dashboard logout control visibility...")
+        response = self.client.get("/dashboard")
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('id="dashboard-logout-btn"', response.text)
+
+    def test_04_dashboard_auth_state_marker(self):
+        print("Testing dashboard auth state marker for post-login navigation...")
+        existing_user = self.db.query(User).filter(User.username == self.username).first()
+        if not existing_user:
+            self.client.post("/auth/register", json={
+                "username": self.username,
+                "email": self.email,
+                "password": self.password
+            })
+
+        login_response = self.client.post("/auth/login", json={
+            "username": self.username,
+            "password": self.password
+        })
+        self.assertEqual(login_response.status_code, 200)
+
+        authenticated_client = TestClient(app)
+        authenticated_client.cookies.set("access_token", login_response.cookies.get("access_token"))
+        response = authenticated_client.get("/dashboard")
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('data-authenticated="true"', response.text)
+
+    def test_05_route_protection(self):
         print("Testing route protection policies...")
         # Access profile without auth
         clean_client = TestClient(app)

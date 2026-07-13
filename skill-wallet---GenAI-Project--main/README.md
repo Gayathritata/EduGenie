@@ -4,6 +4,13 @@ EduGenie is a production-quality, secure, and responsive AI-powered educational 
 
 The system is engineered using a decoupled architecture, combining a high-performance **FastAPI backend** (with SQLite + SQLAlchemy) and a premium **Jinja2 + Vanilla JS Single-Page Application (SPA)** frontend featuring modern glassmorphic designs.
 
+### Recent UI updates
+- The dashboard Quick Start cards now navigate directly to the relevant workspace section after login.
+- The Sign Out action redirects users back to the landing page.
+- Protected dashboard sections now load correctly once the user session is active.
+
+> To enable the full AI experience, add your `GEMINI_API_KEY` and `HF_API_KEY` values in the `.env` file before starting the app.
+
 ---
 
 ## 1. Project Directory Structure
@@ -132,6 +139,8 @@ Open `.env` and fill in your credentials:
 * **`GEMINI_API_KEY`**: Obtain from Google AI Studio.
 * **`HF_API_KEY`**: Obtain from Hugging Face Settings.
 
+After saving the file, restart the server so the new values are loaded.
+
 *Note: If no API keys are configured, the system automatically redirects requests to local mock fallbacks so you can test all features without API credentials.*
 
 ---
@@ -169,6 +178,8 @@ python -m uvicorn app.main:app --reload
 Once initialized, access the portal in your browser:
 * **Interactive Frontend**: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 * **FastAPI Swagger API Documentation**: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+
+After signing in, use the Quick Start cards on the dashboard to jump straight to Smart Q&A, Concept Explainer, Roadmap, Quiz, or Summarizer views.
 
 ---
 

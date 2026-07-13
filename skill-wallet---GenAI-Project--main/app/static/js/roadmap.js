@@ -39,6 +39,12 @@ function mountRoadmapView(container) {
             return;
         }
 
+        if (!hasAuthCookie()) {
+            outputDiv.style.display = 'block';
+            renderAuthRequiredState(outputDiv, 'Study Roadmap');
+            return;
+        }
+
         setLoadingBtn(submitBtn, true);
         outputDiv.style.display = 'block';
         outputDiv.innerHTML = getLoadingSpinnerHTML("Consulting Gemini AI to build learning path and recommendations...");

@@ -77,7 +77,7 @@ class AIOrchestrator:
 
             try:
                 response = self._client.models.generate_content(
-                    model="gemini-2.0-flash",
+                    model="gemini-2.0-flash-lite",
                     contents=prompt
                 )
                 self.gemini_available = True
@@ -86,6 +86,12 @@ class AIOrchestrator:
                 return self._clean_markdown_fencing(response.text.strip())
 
             except Exception as e:
+                error_str = str(e)
+                if "400" in error_str and ("API_KEY_INVALID" in error_str or "API key not valid" in error_str):
+                    logger.warning("Invalid API Key detected. Falling back to offline mode.")
+                    self.gemini_enabled = False
+                    return self._get_offline_response(prompt, "gemini")
+                
                 last_error = e
                 error_message = str(e)
 
