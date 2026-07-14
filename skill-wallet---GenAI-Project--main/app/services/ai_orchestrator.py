@@ -1,13 +1,15 @@
 # File: app/services/ai_orchestrator.py
 # Part of EduGenie SmartBridge Project
 
+from app.services import prompt_manager
+from app.models import response
 import logging
 import time
 import json
 import requests
 from google import genai
 from app.config import settings
-
+from datetime import datetime, timedelta
 logger = logging.getLogger("edugenie")
 
 # Retry configuration constants
@@ -17,12 +19,16 @@ _RETRY_BASE_DELAY = 1.5     # Base delay in seconds (doubles per retry)
 
 
 class AIOrchestrator:
+
     def __init__(self):
         self.gemini_enabled = False
         self._client = None
+        # Circuit Breaker
+        self.gemini_available = True
+        self.gemini_disabled_until = None
         gemini_key = settings.GEMINI_API_KEY
         if (
-            gemini_key 
+            gemini_key
             and gemini_key != "your-gemini-api-key-here"
             and gemini_key != "YOUR_GOOGLE_API_KEY"
         ):
@@ -43,20 +49,42 @@ class AIOrchestrator:
     # ─────────────────────────────────────────────────────────────────────────
     def query_gemini(self, prompt: str) -> str:
         """
-        Queries Google Gemini 2.0 Flash with exponential-backoff retry.
-        Max 2 retries on transient failures before raising RuntimeError.
+        Queries Google Gemini with intelligent retry logic.
+        Retries only for temporary failures.
+        Falls back to LaMini when quota is exhausted.
         """
+        if (
+            not self.gemini_available
+            and self.gemini_disabled_until
+            and datetime.now() < self.gemini_disabled_until
+        ):
+            logger.info("Gemini temporarily disabled. Using LaMini.")
+            return self.query_lamini(prompt)
+
+        # Re-enable Gemini after cooldown
+        if (
+            self.gemini_disabled_until
+            and datetime.now() >= self.gemini_disabled_until
+        ):
+            self.gemini_available = True
+            self.gemini_disabled_until = None
         if not self.gemini_enabled:
             return self._get_offline_response(prompt, "gemini")
 
         last_error = None
-        for attempt in range(1, _GEMINI_MAX_RETRIES + 2):  # attempts: 1, 2, 3
+
+        for attempt in range(1, _GEMINI_MAX_RETRIES + 2):
+
             try:
                 response = self._client.models.generate_content(
                     model="gemini-2.0-flash-lite",
                     contents=prompt
                 )
+                self.gemini_available = True
+                self.gemini_disabled_until = None
+
                 return self._clean_markdown_fencing(response.text.strip())
+
             except Exception as e:
                 error_str = str(e)
                 if "400" in error_str and ("API_KEY_INVALID" in error_str or "API key not valid" in error_str):
@@ -65,17 +93,73 @@ class AIOrchestrator:
                     return self._get_offline_response(prompt, "gemini")
                 
                 last_error = e
-                if attempt <= _GEMINI_MAX_RETRIES:
-                    delay = _RETRY_BASE_DELAY * (2 ** (attempt - 1))  # 1.5s, 3.0s
-                    logger.warning(
-                        f"Gemini attempt {attempt}/{_GEMINI_MAX_RETRIES + 1} failed: {e}. "
-                        f"Retrying in {delay:.1f}s..."
-                    )
-                    time.sleep(delay)
-                else:
-                    logger.error(f"Gemini all {_GEMINI_MAX_RETRIES + 1} attempts exhausted: {e}", exc_info=True)
+                error_message = str(e)
 
-        raise RuntimeError(f"Google Gemini model execution failed after retries: {str(last_error)}")
+            # ---------------------------------------------------------
+            # CASE 1 : Daily Quota Exhausted (DO NOT RETRY)
+            # ---------------------------------------------------------
+            if any(keyword in error_message for keyword in [
+                "RESOURCE_EXHAUSTED",
+                "quota exceeded",
+                "429",
+                "GenerateRequestsPerDay",
+                "GenerateRequestsPerMinute",
+                "GenerateContentInputTokens",
+                "QuotaFailure"
+            ]):
+                logger.warning(
+                    "Gemini quota exhausted. Disabling Gemini for 15 minutes."
+                )
+
+                self.gemini_available = False
+                self.gemini_disabled_until = datetime.now() + timedelta(minutes=15)
+
+                logger.info("Using LaMini fallback.")
+                return self.query_lamini(prompt)
+
+            # ---------------------------------------------------------
+            # CASE 2 : Invalid API Key (DO NOT RETRY)
+            # ---------------------------------------------------------
+            if (
+                "401" in error_message
+                or "UNAUTHENTICATED" in error_message
+            ):
+                logger.error("Invalid Gemini API Key.")
+                return self.query_lamini(prompt)
+
+            # ---------------------------------------------------------
+            # CASE 3 : Permission Denied (DO NOT RETRY)
+            # ---------------------------------------------------------
+            if (
+                "403" in error_message
+                or "PERMISSION_DENIED" in error_message
+            ):
+                logger.error("Gemini permission denied.")
+                return self.query_lamini(prompt)
+
+            # ---------------------------------------------------------
+            # CASE 4 : Retry only temporary failures
+            # ---------------------------------------------------------
+            if attempt <= _GEMINI_MAX_RETRIES:
+                delay = _RETRY_BASE_DELAY * (2 ** (attempt - 1))
+
+                logger.warning(
+                    f"[Gemini Retry] "
+                    f"Attempt {attempt}/{_GEMINI_MAX_RETRIES + 1} | "
+                    f"Delay={delay:.1f}s | "
+                    f"Error={error_message}"
+                )
+
+                time.sleep(delay)
+
+            else:
+                logger.error(
+                    "Gemini retries exhausted. Using LaMini.",
+                    exc_info=True
+                )
+                return self.query_lamini(prompt)
+
+        return self.query_lamini(prompt)
 
     # ─────────────────────────────────────────────────────────────────────────
     # LAMINI — Concept Explanation ONLY
@@ -233,188 +317,302 @@ class AIOrchestrator:
         )
         prompt_lower = prompt.lower()
 
-        # ── Roadmap ────────────────────────────────────────────────────────────
+        # ── Roadmap ──────────────────────────────────────────────────────────
         if "roadmap" in prompt_lower or "learning path" in prompt_lower or "learning coach" in prompt_lower:
             return json.dumps({
-                "topic": "FastAPI Web Development (Offline Demo)",
-                "difficulty": "Beginner",
-                "estimated_time": "8 Weeks (10 hours/week)",
-                "overview": "A structured foundational track covering FastAPI routing, Pydantic validation, SQLite ORM, JWT authentication, and AI API integration. By the end you will be able to build and deploy a full-stack API backend.",
+                "topic": "Python Full Stack Development",
+                "difficulty": "Beginner to Advanced",
+                "estimated_time": "16 Weeks (12-15 hours/week)",
+                "overview": (
+                    "This roadmap is designed to help learners become industry-ready "
+                    "Python Full Stack Developers. It covers frontend development, "
+                    "backend development with Python and FastAPI, database management, "
+                    "authentication, REST APIs, deployment, version control, and "
+                    "real-world project development."
+                ),
+
                 "progression": {
-                    "beginner": "Learn routing, path/query parameters, and Pydantic schemas. Build your first REST API.",
-                    "intermediate": "Add SQLAlchemy ORM models, database sessions, and JWT authentication middleware.",
-                    "advanced": "Implement async background tasks, CORS policies, file uploads, and WebSocket endpoints."
+                    "beginner": "Learn Python fundamentals, HTML5, CSS3, JavaScript, Git, and basic SQL.",
+                    "intermediate": "Build REST APIs using FastAPI, work with SQLite/MySQL, SQLAlchemy ORM, authentication using JWT, and consume APIs using JavaScript.",
+                    "advanced": "Develop complete full-stack applications, integrate AI APIs, deploy applications on cloud platforms, implement Docker, CI/CD pipelines, testing, and optimize application performance."
                 },
+
                 "resources": {
                     "books": [
-                        "FastAPI by Sebastián Ramírez (Official Docs as a book)",
-                        "Python Web Development with FastAPI by Bill Lubanovic",
-                        "Building Data Science Applications with FastAPI by François Voron"
+                        "Python Crash Course by Eric Matthes",
+                        "Automate the Boring Stuff with Python by Al Sweigart",
+                        "HTML & CSS: Design and Build Websites by Jon Duckett",
+                        "JavaScript: The Definitive Guide by David Flanagan",
+                        "FastAPI Official Documentation"
                     ],
                     "youtube": [
-                        "FastAPI Full Course — Amigoscode",
-                        "Build APIs with FastAPI — Tech with Tim",
-                        "FastAPI Crash Course — Traversy Media"
+                        "CodeWithHarry - Python Full Course",
+                        "Apna College - Full Stack Development",
+                        "Bro Code - Python Programming",
+                        "Traversy Media - HTML CSS JavaScript",
+                        "Tech With Tim - FastAPI Tutorial"
                     ],
                     "courses": [
-                        "REST APIs with FastAPI and Python (Udemy)",
-                        "FastAPI — The Complete Course (Udemy)"
+                        "Python for Everybody (Coursera)",
+                        "Complete Python Bootcamp (Udemy)",
+                        "Full Stack Web Development (Udemy)",
+                        "FastAPI Complete Guide",
+                        "Meta Backend Developer Professional Certificate"
                     ],
                     "certifications": [
-                        "Python Backend Engineer Certificate (LinkedIn Learning)",
-                        "AWS Developer Associate (AWS)"
+                        "Python Institute - PCEP",
+                        "Meta Backend Developer",
+                        "AWS Cloud Practitioner",
+                        "Google Associate Cloud Engineer",
+                        "Microsoft Azure Fundamentals"
                     ]
                 },
+
                 "suggested_projects": [
                     {
-                        "title": "Task Manager REST API",
-                        "description": "Build a CRUD task management API with SQLite, Pydantic schemas, and JWT auth. Beginner-level complexity."
+                        "title": "Student Management System",
+                        "description": "Build a CRUD application using FastAPI, SQLite, HTML, CSS and JavaScript."
                     },
                     {
-                        "title": "AI Study Assistant Backend",
-                        "description": "Create a FastAPI backend that integrates Gemini API for Q&A, quiz generation, and summarization. Intermediate complexity."
+                        "title": "AI Learning Assistant",
+                        "description": "Develop an AI-powered educational assistant using FastAPI, Gemini API, SQLite and JavaScript."
                     },
                     {
-                        "title": "Real-Time Chat API",
-                        "description": "Implement a WebSocket-based chat system with user authentication and message history. Advanced complexity."
+                        "title": "E-Commerce Website",
+                        "description": "Create a complete shopping website with authentication, product catalog, cart, payment workflow and admin dashboard."
+                    },
+                    {
+                        "title": "Job Portal",
+                        "description": "Build a recruitment platform with authentication, resume upload, job posting and application tracking."
                     }
                 ],
+
                 "weekly_study_plan": [
-                    {
-                        "week": 1,
-                        "focus": "FastAPI Fundamentals",
-                        "topics": ["Installing FastAPI and Uvicorn", "Path and query parameters", "First router file"],
-                        "checkpoint_quiz_topic": "FastAPI Basics"
-                    },
-                    {
-                        "week": 2,
-                        "focus": "Pydantic Data Validation",
-                        "topics": ["Pydantic BaseModel", "Request and response schemas", "Field validation"],
-                        "checkpoint_quiz_topic": "Pydantic and Schemas"
-                    },
-                    {
-                        "week": 3,
-                        "focus": "SQLAlchemy ORM",
-                        "topics": ["SQLite engine setup", "ORM models and relationships", "Session dependency"],
-                        "checkpoint_quiz_topic": "SQLAlchemy Basics"
-                    },
-                    {
-                        "week": 4,
-                        "focus": "Authentication and Security",
-                        "topics": ["JWT token generation", "Password hashing with bcrypt", "Protected route dependencies"],
-                        "checkpoint_quiz_topic": "JWT and Auth"
-                    }
+                    {"week": 1, "focus": "Python Programming Fundamentals",
+                     "topics": ["Variables", "Data Types", "Operators", "Loops", "Functions", "Modules"],
+                     "checkpoint_quiz_topic": "Python Basics"},
+                    {"week": 2, "focus": "Object-Oriented Programming",
+                     "topics": ["Classes", "Objects", "Inheritance", "Polymorphism", "Exception Handling"],
+                     "checkpoint_quiz_topic": "OOP Concepts"},
+                    {"week": 3, "focus": "Frontend Development",
+                     "topics": ["HTML5", "CSS3", "Responsive Design", "JavaScript ES6"],
+                     "checkpoint_quiz_topic": "Frontend Fundamentals"},
+                    {"week": 4, "focus": "Advanced JavaScript",
+                     "topics": ["DOM Manipulation", "Fetch API", "Async/Await", "JSON"],
+                     "checkpoint_quiz_topic": "JavaScript"},
+                    {"week": 5, "focus": "Database Fundamentals",
+                     "topics": ["SQLite", "SQL Queries", "Relationships", "Normalization"],
+                     "checkpoint_quiz_topic": "Database Basics"},
+                    {"week": 6, "focus": "FastAPI Framework",
+                     "topics": ["Routing", "Pydantic", "Request Validation", "Response Models"],
+                     "checkpoint_quiz_topic": "FastAPI"},
+                    {"week": 7, "focus": "SQLAlchemy ORM",
+                     "topics": ["Models", "Relationships", "CRUD Operations", "Database Sessions"],
+                     "checkpoint_quiz_topic": "SQLAlchemy"},
+                    {"week": 8, "focus": "Authentication",
+                     "topics": ["JWT", "Password Hashing", "Protected Routes", "Role-Based Access"],
+                     "checkpoint_quiz_topic": "Authentication"},
+                    {"week": 9, "focus": "REST API Development",
+                     "topics": ["CRUD APIs", "Status Codes", "Exception Handling", "API Testing"],
+                     "checkpoint_quiz_topic": "REST APIs"},
+                    {"week": 10, "focus": "AI Integration",
+                     "topics": ["Gemini API", "Prompt Engineering", "JSON Responses", "Error Handling"],
+                     "checkpoint_quiz_topic": "Generative AI"},
+                    {"week": 11, "focus": "Git & GitHub",
+                     "topics": ["Git Basics", "Branches", "Pull Requests", "Version Control"],
+                     "checkpoint_quiz_topic": "Git"},
+                    {"week": 12, "focus": "Deployment",
+                     "topics": ["Render", "Railway", "Vercel", "Environment Variables"],
+                     "checkpoint_quiz_topic": "Deployment"},
+                    {"week": 13, "focus": "Mini Project",
+                     "topics": ["Student Management System"],
+                     "checkpoint_quiz_topic": "Mini Project"},
+                    {"week": 14, "focus": "Intermediate Project",
+                     "topics": ["AI Learning Assistant"],
+                     "checkpoint_quiz_topic": "AI Project"},
+                    {"week": 15, "focus": "Major Project",
+                     "topics": ["Full Stack Web Application"],
+                     "checkpoint_quiz_topic": "Major Project"},
+                    {"week": 16, "focus": "Interview Preparation",
+                     "topics": ["DSA", "SQL", "Python", "System Design", "Mock Interviews"],
+                     "checkpoint_quiz_topic": "Final Assessment"}
                 ]
             })
 
-        # ── Quiz ──────────────────────────────────────────────────────────────
+        # ── Quiz ─────────────────────────────────────────────────────────────
         elif "quiz" in prompt_lower or "multiple-choice" in prompt_lower:
             difficulty = "Intermediate"
+
             if "beginner" in prompt_lower:
                 difficulty = "Beginner"
             elif "advanced" in prompt_lower:
                 difficulty = "Advanced"
+
+            # FIX: this return was previously dedented out of the elif block,
+            # which broke the if/elif/elif chain below with a SyntaxError.
             return json.dumps({
-                "topic": "Python Programming (Offline Demo)",
+                "topic": "Python Programming",
                 "difficulty": difficulty,
                 "questions": [
                     {
                         "id": 1,
-                        "question": "What keyword is used to define a function in Python?",
-                        "choices": ["function", "def", "define", "lambda"],
-                        "correct_key": "B",
-                        "explanation": "In Python, the 'def' keyword is used to declare a function. 'lambda' creates anonymous functions but is not used for named function definitions."
+                        "question": "Which keyword is used to define a function in Python?",
+                        "choices": ["function", "define", "def", "func"],
+                        "correct_key": "C",
+                        "explanation": "The 'def' keyword is used to define a function in Python."
                     },
                     {
                         "id": 2,
-                        "question": "Which data type is immutable in Python?",
-                        "choices": ["list", "dict", "set", "tuple"],
-                        "correct_key": "D",
-                        "explanation": "Tuples are immutable — their elements cannot be changed after creation. Lists, dicts, and sets are all mutable."
+                        "question": "Which of the following is a mutable data type in Python?",
+                        "choices": ["Tuple", "String", "List", "Integer"],
+                        "correct_key": "C",
+                        "explanation": "Lists are mutable, meaning their elements can be modified after creation."
                     },
                     {
                         "id": 3,
-                        "question": "What does the 'len()' function return for len([1, 2, 3])?",
-                        "choices": ["2", "3", "4", "TypeError"],
+                        "question": "What is the output of print(len([10, 20, 30, 40]))?",
+                        "choices": ["3", "4", "5", "Error"],
                         "correct_key": "B",
-                        "explanation": "len() returns the number of elements. The list [1, 2, 3] has 3 elements, so len() returns 3."
+                        "explanation": "The list contains four elements, so len() returns 4."
+                    },
+                    {
+                        "id": 4,
+                        "question": "Which loop is used to iterate over a sequence in Python?",
+                        "choices": ["repeat loop", "foreach loop", "for loop", "until loop"],
+                        "correct_key": "C",
+                        "explanation": "The 'for' loop is commonly used to iterate over lists, tuples, strings, and other sequences."
+                    },
+                    {
+                        "id": 5,
+                        "question": "Which symbol is used to write comments in Python?",
+                        "choices": ["//", "/* */", "#", "--"],
+                        "correct_key": "C",
+                        "explanation": "Single-line comments in Python begin with the '#' symbol."
                     }
                 ]
             })
 
-        # ── Summarize ─────────────────────────────────────────────────────────
+        # ── Summarize ────────────────────────────────────────────────────────
         elif "summarize" in prompt_lower or "summarization engine" in prompt_lower:
             return json.dumps({
-                "summary": "This is an offline demonstration summary. The provided text covers key concepts in software architecture and API design. To generate a real summary, configure your GEMINI_API_KEY in the .env file.",
+                "summary": (
+                    "Robotics in Artificial Intelligence and Machine Learning combines intelligent algorithms "
+                    "with robotic systems to enable machines to perceive their environment, learn from data, "
+                    "make decisions, and perform tasks autonomously. AI provides reasoning, planning, and "
+                    "decision-making capabilities, while Machine Learning enables robots to improve their "
+                    "performance through experience. Robotics powered by AI and ML is widely used in "
+                    "manufacturing, healthcare, agriculture, autonomous vehicles, space exploration, "
+                    "and smart warehouses to improve efficiency, accuracy, and safety."
+                ),
                 "bullet_points": [
-                    "The text introduces foundational software engineering principles.",
-                    "Key architectural patterns are discussed with practical examples.",
-                    "API design best practices including RESTful conventions are highlighted.",
-                    "Database integration and ORM usage are covered in detail.",
-                    "Security considerations including authentication and input validation are addressed."
+                    "Robotics integrates Artificial Intelligence and Machine Learning to build intelligent autonomous systems.",
+                    "AI enables robots to make decisions, recognize objects, and solve complex problems.",
+                    "Machine Learning allows robots to learn from data and continuously improve their performance.",
+                    "Computer Vision helps robots identify objects, people, and surroundings using cameras and sensors.",
+                    "Applications include healthcare, manufacturing, agriculture, autonomous vehicles, logistics, and space exploration."
                 ],
-                "important_keywords": ["API", "architecture", "database", "authentication", "validation"],
+                "important_keywords": [
+                    "Robotics",
+                    "Artificial Intelligence",
+                    "Machine Learning",
+                    "Computer Vision",
+                    "Automation",
+                    "Sensors",
+                    "Autonomous Systems",
+                    "Deep Learning"
+                ],
                 "key_concepts": [
-                    {"concept": "RESTful API", "definition": "An API architectural style that uses HTTP methods and stateless communication."},
-                    {"concept": "ORM", "definition": "Object-Relational Mapping — a technique to query and manipulate databases using an object-oriented paradigm."}
+                    {
+                        "concept": "Robotics",
+                        "definition": "The branch of engineering that designs, develops, and operates intelligent machines capable of performing tasks automatically."
+                    },
+                    {
+                        "concept": "Artificial Intelligence",
+                        "definition": "The capability of machines to simulate human intelligence such as learning, reasoning, and decision making."
+                    },
+                    {
+                        "concept": "Machine Learning",
+                        "definition": "A subset of AI that enables systems to learn patterns from data without being explicitly programmed."
+                    },
+                    {
+                        "concept": "Computer Vision",
+                        "definition": "A field of AI that enables robots to interpret and understand visual information from images and videos."
+                    }
                 ],
-                "revision_notes": "RESTful APIs use HTTP verbs (GET, POST, PUT, DELETE). ORMs map database tables to Python classes. JWT tokens authenticate users without server-side sessions. Pydantic validates request/response data.",
+                "revision_notes": (
+                    "Robotics + AI + Machine Learning = Intelligent Autonomous Systems. "
+                    "AI enables decision making, ML enables learning from experience, and Computer Vision enables "
+                    "robots to understand their surroundings. Major applications include healthcare, manufacturing, "
+                    "agriculture, autonomous vehicles, and space exploration."
+                ),
                 "length": "medium"
             })
 
-        # ── Concept Explanation (LaMini offline) ─────────────────────────────
-        elif "explain" in prompt_lower or "educator" in prompt_lower or provider == "lamini":
-            concept = "the requested concept"
-            for marker in ["explain the concept of '", "explain '", "explaining '"]:
-                if marker in prompt_lower:
-                    start = prompt_lower.find(marker) + len(marker)
-                    end = prompt_lower.find("'", start)
-                    if start != -1 and end != -1:
-                        concept = prompt[start:end]
-                        break
-
-            return (
-                f"## {concept.title()} — Concept Explanation (Offline Demo)\n\n"
-                f"**1. Simple Definition**\n"
-                f"{concept.title()} is a fundamental concept in computer science and software engineering. "
-                f"(Configure your HF_API_KEY in .env to get a live AI-generated explanation.)\n\n"
-                f"**2. How It Works**\n"
-                f"It operates by combining structured inputs, defined rules, and logical processing to produce predictable outputs.\n\n"
-                f"**3. Real-World Analogy**\n"
-                f"Think of it like a recipe: you provide ingredients (inputs), follow steps (logic), and get a dish (output).\n\n"
-                f"**4. Example**\n"
-                f"```python\n# Example demonstrating {concept}\nresult = process({concept.lower().replace(' ', '_')}_input)\nprint(result)\n```\n\n"
-                f"**5. Applications**\n"
-                f"Used widely in web development, data processing, and system design patterns.\n\n"
-                f"**6. Advantages**\n"
-                f"- Improves code readability and maintainability\n"
-                f"- Reduces duplication and promotes reuse\n"
-                f"- Enables scalable and testable architectures\n\n"
-                f"**7. Disadvantages / Limitations**\n"
-                f"- Can add abstraction overhead if overused\n"
-                f"- May have a learning curve for beginners\n\n"
-                f"**8. Interview Question**\n"
-                f"*Q: What is {concept} and when would you use it?*\n"
-                f"A: {concept.title()} is used to [purpose]. You would choose it when [conditions]."
-            )
-
-        # ── Q&A default fallback ──────────────────────────────────────────────
+        # ── Concept Explanation (default / LaMini fallback) ────────────────────
+        # NOTE: In the pasted source, this branch's opening (the condition,
+        # `return json.dumps({`, the "explanation" key, and the "**Definition**"
+        # / start of "**Types**" text) was missing — the fragment picked up
+        # mid-list at "Linked List". I've reconstructed a plausible opening
+        # below so the file parses; verify this against your actual source,
+        # since I inferred the missing lines rather than recovering them.
         else:
             return json.dumps({
-                "answer": (
-                    "## EduGenie — Offline Demo Mode\n\n"
-                    "Hello! I am your AI learning assistant, currently running in **offline demo mode** "
-                    "because the `GEMINI_API_KEY` is not configured.\n\n"
-                    "### How to Enable Live AI\n"
-                    "1. Copy `.env.example` to `.env`\n"
-                    "2. Add your Gemini API key: `GEMINI_API_KEY=your-actual-key`\n"
-                    "3. Restart the server: `uvicorn app.main:app --reload`\n\n"
-                    "Get your free Gemini API key at [aistudio.google.com](https://aistudio.google.com/)"
+                "explanation": (
+                    "**Definition**\n"
+                    "A Data Structure is a specialized format for organizing, processing, "
+                    "retrieving, and storing data so that it can be used efficiently.\n\n"
+                    "**Types**\n"
+                    "• Array\n"
+                    "• Linked List\n"
+                    "• Stack (LIFO)\n"
+                    "• Queue (FIFO)\n"
+                    "• Tree\n"
+                    "• Graph\n"
+                    "• Hash Table\n\n"
+
+                    "**Advantages**\n"
+                    "• Fast data access\n"
+                    "• Efficient memory usage\n"
+                    "• Better program performance\n"
+                    "• Easier implementation of algorithms\n"
+                    "• Supports scalable applications\n\n"
+
+                    "**Disadvantages**\n"
+                    "• Some structures are complex to implement.\n"
+                    "• Choosing the wrong data structure can reduce performance.\n"
+                    "• Dynamic structures may consume additional memory.\n\n"
+
+                    "**Applications**\n"
+                    "• Database Management Systems\n"
+                    "• Operating Systems\n"
+                    "• Artificial Intelligence\n"
+                    "• Search Engines\n"
+                    "• Web Browsers\n"
+                    "• Compiler Design\n"
+                    "• Networking\n\n"
+
+                    "**Interview Question**\n"
+                    "Q: What is a Data Structure and why is it important?\n\n"
+                    "Answer: A Data Structure is a method of organizing and storing data "
+                    "efficiently so that operations like searching, insertion, deletion, "
+                    "and sorting can be performed quickly. Choosing the appropriate data "
+                    "structure improves application performance and memory utilization."
                 ),
-                "key_concepts": ["API Configuration", "Environment Variables", "Offline Mode"],
+                "key_concepts": [
+                    "Data Structure",
+                    "Array",
+                    "Linked List",
+                    "Stack",
+                    "Queue",
+                    "Tree",
+                    "Graph",
+                    "Hash Table"
+                ],
                 "follow_up_questions": [
-                    "How do I get a Gemini API key?",
-                    "What can EduGenie do with a live API key?"
+                    "What are Linear and Non-Linear Data Structures?",
+                    "Explain Stack with a real-world example.",
+                    "Explain Queue with a real-world example.",
+                    "Difference between Array and Linked List?"
                 ],
                 "context_used": False
             })
