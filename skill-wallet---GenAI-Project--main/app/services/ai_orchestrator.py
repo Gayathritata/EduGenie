@@ -310,6 +310,7 @@ class AIOrchestrator:
         """
         Structured offline mock responses for credential-free local development.
         Matches the exact JSON schema expected by each endpoint's response model.
+        Topic: Data Structures — hardcoded for all features.
         """
         logger.info(
             f"Generating offline mock response for provider='{provider}' "
@@ -317,177 +318,256 @@ class AIOrchestrator:
         )
         prompt_lower = prompt.lower()
 
-        # ── Roadmap ──────────────────────────────────────────────────────────
-        if "roadmap" in prompt_lower or "learning path" in prompt_lower or "learning coach" in prompt_lower:
+        # ── Q&A ──────────────────────────────────────────────────────────────
+        if "student" in prompt_lower or ("edugenie, an expert" in prompt_lower and "quiz" not in prompt_lower and "roadmap" not in prompt_lower and "summarize" not in prompt_lower):
             return json.dumps({
-                "topic": "Python Full Stack Development",
-                "difficulty": "Beginner to Advanced",
-                "estimated_time": "16 Weeks (12-15 hours/week)",
-                "overview": (
-                    "This roadmap is designed to help learners become industry-ready "
-                    "Python Full Stack Developers. It covers frontend development, "
-                    "backend development with Python and FastAPI, database management, "
-                    "authentication, REST APIs, deployment, version control, and "
-                    "real-world project development."
+                "answer": (
+                    "## What are Data Structures?\n\n"
+                    "A **Data Structure** is a specialized format for organizing, processing, retrieving, "
+                    "and storing data so that it can be accessed and modified efficiently. "
+                    "Data structures are one of the foundational pillars of computer science — "
+                    "every algorithm you write depends on how well you choose and use them.\n\n"
+
+                    "## Types of Data Structures\n\n"
+                    "Data structures are broadly classified into two categories:\n\n"
+                    "**1. Linear Data Structures** — Elements are arranged sequentially:\n"
+                    "- **Array**: Fixed-size collection of elements of the same type, accessed by index. O(1) access.\n"
+                    "- **Linked List**: Nodes connected via pointers. Efficient insertions/deletions (O(1)) but O(n) access.\n"
+                    "- **Stack**: Last-In First-Out (LIFO). Used in undo operations, recursion, expression parsing.\n"
+                    "- **Queue**: First-In First-Out (FIFO). Used in scheduling, BFS, print spoolers.\n\n"
+
+                    "**2. Non-Linear Data Structures** — Elements arranged hierarchically or as networks:\n"
+                    "- **Tree**: Hierarchical structure. Binary Search Tree gives O(log n) search.\n"
+                    "- **Graph**: Nodes and edges. Used in maps, social networks, shortest-path algorithms.\n"
+                    "- **Heap**: A complete binary tree satisfying the heap property. Used in priority queues.\n"
+                    "- **Hash Table**: Key-value pairs with O(1) average-case lookup using hashing.\n\n"
+
+                    "## Why Data Structures Matter\n\n"
+                    "Choosing the right data structure can make the difference between an O(n\u00b2) "
+                    "and an O(log n) solution. For example:\n\n"
+                    "```python\n"
+                    "# Using a list (O(n) lookup) vs set (O(1) lookup)\n"
+                    "nums = [1, 2, 3, 4, 5]\n"
+                    "print(3 in nums)        # O(n) — scans entire list\n\n"
+                    "nums_set = {1, 2, 3, 4, 5}\n"
+                    "print(3 in nums_set)    # O(1) — direct hash lookup\n"
+                    "```\n\n"
+
+                    "## Real-World Applications\n\n"
+                    "| Data Structure | Real-World Use |\n"
+                    "|----------------|----------------|\n"
+                    "| Stack          | Browser back/forward, undo in editors |\n"
+                    "| Queue          | OS process scheduling, message queues |\n"
+                    "| Hash Table     | Python dictionaries, database indexing |\n"
+                    "| Tree           | File systems, XML/JSON parsing, databases |\n"
+                    "| Graph          | Google Maps, social networks, recommendation systems |"
                 ),
+                "key_concepts": [
+                    "Array",
+                    "Linked List",
+                    "Stack (LIFO)",
+                    "Queue (FIFO)",
+                    "Binary Search Tree",
+                    "Hash Table",
+                    "Graph",
+                    "Heap"
+                ],
+                "follow_up_questions": [
+                    "What is the difference between a Stack and a Queue?",
+                    "When would you use a Hash Table over a Binary Search Tree?",
+                    "Explain how a Graph differs from a Tree.",
+                    "What is the time complexity of common operations on a Linked List?",
+                    "How does hashing work in a Hash Table?"
+                ],
+                "context_used": False
+            })
 
+        # ── Roadmap ──────────────────────────────────────────────────────────
+        elif "roadmap" in prompt_lower or "learning path" in prompt_lower or "learning coach" in prompt_lower:
+            return json.dumps({
+                "topic": "Data Structures & Algorithms",
+                "difficulty": "Beginner to Advanced",
+                "estimated_time": "12 Weeks (10-12 hours/week)",
+                "overview": (
+                    "This roadmap is designed to take you from zero to mastery in Data Structures and Algorithms (DSA). "
+                    "You will learn how to organize data efficiently using arrays, linked lists, stacks, queues, trees, "
+                    "graphs, and hash tables, and apply algorithmic techniques like sorting, searching, recursion, "
+                    "dynamic programming, and greedy methods to solve real-world and interview-level problems."
+                ),
                 "progression": {
-                    "beginner": "Learn Python fundamentals, HTML5, CSS3, JavaScript, Git, and basic SQL.",
-                    "intermediate": "Build REST APIs using FastAPI, work with SQLite/MySQL, SQLAlchemy ORM, authentication using JWT, and consume APIs using JavaScript.",
-                    "advanced": "Develop complete full-stack applications, integrate AI APIs, deploy applications on cloud platforms, implement Docker, CI/CD pipelines, testing, and optimize application performance."
+                    "beginner": "Learn Python basics, arrays, strings, and Big-O time/space complexity. Solve simple problems using loops and conditionals.",
+                    "intermediate": "Master linked lists, stacks, queues, recursion, binary search, sorting algorithms (merge sort, quick sort), and binary search trees.",
+                    "advanced": "Study heaps, graphs (BFS, DFS, Dijkstra), dynamic programming, backtracking, tries, and segment trees."
                 },
-
                 "resources": {
                     "books": [
-                        "Python Crash Course by Eric Matthes",
-                        "Automate the Boring Stuff with Python by Al Sweigart",
-                        "HTML & CSS: Design and Build Websites by Jon Duckett",
-                        "JavaScript: The Definitive Guide by David Flanagan",
-                        "FastAPI Official Documentation"
+                        "Introduction to Algorithms (CLRS) by Cormen, Leiserson, Rivest & Stein",
+                        "Data Structures and Algorithms in Python by Goodrich, Tamassia & Goldwasser",
+                        "Cracking the Coding Interview by Gayle Laakmann McDowell",
+                        "Grokking Algorithms by Aditya Bhargava",
+                        "The Algorithm Design Manual by Steven Skiena"
                     ],
                     "youtube": [
-                        "CodeWithHarry - Python Full Course",
-                        "Apna College - Full Stack Development",
-                        "Bro Code - Python Programming",
-                        "Traversy Media - HTML CSS JavaScript",
-                        "Tech With Tim - FastAPI Tutorial"
+                        "Abdul Bari — Algorithms (YouTube)",
+                        "CodeWithHarry — Data Structures in Python",
+                        "William Fiset — Graph Theory Algorithms",
+                        "NeetCode — LeetCode Problem Walkthroughs",
+                        "CS Dojo — Data Structures and Algorithms"
                     ],
                     "courses": [
-                        "Python for Everybody (Coursera)",
-                        "Complete Python Bootcamp (Udemy)",
-                        "Full Stack Web Development (Udemy)",
-                        "FastAPI Complete Guide",
-                        "Meta Backend Developer Professional Certificate"
+                        "Data Structures and Algorithms Specialization (Coursera — UC San Diego)",
+                        "Algorithms, Part I & II (Coursera — Princeton University)",
+                        "Master the Coding Interview: Data Structures + Algorithms (Udemy)",
+                        "The Last Algorithms Course You'll Need (Frontend Masters)",
+                        "LeetCode DSA Study Plan (leetcode.com)"
                     ],
                     "certifications": [
-                        "Python Institute - PCEP",
-                        "Meta Backend Developer",
-                        "AWS Cloud Practitioner",
-                        "Google Associate Cloud Engineer",
-                        "Microsoft Azure Fundamentals"
+                        "Google Technical Interview Certification (Grow with Google)",
+                        "Python Institute — PCAP (includes data structures)",
+                        "Meta Coding Interview Prep (Meta Careers)",
+                        "AWS Developer Associate (uses DSA concepts)",
+                        "HackerRank Problem Solving Certificate"
                     ]
                 },
-
                 "suggested_projects": [
                     {
-                        "title": "Student Management System",
-                        "description": "Build a CRUD application using FastAPI, SQLite, HTML, CSS and JavaScript."
+                        "title": "Custom Linked List Library",
+                        "description": "Implement a fully-featured singly and doubly linked list in Python with insert, delete, reverse, and cycle-detection methods."
                     },
                     {
-                        "title": "AI Learning Assistant",
-                        "description": "Develop an AI-powered educational assistant using FastAPI, Gemini API, SQLite and JavaScript."
+                        "title": "Expression Evaluator using Stack",
+                        "description": "Build a calculator that parses and evaluates infix/postfix mathematical expressions using a stack data structure."
                     },
                     {
-                        "title": "E-Commerce Website",
-                        "description": "Create a complete shopping website with authentication, product catalog, cart, payment workflow and admin dashboard."
+                        "title": "Graph Pathfinder",
+                        "description": "Implement BFS, DFS, and Dijkstra's shortest path on a weighted graph and visualize paths in the terminal."
                     },
                     {
-                        "title": "Job Portal",
-                        "description": "Build a recruitment platform with authentication, resume upload, job posting and application tracking."
+                        "title": "LRU Cache Implementation",
+                        "description": "Build a Least Recently Used (LRU) cache using a doubly linked list and hash map with O(1) get and put operations."
                     }
                 ],
-
                 "weekly_study_plan": [
-                    {"week": 1, "focus": "Python Programming Fundamentals",
-                     "topics": ["Variables", "Data Types", "Operators", "Loops", "Functions", "Modules"],
-                     "checkpoint_quiz_topic": "Python Basics"},
-                    {"week": 2, "focus": "Object-Oriented Programming",
-                     "topics": ["Classes", "Objects", "Inheritance", "Polymorphism", "Exception Handling"],
-                     "checkpoint_quiz_topic": "OOP Concepts"},
-                    {"week": 3, "focus": "Frontend Development",
-                     "topics": ["HTML5", "CSS3", "Responsive Design", "JavaScript ES6"],
-                     "checkpoint_quiz_topic": "Frontend Fundamentals"},
-                    {"week": 4, "focus": "Advanced JavaScript",
-                     "topics": ["DOM Manipulation", "Fetch API", "Async/Await", "JSON"],
-                     "checkpoint_quiz_topic": "JavaScript"},
-                    {"week": 5, "focus": "Database Fundamentals",
-                     "topics": ["SQLite", "SQL Queries", "Relationships", "Normalization"],
-                     "checkpoint_quiz_topic": "Database Basics"},
-                    {"week": 6, "focus": "FastAPI Framework",
-                     "topics": ["Routing", "Pydantic", "Request Validation", "Response Models"],
-                     "checkpoint_quiz_topic": "FastAPI"},
-                    {"week": 7, "focus": "SQLAlchemy ORM",
-                     "topics": ["Models", "Relationships", "CRUD Operations", "Database Sessions"],
-                     "checkpoint_quiz_topic": "SQLAlchemy"},
-                    {"week": 8, "focus": "Authentication",
-                     "topics": ["JWT", "Password Hashing", "Protected Routes", "Role-Based Access"],
-                     "checkpoint_quiz_topic": "Authentication"},
-                    {"week": 9, "focus": "REST API Development",
-                     "topics": ["CRUD APIs", "Status Codes", "Exception Handling", "API Testing"],
-                     "checkpoint_quiz_topic": "REST APIs"},
-                    {"week": 10, "focus": "AI Integration",
-                     "topics": ["Gemini API", "Prompt Engineering", "JSON Responses", "Error Handling"],
-                     "checkpoint_quiz_topic": "Generative AI"},
-                    {"week": 11, "focus": "Git & GitHub",
-                     "topics": ["Git Basics", "Branches", "Pull Requests", "Version Control"],
-                     "checkpoint_quiz_topic": "Git"},
-                    {"week": 12, "focus": "Deployment",
-                     "topics": ["Render", "Railway", "Vercel", "Environment Variables"],
-                     "checkpoint_quiz_topic": "Deployment"},
-                    {"week": 13, "focus": "Mini Project",
-                     "topics": ["Student Management System"],
-                     "checkpoint_quiz_topic": "Mini Project"},
-                    {"week": 14, "focus": "Intermediate Project",
-                     "topics": ["AI Learning Assistant"],
-                     "checkpoint_quiz_topic": "AI Project"},
-                    {"week": 15, "focus": "Major Project",
-                     "topics": ["Full Stack Web Application"],
-                     "checkpoint_quiz_topic": "Major Project"},
-                    {"week": 16, "focus": "Interview Preparation",
-                     "topics": ["DSA", "SQL", "Python", "System Design", "Mock Interviews"],
-                     "checkpoint_quiz_topic": "Final Assessment"}
+                    {"week": 1, "focus": "Python Foundations & Big-O Notation",
+                     "topics": ["Python Lists", "Tuples", "Dictionaries", "Big-O Time Complexity", "Space Complexity"],
+                     "checkpoint_quiz_topic": "Big-O Notation"},
+                    {"week": 2, "focus": "Arrays & Strings",
+                     "topics": ["Static vs Dynamic Arrays", "Two-Pointer Technique", "Sliding Window", "String Manipulation"],
+                     "checkpoint_quiz_topic": "Arrays"},
+                    {"week": 3, "focus": "Linked Lists",
+                     "topics": ["Singly Linked List", "Doubly Linked List", "Cycle Detection (Floyd)", "Reverse a Linked List"],
+                     "checkpoint_quiz_topic": "Linked Lists"},
+                    {"week": 4, "focus": "Stacks & Queues",
+                     "topics": ["Stack (LIFO)", "Queue (FIFO)", "Deque", "Monotonic Stack", "BFS using Queue"],
+                     "checkpoint_quiz_topic": "Stacks & Queues"},
+                    {"week": 5, "focus": "Recursion & Backtracking",
+                     "topics": ["Base Cases", "Recursive Tree", "Memoization", "N-Queens", "Maze Solver"],
+                     "checkpoint_quiz_topic": "Recursion"},
+                    {"week": 6, "focus": "Sorting & Searching",
+                     "topics": ["Bubble Sort", "Merge Sort", "Quick Sort", "Binary Search", "Search in Rotated Array"],
+                     "checkpoint_quiz_topic": "Sorting Algorithms"},
+                    {"week": 7, "focus": "Hash Tables & Sets",
+                     "topics": ["Hash Functions", "Collision Resolution", "Python dict internals", "Anagram Detection", "Two Sum"],
+                     "checkpoint_quiz_topic": "Hash Tables"},
+                    {"week": 8, "focus": "Trees",
+                     "topics": ["Binary Tree", "Binary Search Tree", "Tree Traversals (In/Pre/Post)", "Height & Depth", "Balanced Trees"],
+                     "checkpoint_quiz_topic": "Binary Trees"},
+                    {"week": 9, "focus": "Heaps & Priority Queues",
+                     "topics": ["Min-Heap", "Max-Heap", "Heapify", "Python heapq", "K Largest Elements"],
+                     "checkpoint_quiz_topic": "Heaps"},
+                    {"week": 10, "focus": "Graphs",
+                     "topics": ["Graph Representations", "BFS", "DFS", "Topological Sort", "Cycle Detection"],
+                     "checkpoint_quiz_topic": "Graph Traversal"},
+                    {"week": 11, "focus": "Dynamic Programming",
+                     "topics": ["Memoization", "Tabulation", "0/1 Knapsack", "Fibonacci", "Longest Common Subsequence"],
+                     "checkpoint_quiz_topic": "Dynamic Programming"},
+                    {"week": 12, "focus": "Advanced Topics & Mock Interviews",
+                     "topics": ["Trie", "Segment Tree", "Dijkstra", "Greedy Algorithms", "Mock Interview Problems"],
+                     "checkpoint_quiz_topic": "Final DSA Assessment"}
                 ]
             })
 
         # ── Quiz ─────────────────────────────────────────────────────────────
         elif "quiz" in prompt_lower or "multiple-choice" in prompt_lower:
             difficulty = "Intermediate"
-
             if "beginner" in prompt_lower:
                 difficulty = "Beginner"
             elif "advanced" in prompt_lower:
                 difficulty = "Advanced"
 
-            # FIX: this return was previously dedented out of the elif block,
-            # which broke the if/elif/elif chain below with a SyntaxError.
             return json.dumps({
-                "topic": "Python Programming",
+                "topic": "Data Structures",
                 "difficulty": difficulty,
                 "questions": [
                     {
                         "id": 1,
-                        "question": "Which keyword is used to define a function in Python?",
-                        "choices": ["function", "define", "def", "func"],
-                        "correct_key": "C",
-                        "explanation": "The 'def' keyword is used to define a function in Python."
+                        "question": "Which data structure follows the Last-In First-Out (LIFO) principle?",
+                        "choices": ["Queue", "Stack", "Linked List", "Array"],
+                        "correct_key": "B",
+                        "explanation": "A Stack follows LIFO — the last element added is the first one removed. Common uses include undo operations, function call stacks, and expression parsing."
                     },
                     {
                         "id": 2,
-                        "question": "Which of the following is a mutable data type in Python?",
-                        "choices": ["Tuple", "String", "List", "Integer"],
+                        "question": "What is the average-case time complexity for searching in a Hash Table?",
+                        "choices": ["O(n)", "O(log n)", "O(1)", "O(n log n)"],
                         "correct_key": "C",
-                        "explanation": "Lists are mutable, meaning their elements can be modified after creation."
+                        "explanation": "Hash Tables provide O(1) average-case lookup because the key is hashed directly to a bucket index. Worst case is O(n) due to collisions."
                     },
                     {
                         "id": 3,
-                        "question": "What is the output of print(len([10, 20, 30, 40]))?",
-                        "choices": ["3", "4", "5", "Error"],
-                        "correct_key": "B",
-                        "explanation": "The list contains four elements, so len() returns 4."
+                        "question": "Which traversal of a Binary Search Tree produces elements in sorted (ascending) order?",
+                        "choices": ["Pre-order", "Post-order", "In-order", "Level-order"],
+                        "correct_key": "C",
+                        "explanation": "In-order traversal (Left \u2192 Root \u2192 Right) of a BST always produces elements in ascending sorted order."
                     },
                     {
                         "id": 4,
-                        "question": "Which loop is used to iterate over a sequence in Python?",
-                        "choices": ["repeat loop", "foreach loop", "for loop", "until loop"],
-                        "correct_key": "C",
-                        "explanation": "The 'for' loop is commonly used to iterate over lists, tuples, strings, and other sequences."
+                        "question": "What is the time complexity of inserting an element at the beginning of a Singly Linked List?",
+                        "choices": ["O(n)", "O(log n)", "O(n\u00b2)", "O(1)"],
+                        "correct_key": "D",
+                        "explanation": "Inserting at the head of a linked list is O(1) because you only need to update the head pointer — no shifting of elements is required."
                     },
                     {
                         "id": 5,
-                        "question": "Which symbol is used to write comments in Python?",
-                        "choices": ["//", "/* */", "#", "--"],
+                        "question": "Which data structure is used internally by a recursive function call mechanism?",
+                        "choices": ["Queue", "Heap", "Stack", "Graph"],
                         "correct_key": "C",
-                        "explanation": "Single-line comments in Python begin with the '#' symbol."
+                        "explanation": "The call stack is used to keep track of function calls. Each function invocation pushes a frame; when it returns, the frame is popped."
+                    },
+                    {
+                        "id": 6,
+                        "question": "What is the space complexity of a graph represented as an Adjacency Matrix for V vertices?",
+                        "choices": ["O(V)", "O(E)", "O(V\u00b2)", "O(V + E)"],
+                        "correct_key": "C",
+                        "explanation": "An adjacency matrix uses a V\u00d7V 2D array, resulting in O(V\u00b2) space. Adjacency lists are more space-efficient at O(V + E)."
+                    },
+                    {
+                        "id": 7,
+                        "question": "Which algorithm uses a Queue to traverse a graph level by level?",
+                        "choices": ["Depth-First Search (DFS)", "Dijkstra's Algorithm", "Breadth-First Search (BFS)", "Prim's Algorithm"],
+                        "correct_key": "C",
+                        "explanation": "BFS uses a Queue (FIFO) to explore all neighbors before moving to the next level, making it ideal for shortest-path in unweighted graphs."
+                    },
+                    {
+                        "id": 8,
+                        "question": "In a Min-Heap, which element is always at the root?",
+                        "choices": ["The maximum element", "The median element", "The minimum element", "A random element"],
+                        "correct_key": "C",
+                        "explanation": "In a Min-Heap, the root always holds the smallest element. Every parent node is smaller than or equal to its children."
+                    },
+                    {
+                        "id": 9,
+                        "question": "What is the worst-case time complexity of Quick Sort?",
+                        "choices": ["O(n log n)", "O(n)", "O(n\u00b2)", "O(log n)"],
+                        "correct_key": "C",
+                        "explanation": "Quick Sort degrades to O(n\u00b2) when the pivot is always the smallest or largest element, e.g., on an already-sorted array with naive pivot selection."
+                    },
+                    {
+                        "id": 10,
+                        "question": "Which data structure is best suited for implementing a priority queue efficiently?",
+                        "choices": ["Array", "Linked List", "Binary Heap", "Stack"],
+                        "correct_key": "C",
+                        "explanation": "A Binary Heap supports insert and extract-min/max in O(log n) time, making it the ideal underlying structure for a priority queue."
                     }
                 ]
             })
@@ -496,123 +576,159 @@ class AIOrchestrator:
         elif "summarize" in prompt_lower or "summarization engine" in prompt_lower:
             return json.dumps({
                 "summary": (
-                    "Robotics in Artificial Intelligence and Machine Learning combines intelligent algorithms "
-                    "with robotic systems to enable machines to perceive their environment, learn from data, "
-                    "make decisions, and perform tasks autonomously. AI provides reasoning, planning, and "
-                    "decision-making capabilities, while Machine Learning enables robots to improve their "
-                    "performance through experience. Robotics powered by AI and ML is widely used in "
-                    "manufacturing, healthcare, agriculture, autonomous vehicles, space exploration, "
-                    "and smart warehouses to improve efficiency, accuracy, and safety."
+                    "Data Structures are specialized formats for organizing, storing, and managing data in a computer "
+                    "so that it can be accessed and modified efficiently. They form the backbone of every software "
+                    "system and algorithm. The two primary categories are linear structures — such as arrays, linked "
+                    "lists, stacks, and queues — and non-linear structures, which include trees, graphs, and hash tables.\n\n"
+                    "Linear data structures store elements sequentially. Arrays offer O(1) random access but fixed size. "
+                    "Linked lists allow dynamic memory allocation with efficient insertions and deletions. Stacks enforce "
+                    "LIFO ordering critical for recursion and expression evaluation. Queues follow FIFO and underpin "
+                    "scheduling and BFS algorithms.\n\n"
+                    "Non-linear data structures model complex relationships. Binary Search Trees enable O(log n) operations. "
+                    "Graphs represent networks and power applications like navigation and social networks. "
+                    "Hash Tables provide O(1) average-case key-value lookup. Heaps are complete binary trees used in "
+                    "priority queues and Dijkstra's algorithm."
                 ),
                 "bullet_points": [
-                    "Robotics integrates Artificial Intelligence and Machine Learning to build intelligent autonomous systems.",
-                    "AI enables robots to make decisions, recognize objects, and solve complex problems.",
-                    "Machine Learning allows robots to learn from data and continuously improve their performance.",
-                    "Computer Vision helps robots identify objects, people, and surroundings using cameras and sensors.",
-                    "Applications include healthcare, manufacturing, agriculture, autonomous vehicles, logistics, and space exploration."
+                    "Data Structures organize and store data to enable efficient access, insertion, deletion, and modification.",
+                    "Linear structures (Array, Linked List, Stack, Queue) store elements sequentially with different trade-offs.",
+                    "Arrays give O(1) access by index; Linked Lists give O(1) insert/delete at the head.",
+                    "Non-linear structures (Tree, Graph, Heap, Hash Table) model hierarchical or networked relationships.",
+                    "Hash Tables provide O(1) average-case lookup; Binary Search Trees give O(log n) operations.",
+                    "Choosing the correct data structure determines the time and space complexity of your algorithm.",
+                    "Graphs power real-world applications like GPS navigation, social media, and web search.",
+                    "Heaps are the backbone of priority queues, used in Dijkstra's shortest-path and heap sort algorithms."
                 ],
                 "important_keywords": [
-                    "Robotics",
-                    "Artificial Intelligence",
-                    "Machine Learning",
-                    "Computer Vision",
-                    "Automation",
-                    "Sensors",
-                    "Autonomous Systems",
-                    "Deep Learning"
-                ],
-                "key_concepts": [
-                    {
-                        "concept": "Robotics",
-                        "definition": "The branch of engineering that designs, develops, and operates intelligent machines capable of performing tasks automatically."
-                    },
-                    {
-                        "concept": "Artificial Intelligence",
-                        "definition": "The capability of machines to simulate human intelligence such as learning, reasoning, and decision making."
-                    },
-                    {
-                        "concept": "Machine Learning",
-                        "definition": "A subset of AI that enables systems to learn patterns from data without being explicitly programmed."
-                    },
-                    {
-                        "concept": "Computer Vision",
-                        "definition": "A field of AI that enables robots to interpret and understand visual information from images and videos."
-                    }
-                ],
-                "revision_notes": (
-                    "Robotics + AI + Machine Learning = Intelligent Autonomous Systems. "
-                    "AI enables decision making, ML enables learning from experience, and Computer Vision enables "
-                    "robots to understand their surroundings. Major applications include healthcare, manufacturing, "
-                    "agriculture, autonomous vehicles, and space exploration."
-                ),
-                "length": "medium"
-            })
-
-        # ── Concept Explanation (default / LaMini fallback) ────────────────────
-        # NOTE: In the pasted source, this branch's opening (the condition,
-        # `return json.dumps({`, the "explanation" key, and the "**Definition**"
-        # / start of "**Types**" text) was missing — the fragment picked up
-        # mid-list at "Linked List". I've reconstructed a plausible opening
-        # below so the file parses; verify this against your actual source,
-        # since I inferred the missing lines rather than recovering them.
-        else:
-            return json.dumps({
-                "explanation": (
-                    "**Definition**\n"
-                    "A Data Structure is a specialized format for organizing, processing, "
-                    "retrieving, and storing data so that it can be used efficiently.\n\n"
-                    "**Types**\n"
-                    "• Array\n"
-                    "• Linked List\n"
-                    "• Stack (LIFO)\n"
-                    "• Queue (FIFO)\n"
-                    "• Tree\n"
-                    "• Graph\n"
-                    "• Hash Table\n\n"
-
-                    "**Advantages**\n"
-                    "• Fast data access\n"
-                    "• Efficient memory usage\n"
-                    "• Better program performance\n"
-                    "• Easier implementation of algorithms\n"
-                    "• Supports scalable applications\n\n"
-
-                    "**Disadvantages**\n"
-                    "• Some structures are complex to implement.\n"
-                    "• Choosing the wrong data structure can reduce performance.\n"
-                    "• Dynamic structures may consume additional memory.\n\n"
-
-                    "**Applications**\n"
-                    "• Database Management Systems\n"
-                    "• Operating Systems\n"
-                    "• Artificial Intelligence\n"
-                    "• Search Engines\n"
-                    "• Web Browsers\n"
-                    "• Compiler Design\n"
-                    "• Networking\n\n"
-
-                    "**Interview Question**\n"
-                    "Q: What is a Data Structure and why is it important?\n\n"
-                    "Answer: A Data Structure is a method of organizing and storing data "
-                    "efficiently so that operations like searching, insertion, deletion, "
-                    "and sorting can be performed quickly. Choosing the appropriate data "
-                    "structure improves application performance and memory utilization."
-                ),
-                "key_concepts": [
-                    "Data Structure",
                     "Array",
                     "Linked List",
                     "Stack",
                     "Queue",
-                    "Tree",
+                    "Binary Search Tree",
+                    "Hash Table",
                     "Graph",
-                    "Hash Table"
+                    "Heap",
+                    "Big-O Complexity",
+                    "Dynamic Programming"
+                ],
+                "key_concepts": [
+                    {
+                        "concept": "Array",
+                        "definition": "A fixed-size, contiguous block of memory storing elements of the same type, accessible in O(1) time by index."
+                    },
+                    {
+                        "concept": "Linked List",
+                        "definition": "A dynamic collection of nodes where each node stores data and a pointer to the next node, enabling O(1) insertion at the head."
+                    },
+                    {
+                        "concept": "Stack",
+                        "definition": "A linear data structure following Last-In First-Out (LIFO) order, used in recursion, undo features, and expression parsing."
+                    },
+                    {
+                        "concept": "Hash Table",
+                        "definition": "A data structure that maps keys to values using a hash function, providing O(1) average-case lookup, insert, and delete."
+                    },
+                    {
+                        "concept": "Binary Search Tree (BST)",
+                        "definition": "A tree where each node's left subtree has smaller values and right subtree has larger values, enabling O(log n) search."
+                    },
+                    {
+                        "concept": "Graph",
+                        "definition": "A collection of vertices and edges used to model networks, maps, social connections, and dependency systems."
+                    }
+                ],
+                "revision_notes": (
+                    "KEY COMPLEXITIES: "
+                    "Array: Access O(1) | Insert/Delete O(n). "
+                    "Linked List: Access O(n) | Insert/Delete at head O(1). "
+                    "Stack/Queue: All operations O(1). "
+                    "Hash Table: O(1) avg, O(n) worst. "
+                    "BST: O(log n) avg, O(n) worst (unbalanced). "
+                    "Heap: Insert O(log n) | Extract O(log n) | Build O(n). "
+                    "CHOOSE BY USE: Fast lookup \u2192 Hash Table. Sorted data \u2192 BST. Priority \u2192 Heap. LIFO \u2192 Stack. FIFO \u2192 Queue."
+                ),
+                "length": "medium"
+            })
+
+        # ── Concept Explanation (LaMini / default fallback) ──────────────────
+        else:
+            return json.dumps({
+                "explanation": (
+                    "## Data Structures \u2014 Concept Explanation\n\n"
+                    "**1. Simple Definition**\n"
+                    "A Data Structure is a specialized way of organizing, storing, and managing data in a computer "
+                    "so that it can be accessed, modified, and processed efficiently. It defines both the data itself, "
+                    "the relationships between the data, and the operations that can be applied to it.\n\n"
+
+                    "**2. How It Works**\n"
+                    "A data structure defines rules for how data is laid out in memory and what operations are allowed. "
+                    "For example, a Stack only allows add/remove from the top (LIFO), while an Array lets you access "
+                    "any element directly by index in O(1) time.\n\n"
+
+                    "**3. Real-World Analogy**\n"
+                    "Think of a library:\n"
+                    "\u2022 Books = data\n"
+                    "\u2022 Shelves organized alphabetically = Array (direct access by position)\n"
+                    "\u2022 A stack of books on a desk = Stack (last placed, first picked)\n"
+                    "\u2022 A waiting list for a reserved book = Queue (first requested, first served)\n"
+                    "\u2022 The library catalog network = Graph (books connected by references)\n\n"
+
+                    "**4. Example**\n"
+                    "```python\n"
+                    "# Stack using Python list\n"
+                    "stack = []\n"
+                    "stack.append(10)    # Push\n"
+                    "stack.append(20)\n"
+                    "stack.append(30)\n"
+                    "print(stack.pop())  # Pop \u2192 30 (LIFO)\n\n"
+                    "# Hash Table using Python dict\n"
+                    "phonebook = {'Alice': '9876543210', 'Bob': '9123456789'}\n"
+                    "print(phonebook['Alice'])  # O(1) lookup\n"
+                    "```\n\n"
+
+                    "**5. Applications**\n"
+                    "\u2022 Arrays & Hash Tables \u2192 Database indexing, caching (Redis)\n"
+                    "\u2022 Stacks \u2192 Browser history, undo/redo, compiler parsing\n"
+                    "\u2022 Queues \u2192 OS process scheduling, message brokers (Kafka, RabbitMQ)\n"
+                    "\u2022 Trees \u2192 File systems, XML/JSON parsers, decision trees in ML\n"
+                    "\u2022 Graphs \u2192 Google Maps, Facebook social graph, recommendation engines\n"
+                    "\u2022 Heaps \u2192 Task schedulers, Dijkstra's algorithm, real-time leaderboards\n\n"
+
+                    "**6. Advantages**\n"
+                    "\u2022 Enables efficient data access and manipulation\n"
+                    "\u2022 Reduces time and space complexity of algorithms\n"
+                    "\u2022 Provides reusable, well-understood abstractions\n"
+                    "\u2022 Essential for writing scalable, high-performance software\n\n"
+
+                    "**7. Disadvantages / Limitations**\n"
+                    "\u2022 Choosing the wrong structure causes poor performance\n"
+                    "\u2022 Complex structures (B-Trees, Tries) have steep learning curves\n"
+                    "\u2022 Dynamic structures use more memory per element due to pointers\n"
+                    "\u2022 Hash Tables can degrade to O(n) with many collisions\n\n"
+
+                    "**8. Interview Question**\n"
+                    "Q: What is the difference between an Array and a Linked List?\n\n"
+                    "A: An Array stores elements in contiguous memory with O(1) random access by index, "
+                    "but insertion/deletion is O(n) due to shifting. A Linked List stores elements as nodes "
+                    "with pointers \u2014 insertion/deletion at the head is O(1), but random access is O(n). "
+                    "Use Arrays when you need fast access; use Linked Lists when you need frequent insertions/deletions."
+                ),
+                "key_concepts": [
+                    "Array",
+                    "Linked List",
+                    "Stack (LIFO)",
+                    "Queue (FIFO)",
+                    "Binary Search Tree",
+                    "Hash Table",
+                    "Graph",
+                    "Heap"
                 ],
                 "follow_up_questions": [
-                    "What are Linear and Non-Linear Data Structures?",
-                    "Explain Stack with a real-world example.",
-                    "Explain Queue with a real-world example.",
-                    "Difference between Array and Linked List?"
+                    "What is the difference between a Stack and a Queue?",
+                    "When would you use a Hash Table over a Binary Search Tree?",
+                    "What are Linear vs Non-Linear Data Structures?",
+                    "Explain how a Min-Heap works with an example.",
+                    "What is the time complexity of BFS and DFS on a graph?"
                 ],
                 "context_used": False
             })
