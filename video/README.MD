@@ -4,7 +4,7 @@
 
 All project demonstration videos are available in the Google Drive folder below:
 
-🔗 https://drive.google.com/drive/folders/1fkB9FpXlXMiTp0KPJWq7PDRMuuSkscoN?usp=sharing
+🔗 https://drive.google.com/file/d/12C_zVE0jLsYDhLSyr8ETaXfHj24z1AJH/view?usp=sharing
 
 ---
 
